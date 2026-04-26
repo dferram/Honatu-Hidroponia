@@ -2,30 +2,39 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative overflow-hidden bg-surface-container-lowest">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 text-center lg:pt-32">
-        <h1 className="mx-auto max-w-4xl font-sans text-5xl font-bold tracking-tight text-on-surface sm:text-7xl">
-          Llevamos la producción de <span className="text-primary">hidroponía</span> a tu hogar.
+    <div className="relative overflow-hidden bg-surface-container-lowest pt-24 pb-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary-container/10 border border-primary-container/20 mb-10 animate-fade-in">
+          <div className="w-2 h-2 rounded-full bg-primary-container animate-pulse"></div>
+          <span className="text-label-caps text-primary-container font-bold tracking-widest">SYSTEM STATUS: OPTIMAL CIRCULATION</span>
+        </div>
+        
+        <h1 className="mx-auto max-w-5xl text-display-lg font-bold tracking-tight text-on-surface sm:text-7xl leading-[1.1]">
+          Experimenta el crecimiento con <br />
+          <span className="text-primary-container">precisión tecnológica.</span>
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-on-surface-variant">
-          Descubre la intersección perfecta entre vitalidad biológica y precisión tecnológica. Sistemas limpios, eficientes y listos para cultivar.
+        
+        <p className="mx-auto mt-8 max-w-2xl text-body-md text-on-surface-variant leading-relaxed">
+          Cultiva productos densos en nutrientes en cualquier espacio interior con nuestros sistemas hidropónicos meticulosamente diseñados. La intersección perfecta entre vitalidad biológica y ciencia.
         </p>
-        <div className="mt-10 flex items-center justify-center gap-x-6">
+        
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link
             href="/tienda"
-            className="rounded-DEFAULT bg-primary px-6 py-3 text-sm font-semibold text-on-primary shadow-sm hover:bg-primary-container focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all"
+            className="w-full sm:w-auto rounded-DEFAULT bg-primary px-10 py-4 text-sm font-bold text-on-primary shadow-lg hover:bg-primary-container hover:scale-105 transition-all duration-300"
           >
-            Explorar Tienda
+            EXPLORAR SISTEMAS
           </Link>
-          <Link href="/aprende" className="text-sm font-semibold leading-6 text-on-surface hover:text-primary transition-colors flex items-center gap-2">
-            Ver cómo funciona <span aria-hidden="true">→</span>
+          <Link href="/aprende" className="text-label-caps font-bold text-on-surface hover:text-primary transition-all flex items-center gap-2 group">
+            VER CÓMO FUNCIONA 
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </div>
       </div>
       
-      {/* Background decoration */}
-      <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
-        <div className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-primary-container to-secondary-container opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"></div>
+      {/* Refined Background decoration */}
+      <div className="absolute inset-x-0 -bottom-24 -z-10 transform-gpu overflow-hidden blur-3xl pointer-events-none" aria-hidden="true">
+        <div className="relative left-[50%] aspect-[1155/678] w-[80rem] -translate-x-1/2 bg-gradient-to-tr from-primary-container/20 to-secondary-container/10 opacity-30"></div>
       </div>
     </div>
   );
