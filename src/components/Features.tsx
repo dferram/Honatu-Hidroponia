@@ -9,20 +9,20 @@ export default function Features() {
               Eliminamos la incertidumbre de la <span className="text-primary-container">horticultura tradicional.</span>
             </h2>
             <p className="text-body-md text-on-surface-variant mb-12 max-w-xl leading-relaxed">
-              Los sistemas Honatu integran matrices sensoriales de grado comercial con interfaces domésticas intuitivas, garantizando un control ambiental óptimo para el máximo rendimiento botánico.
+              Los sistemas Honatu integran ingeniería de precisión con un diseño minimalista, garantizando un entorno de cultivo óptimo para el máximo rendimiento botánico en cualquier espacio interior.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="p-8 bg-surface rounded-2xl shadow-sm border border-outline-variant/10">
-                <h4 className="text-title-sm font-bold text-on-surface mb-3">Microclimas Automatizados</h4>
+                <h4 className="text-title-sm font-bold text-on-surface mb-3">Eficiencia Nutritiva</h4>
                 <p className="text-body-md text-on-surface-variant">
-                  Ajustes en tiempo real de pH, dosificación de nutrientes y ciclos de luz mediante procesadores integrados.
+                  Distribución equilibrada de pH y nutrientes diseñada para acelerar el ciclo de crecimiento de forma natural.
                 </p>
               </div>
               <div className="p-8 bg-surface rounded-2xl shadow-sm border border-outline-variant/10">
                 <h4 className="text-title-sm font-bold text-on-surface mb-3">90% Menos de Agua</h4>
                 <p className="text-body-md text-on-surface-variant">
-                  Los sistemas de recirculación de circuito cerrado reducen drásticamente el desperdicio en comparación con la agricultura tradicional.
+                  Sistemas de recirculación de circuito cerrado que optimizan el uso del recurso hídrico al máximo.
                 </p>
               </div>
             </div>
@@ -33,16 +33,16 @@ export default function Features() {
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/20">
               <img 
                 src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=1200&h=800" 
-                alt="Honatu Technology Interface" 
+                alt="Honatu Engineering" 
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-8">
                 <div className="flex gap-4">
                   <div className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
-                    <span className="text-xs font-bold text-white tracking-widest">LIVE DIAGNOSTICS</span>
+                    <span className="text-xs font-bold text-white tracking-widest">PRECISION ENGINEERING</span>
                   </div>
                   <div className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
-                    <span className="text-xs font-bold text-white tracking-widest">OPTIMAL GROWTH</span>
+                    <span className="text-xs font-bold text-white tracking-widest">OPTIMAL EFFICIENCY</span>
                   </div>
                 </div>
               </div>

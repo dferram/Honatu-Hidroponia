@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import Features from "@/components/Features";
-import DashboardPreview from "@/components/DashboardPreview";
 import Community from "@/components/Community";
 import Footer from "@/components/Footer";
 
@@ -27,14 +26,10 @@ export default function Home() {
         </div>
 
         <div className="reveal [animation-delay:200ms]">
-          <DashboardPreview />
-        </div>
-
-        <div className="reveal [animation-delay:400ms]">
           <Features />
         </div>
 
-        <div className="reveal [animation-delay:600ms]">
+        <div className="reveal [animation-delay:400ms]">
           <Community />
         </div>
       </main>
