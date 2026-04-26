@@ -45,13 +45,21 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-label-caps text-outline-variant font-bold">
-            &copy; {new Date().getFullYear()} HONATU HYDROCHRONICS. PRECISION GROWTH TECHNOLOGY.
-          </p>
+        <div className="pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-6 text-outline-variant">
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+            <p className="text-label-caps font-bold text-[10px]">
+              &copy; {new Date().getFullYear()} HONATU HYDROCHRONICS. PRECISION GROWTH TECHNOLOGY.
+            </p>
+            <span className="hidden md:block text-outline-variant/20">|</span>
+            <Link 
+              href="https://xcore-byg8fkdve4eyatbz.mexicocentral-01.azurewebsites.net/" 
+              className="text-[10px] font-bold tracking-widest hover:text-primary transition-colors opacity-60 hover:opacity-100"
+            >
+              CREATED BY XCORE
+            </Link>
+          </div>
           <div className="flex space-x-8">
-            <Link href="https://instagram.com" className="text-label-caps text-on-surface-variant hover:text-primary font-bold transition-all">INSTAGRAM</Link>
-            <Link href="https://twitter.com" className="text-label-caps text-on-surface-variant hover:text-primary font-bold transition-all">TWITTER</Link>
+            <Link href="https://www.instagram.com/honatu_hidroponia/" className="text-label-caps text-on-surface-variant hover:text-primary font-bold transition-all">INSTAGRAM</Link>
           </div>
         </div>
       </div>
