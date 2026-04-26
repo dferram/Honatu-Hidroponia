@@ -3,27 +3,30 @@ import Link from "next/link";
 const products = [
   {
     id: 1,
+    category: 'AEROPONICS',
     name: 'Torre Stratos',
     description: 'Sistema vertical aeropónico de 36 niveles.',
-    price: '$299',
-    image: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&q=80&w=600&h=800',
-    tags: ['Kits', 'Premium']
+    price: '$299.00',
+    spec: 'N-P-K: 5-3-4',
+    image: '/hero-tower.png'
   },
   {
     id: 2,
+    category: 'TECHNOLOGY',
     name: 'Lumina Pro',
     description: 'Iluminación LED de espectro completo para interiores.',
-    price: '$129',
-    image: 'https://images.unsplash.com/photo-1585250064619-7ebfbd655761?auto=format&fit=crop&q=80&w=600&h=800',
-    tags: ['Tecnología']
+    price: '$129.00',
+    spec: '300W FULL SPECTRUM',
+    image: '/led-spectrum.png'
   },
   {
     id: 3,
+    category: 'NUTRIENTS',
     name: 'Nutrientes Flora B',
     description: 'Solución balanceada N-P-K para etapa de floración.',
-    price: '$35',
-    image: 'https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&q=80&w=600&h=800',
-    tags: ['Nutrientes', 'Esencial']
+    price: '$35.00',
+    spec: 'ORGANIC CERTIFIED',
+    image: '/nutrientes.png'
   }
 ];
 
@@ -31,55 +34,50 @@ export default function FeaturedProducts() {
   return (
     <section className="py-24 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-end mb-12">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">Nuestros Favoritos</h2>
-            <p className="mt-4 text-lg text-on-surface-variant max-w-2xl">
-              Diseño minimalista y precisión técnica. Encuentra todo lo que necesitas para tu ecosistema.
-            </p>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+          <div className="max-w-2xl">
+            <h2 className="text-display-lg font-bold tracking-tight text-on-surface leading-tight">
+              Diseño Orgánico. <br />
+              <span className="text-primary-container">Precisión Técnica.</span>
+            </h2>
           </div>
-          <Link href="/tienda" className="hidden sm:block text-sm font-semibold text-primary hover:text-primary-container transition-colors">
-            Ver catálogo completo →
+          <Link href="/tienda" className="text-label-caps text-primary hover:text-primary-container transition-all group flex items-center gap-2">
+            VER CATÁLOGO COMPLETO
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-y-16 gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => (
-            <div key={product.id} className="group relative bg-surface-container-lowest rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 border border-outline-variant/30">
-              <div className="aspect-[4/5] w-full overflow-hidden rounded-md bg-surface-container-low lg:aspect-[4/5] relative">
-                {/* Fallback color/image if external unplash fails */}
+            <div key={product.id} className="group flex flex-col">
+              <div className="mb-4">
+                <span className="text-label-caps text-outline font-bold tracking-widest">{product.category}</span>
+              </div>
+              <div className="aspect-[4/5] w-full overflow-hidden rounded-xl bg-surface-container-low relative shadow-sm hover:shadow-xl transition-all duration-500 mb-6">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="h-full w-full object-cover object-center lg:h-full lg:w-full group-hover:scale-105 transition-transform duration-500"
+                  className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-2 left-2 flex gap-2">
-                  {product.tags.map((tag) => (
-                    <span key={tag} className="inline-flex items-center rounded-full bg-tertiary-container px-2 py-1 text-xs font-medium text-on-secondary-container">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold text-on-surface">
+              <div className="flex flex-col flex-grow">
+                <div className="flex justify-between items-baseline mb-2">
+                  <h3 className="text-title-sm font-bold text-on-surface">
                     <Link href={`/producto/${product.id}`}>
-                      <span aria-hidden="true" className="absolute inset-0" />
                       {product.name}
                     </Link>
                   </h3>
-                  <p className="mt-1 text-sm text-on-surface-variant line-clamp-2">{product.description}</p>
+                  <p className="text-title-sm font-semibold text-primary">{product.price}</p>
                 </div>
-                <p className="text-lg font-medium text-primary">{product.price}</p>
+                <p className="text-body-md text-on-surface-variant mb-4 leading-relaxed line-clamp-2">
+                  {product.description}
+                </p>
+                <div className="mt-auto pt-4 border-t border-outline-variant/20">
+                  <span className="text-label-caps text-outline-variant font-bold">{product.spec}</span>
+                </div>
               </div>
             </div>
           ))}
-        </div>
-        <div className="mt-10 sm:hidden">
-            <Link href="/tienda" className="text-sm font-semibold text-primary hover:text-primary-container transition-colors">
-                Ver catálogo completo →
-            </Link>
         </div>
       </div>
     </section>
