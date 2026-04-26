@@ -8,7 +8,7 @@ const products = [
     description: 'Sistema vertical aeropónico de 36 niveles.',
     price: '$299.00',
     spec: 'N-P-K: 5-3-4',
-    image: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&q=80&w=800&h=1000'
+    image: '/hero-tower.png'
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const products = [
     description: 'Iluminación LED de espectro completo para interiores.',
     price: '$129.00',
     spec: '300W FULL SPECTRUM',
-    image: 'https://images.unsplash.com/photo-1585250064619-7ebfbd655761?auto=format&fit=crop&q=80&w=800&h=1000'
+    image: '/led-spectrum.png'
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const products = [
     description: 'Solución balanceada N-P-K para etapa de floración.',
     price: '$35.00',
     spec: 'ORGANIC CERTIFIED',
-    image: 'https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&q=80&w=800&h=1000'
+    image: '/nutrientes.png'
   }
 ];
 
