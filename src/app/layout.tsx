@@ -10,6 +10,9 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Honatu - Hidroponía",
   description: "Llevamos la producción de hidroponía a tu hogar.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
