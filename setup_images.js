@@ -8,7 +8,9 @@ const files = [
   { src: 'honatu_tower_hero_1777174333198.png', dest: 'hero-tower.png' },
   { src: 'honatu_led_spectrum_1777174352174.png', dest: 'led-spectrum.png' },
   { src: 'honatu_nutrients_lab_1777174371378.png', dest: 'nutrientes.png' },
-  { src: 'honatu_dashboard_preview_1777174391301.png', dest: 'dashboard.png' }
+  { src: 'honatu_dashboard_preview_1777174391301.png', dest: 'dashboard.png' },
+  { src: 'honatu_nutrient_a_bottle_1777222633427.png', dest: 'nutrientes-a.png' },
+  { src: 'honatu_substrate_bag_1777222653080.png', dest: 'sustrato.png' }
 ];
 
 files.forEach(file => {
