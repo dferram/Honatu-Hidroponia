@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Honatu Hidroponia - Tienda Online
 
-## Getting Started
+Este es un proyecto de [Next.js](https://nextjs.org) para la tienda online de Honatu Hidroponia, especializada en sistemas de cultivo aeropónico y vertical.
 
-First, run the development server:
+## 🚀 Deploy en GitHub Pages
+
+Este proyecto está configurado para desplegarse automáticamente en GitHub Pages mediante GitHub Actions.
+
+### Configuración Inicial
+
+1. Ve a la configuración de tu repositorio en GitHub
+2. Navega a **Settings** > **Pages**
+3. En **Source**, selecciona **GitHub Actions**
+4. El workflow se ejecutará automáticamente en cada push a la rama `main`
+
+### URL del Sitio
+
+Una vez desplegado, tu sitio estará disponible en:
+```
+https://dferram.github.io/Honatu-Hidroponia/
+```
+
+### Cambios Realizados para GitHub Pages
+
+- ✅ Configurado `output: 'export'` para generación estática
+- ✅ Agregado `basePath` y `assetPrefix` para subdirectorio de GitHub Pages
+- ✅ Configurado `generateStaticParams()` para rutas dinámicas
+- ✅ Deshabilitada optimización de imágenes (no compatible con export estático)
+- ✅ Agregado archivo `.nojekyll` para evitar procesamiento de Jekyll
+
+## 🛠️ Desarrollo Local
+
+Primero, instala las dependencias:
+
+```bash
+npm install
+```
+
+Luego, ejecuta el servidor de desarrollo:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Build Local
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para generar el build estático localmente:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+Los archivos estáticos se generarán en la carpeta `out/`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🐳 Docker (Opcional)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+También puedes ejecutar el proyecto con Docker:
 
-## Deploy on Vercel
+```bash
+docker compose up
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Estructura del Proyecto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── page.tsx              # Página principal
+│   ├── tienda/
+│   │   └── page.tsx          # Catálogo de productos
+│   └── producto/[id]/
+│       └── page.tsx          # Página de detalle de producto
+└── components/
+    ├── Navbar.tsx
+    ├── Hero.tsx
+    ├── Features.tsx
+    ├── FeaturedProducts.tsx
+    ├── DashboardPreview.tsx
+    ├── Community.tsx
+    └── Footer.tsx
+```
+
+## 🎨 Tecnologías
+
+- **Next.js 16.2.4** - Framework React con App Router
+- **React 19** - Biblioteca de UI
+- **TypeScript** - Tipado estático
+- **Tailwind CSS 4** - Framework de estilos
+- **GitHub Actions** - CI/CD para deployment automático
+
+## 📝 Notas
+
+- Las imágenes deben estar en la carpeta `public/`
+- Los productos están hardcodeados en `src/app/tienda/page.tsx`
+- Para agregar más productos, actualiza el array `products` y agrega los IDs correspondientes en `generateStaticParams()`
+
+## 🔗 Enlaces Útiles
+
+- [Documentación de Next.js](https://nextjs.org/docs)
+- [Documentación de GitHub Pages](https://docs.github.com/en/pages)
+- [Tailwind CSS](https://tailwindcss.com/docs)

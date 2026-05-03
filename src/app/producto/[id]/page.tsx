@@ -2,6 +2,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 
+// Genera las rutas estáticas en tiempo de build
+export function generateStaticParams() {
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+    { id: '4' },
+    { id: '5' },
+    { id: '6' },
+  ];
+}
+
 export default function ProductPage({ params }: { params: { id: string } }) {
   // En un caso real, buscaríamos el producto por ID
   const product = {
