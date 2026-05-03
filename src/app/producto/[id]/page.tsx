@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { assetPath } from "@/lib/utils";
 
 // Genera las rutas estáticas en tiempo de build
 export function generateStaticParams() {
@@ -42,7 +43,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="aspect-square rounded-3xl overflow-hidden bg-surface-container-low reveal">
-              <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+              <img src={assetPath(product.image)} alt={product.name} className="w-full h-full object-cover" />
             </div>
 
             <div className="reveal [animation-delay:200ms]">

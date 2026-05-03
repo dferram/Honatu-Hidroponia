@@ -1,3 +1,5 @@
+import { assetPath } from "@/lib/utils";
+
 export default function Community() {
   const categories = [
     {
@@ -15,7 +17,7 @@ export default function Community() {
     {
       title: "Ciencia Botánica",
       description: "Artículos profundos sobre la biología de las plantas y optimización de nutrientes.",
-      image: "/led-spectrum.png",
+      image: assetPath('/led-spectrum.png'),
       link: "/aprende/ciencia"
     }
   ];

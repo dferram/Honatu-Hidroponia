@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/utils";
 
 export default function Hero() {
   return (
@@ -39,7 +40,7 @@ export default function Hero() {
             <div className="absolute -inset-10 bg-primary-container/10 rounded-full blur-3xl"></div>
             <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(20,66,45,0.2)]">
               <img 
-                src="/hero-tower.png" 
+                src={assetPath('/hero-tower.png')} 
                 alt="Torre Stratos" 
                 className="w-full h-full object-cover"
               />
