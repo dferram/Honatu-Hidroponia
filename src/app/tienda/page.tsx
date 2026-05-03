@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { assetPath } from "@/lib/utils";
 
 const products = [
   {
@@ -95,7 +96,7 @@ export default function TiendaPage() {
                 </div>
                 <div className="aspect-[4/5] w-full overflow-hidden rounded-xl bg-surface-container-low relative shadow-sm hover:shadow-xl transition-all duration-500 mb-6">
                   <img
-                    src={product.image}
+                    src={assetPath(product.image)}
                     alt={product.name}
                     className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />

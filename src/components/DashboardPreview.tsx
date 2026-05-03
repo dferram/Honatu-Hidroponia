@@ -1,3 +1,5 @@
+import { assetPath } from "@/lib/utils";
+
 export default function DashboardPreview() {
   return (
     <section className="py-24 bg-on-surface text-surface overflow-hidden">
@@ -8,7 +10,7 @@ export default function DashboardPreview() {
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary-container rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative glass-dark rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
                 <img 
-                  src="/dashboard.png" 
+                  src={assetPath('/dashboard.png')} 
                   alt="Honatu Intelligence Dashboard" 
                   className="w-full h-auto"
                 />
