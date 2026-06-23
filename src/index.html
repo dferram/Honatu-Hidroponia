@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/ecommerce.css">
   <link rel="icon" href="assets/logo/Logo.png" type="image/png">
   <script src="js/main.js" defer></script>
 </head>
@@ -42,6 +43,12 @@
       </div>
 
       <div class="nav-right">
+        <a href="favoritos.html" class="nav-cart" aria-label="Favoritos">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </a>
+        <button id="userLoginToggle" class="nav-cart" aria-label="Usuario">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
         <button id="cartToggle" class="nav-cart" aria-label="Carrito de compras">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
           <span id="cartBadge" class="cart-badge">0</span>
@@ -124,12 +131,8 @@
           <h2 class="section-title">Insumos Hidropónicos</h2>
           <p class="section-subtitle">Productos seleccionados para cada etapa de tu cultivo. Calidad probada, resultados reales.</p>
         </div>
-        <div class="shop-filters">
-          <button class="filter-btn active" data-filter="todos">Todos</button>
-          <button class="filter-btn" data-filter="nutrientes">Nutrientes</button>
-          <button class="filter-btn" data-filter="sustratos">Sustratos</button>
-          <button class="filter-btn" data-filter="sistemas">Sistemas</button>
-          <button class="filter-btn" data-filter="herramientas">Herramientas</button>
+        <div class="shop-actions">
+          <a href="tienda.html" class="btn btn-secondary btn-sm" style="border-radius: var(--radius-full); padding: 8px 20px;">Ver todos los productos <span class="btn-icon">&rarr;</span></a>
         </div>
       </div>
 
@@ -187,56 +190,6 @@
           </div>
         </article>
 
-        <article class="product-card reveal" data-delay="4" data-category="sistemas" data-id="4" data-name="Kit NFT Básico" data-price="1890" data-img="assets/images/home/img_4.jpg">
-          <div class="product-img-wrap">
-            <img src="assets/images/home/img_4.jpg" alt="Kit NFT Básico" loading="lazy">
-          </div>
-          <div class="product-body">
-            <span class="product-category">Sistemas</span>
-            <h3 class="product-name">Kit NFT Básico</h3>
-            <p class="product-desc">Sistema completo de recirculación con tubos, bomba y tanque para 12 plantas.</p>
-            <div class="product-footer">
-              <span class="product-price">$1,890 <small>MXN</small></span>
-              <button class="btn-add-cart" data-product-id="4" aria-label="Agregar al carrito">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card reveal" data-delay="5" data-category="nutrientes" data-id="5" data-name="CalMag Plus" data-price="329" data-img="assets/images/home/img_5.jpg">
-          <div class="product-img-wrap">
-            <img src="assets/images/home/img_5.jpg" alt="CalMag Plus" loading="lazy">
-          </div>
-          <div class="product-body">
-            <span class="product-category">Nutrientes</span>
-            <h3 class="product-name">CalMag Plus</h3>
-            <p class="product-desc">Suplemento de calcio y magnesio para prevenir deficiencias comunes en hidroponía.</p>
-            <div class="product-footer">
-              <span class="product-price">$329 <small>MXN</small></span>
-              <button class="btn-add-cart" data-product-id="5" aria-label="Agregar al carrito">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card reveal" data-delay="6" data-category="sustratos" data-id="6" data-name="Perlita Expandida 10L" data-price="189" data-img="assets/images/home/img_7.jpg">
-          <div class="product-img-wrap">
-            <img src="assets/images/home/img_7.jpg" alt="Perlita Expandida" loading="lazy">
-          </div>
-          <div class="product-body">
-            <span class="product-category">Sustratos</span>
-            <h3 class="product-name">Perlita Expandida 10L</h3>
-            <p class="product-desc">Sustrato ligero y estéril para mejorar aireación y drenaje en tus cultivos.</p>
-            <div class="product-footer">
-              <span class="product-price">$189 <small>MXN</small></span>
-              <button class="btn-add-cart" data-product-id="6" aria-label="Agregar al carrito">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              </button>
-            </div>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -529,9 +482,41 @@
         <span class="cart-total-label">Total:</span>
         <span id="cartTotal" class="cart-total-value">$0 MXN</span>
       </div>
-      <button class="btn btn-terracotta btn-checkout">Proceder al Pago <span class="btn-icon">&rarr;</span></button>
+      <a href="carrito.html" class="btn btn-terracotta btn-checkout" style="text-decoration: none; text-align: center;">Ver Carrito Completo <span class="btn-icon">&rarr;</span></a>
     </div>
   </aside>
+
+  <!-- LOGIN MODAL -->
+  <div id="loginOverlay" class="login-overlay"></div>
+  <div id="loginModal" class="login-modal" aria-hidden="true" role="dialog">
+    <div class="login-modal-content">
+      <button id="loginClose" class="login-close" aria-label="Cerrar modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      
+      <div class="login-header">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-forest)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 16px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <h2 id="loginTitle">Inicia Sesión</h2>
+        <p id="loginSubtitle">Inicia sesión primero para poder comprar o guardar favoritos.</p>
+      </div>
+      
+      <form id="loginForm" class="login-form">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Correo electrónico</label>
+          <input type="email" id="loginEmail" class="form-input" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Contraseña</label>
+          <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Ingresar</button>
+      </form>
+      
+      <div class="login-footer">
+        <p>¿No tienes cuenta? <a href="#" style="color: var(--color-forest); font-weight: 600;">Regístrate</a></p>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

@@ -158,6 +158,45 @@ document.addEventListener('DOMContentLoaded', () => {
   counters.forEach(counter => counterObserver.observe(counter));
 
   /* ==========================================
+     AUTH SYSTEM (MOCK)
+     ========================================== */
+  let isAuthenticated = localStorage.getItem('honatu-auth') === 'true';
+
+  const loginModal = document.getElementById('loginModal');
+  const loginOverlay = document.getElementById('loginOverlay');
+  const userLoginToggle = document.getElementById('userLoginToggle');
+  const loginClose = document.getElementById('loginClose');
+  const loginForm = document.getElementById('loginForm');
+
+  const openLoginModal = () => {
+    if (isAuthenticated) {
+      alert("Ya has iniciado sesión. (Perfil Mock)");
+      return;
+    }
+    loginModal?.classList.add('active');
+    loginOverlay?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLoginModal = () => {
+    loginModal?.classList.remove('active');
+    loginOverlay?.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  userLoginToggle?.addEventListener('click', openLoginModal);
+  loginClose?.addEventListener('click', closeLoginModal);
+  loginOverlay?.addEventListener('click', closeLoginModal);
+
+  loginForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    isAuthenticated = true;
+    localStorage.setItem('honatu-auth', 'true');
+    closeLoginModal();
+    alert("¡Sesión iniciada con éxito! Ya puedes agregar al carrito.");
+  });
+
+  /* ==========================================
      E-COMMERCE: Cart System
      ========================================== */
   let cart = JSON.parse(localStorage.getItem('honatu-cart') || '[]');
@@ -279,6 +318,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.btn-add-cart').forEach(btn => {
     btn.addEventListener('click', function () {
+      if (!isAuthenticated) {
+        openLoginModal();
+        return;
+      }
+
       const card = this.closest('.product-card');
       if (!card) return;
 
