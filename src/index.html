@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honatu | Insumos Hidropónicos</title>
+
+    <!-- Hojas de estilo unificadas -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/home.css">
+
+    <!-- JS de inicialización y control de loader -->
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+    <!-- PANTALLA DE CARGA -->
+    <div id="loader" class="loader" aria-hidden="false">
+        <div class="loader-inner">
+            <img src="assets/logo/Logo.png" alt="Logo" class="loader-logo">
+            <div class="loader-lines" aria-hidden="true">
+                <span class="line" style="--i:0"></span>
+                <span class="line" style="--i:1"></span>
+                <span class="line" style="--i:2"></span>
+                <span class="line" style="--i:3"></span>
+                <span class="line" style="--i:4"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO CON VIDEO/IMAGEN -->
+    <section class="hero">
+
+        <!-- VIDEO / IMAGEN DE FONDO -->
+        <video autoplay muted loop playsinline class="hero-video" poster="assets/logo/Logo.png">
+            <source src="assets/images/home/img_6.jpg" type="image/jpeg">
+            Tu navegador no soporta el elemento <code>video</code> o la imagen.
+        </video>
+
+        <!-- OVERLAY para mejorar contraste -->
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <!-- NAVBAR -->
+        <header class="navbar" role="banner">
+            <div class="container nav-flex">
+
+                <!-- LOGO -->
+                <div class="logo">
+                    <a href="index.html" aria-label="Inicio">
+                        <img src="assets/logo/Logo.png" alt="Logo de Honatu">
+                    </a>
+                </div>
+
+                <nav role="navigation" aria-label="Menú principal">
+                    <ul class="nav-links">
+                        <li><a href="educacion.html">Educación</a></li>
+                        <li><a href="acciones.html">Acciones</a></li>
+                        <li><a href="involucrate.html">Involúcrate</a></li>
+                        <li><a href="nosotros.html">Acerca de nosotros</a></li>
+                        <li><a href="#contacto" class="btn-cta">Vuélvete miembro</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- TEXTO HERO -->
+        <div class="hero-content">
+            <h1>Nuestra Salud Dependiente<br>de Nuestro Entorno</h1>
+        </div>
+
+    </section>
+
+    <!-- INSUMOS HIDROPÓNICOS -->
+    <section class="hidro-section">
+        <div class="container hidro-grid">
+
+            <div class="hidro-content">
+                <div class="section-header">
+                    <h2>Insumos Hidropónicos</h2>
+                    <p>Todo lo que necesitas para iniciar y mantener tus cultivos hidropónicos: sustratos, nutrientes, bombas y más.</p>
+                </div>
+
+                <ul class="hidro-list">
+                    <li><strong>Nutrientes balanceados</strong> para etapas de crecimiento y floración.</li>
+                    <li><strong>Sustratos inertes</strong> (perlita, fibra de coco, lana de roca).</li>
+                    <li><strong>Sistemas</strong> (NFT, DWC, goteo) y bombas de calidad.</li>
+                    <li><strong>Medidores</strong> pH y EC para control preciso del agua.</li>
+                </ul>
+
+                <p class="hidro-cta">¿Quieres ver cómo se usan? Mira el video explicativo junto a esta sección.</p>
+                <a class="btn-cta" href="educacion.html">Ver catálogo / Aprender más</a>
+            </div>
+
+            <div class="hidro-media">
+                <div class="hydro-video-box" role="img" aria-label="Vista previa de video insumos">
+                    <img src="assets/images/home/img_4.jpg" alt="Preview video" />
+                    <button class="play-btn" aria-label="Reproducir video">▶</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN EXTRA -->
+    <section class="features">
+        <div class="container">
+
+            <div class="section-header">
+                <h2>Nuestro Enfoque</h2>
+                <p>Inspirados en la naturaleza para crear soluciones sostenibles.</p>
+            </div>
+
+            <div class="grid">
+
+                <div class="card">
+                    <div class="img-box">
+                        <img src="assets/images/home/img_1.jpg" alt="Conservación" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3>Conservación</h3>
+                    <p>Protegemos ecosistemas y fomentamos el equilibrio ambiental.</p>
+                </div>
+
+                <div class="card">
+                    <div class="img-box">
+                        <img src="assets/images/home/img_2.jpg" alt="Biodiversidad" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3>Biodiversidad</h3>
+                    <p>Valoramos la riqueza natural y su impacto en el planeta.</p>
+                </div>
+
+                <div class="card">
+                    <div class="img-box">
+                        <img src="assets/images/home/img_3.jpg" alt="Sustentabilidad" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3>Sustentabilidad</h3>
+                    <p>Diseñamos soluciones responsables a largo plazo.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA: ubicación -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Encuéntranos</h2>
+                <p>Ubicación del local (puedes abrir en Google Maps para indicaciones detalladas).</p>
+            </div>
+
+            <div class="map-wrap">
+                <iframe class="map-frame"
+                    src="https://www.google.com/maps?q=76000%2C%20Centro%2C%2076000%20Santiago%20de%20Quer%C3%A9taro%2C%20Qro.&output=embed"
+                    allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <p style="text-align:center; margin-top:18px;">
+                <a class="btn-cta" href="https://www.google.com/maps?q=76000, Centro, 76000 Santiago de Querétaro, Qro." target="_blank" rel="noopener">
+                    Abrir en Google Maps
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER: Contacto -->
+    <footer id="contacto" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><strong>Teléfono:</strong> +1 (555) 123-4567</p>
+                <p><strong>Email:</strong> info@hidroponicos.com</p>
+                <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad Ejemplo, País</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes - Viernes: 9:00 AM - 6:00 PM</p>
+                <p>Sábado: 10:00 AM - 4:00 PM</p>
+                <p>Domingo: Cerrado</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <p>Facebook: @HidroponicosEjemplo</p>
+                <p>Instagram: @hidroponicos_ej</p>
+                <p>Twitter: @HidroEjemplo</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Insumos Hidropónicos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+/* ESTILOS COMUNES Y GLOBALES - HONATU */
+
+/* Importar Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light;
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Inter', system-ui, Arial, sans-serif;
+    --color-bg-light: #eff7f3;
+    --color-bg-gradient: #f4fbf8;
+    --color-text-dark: #0f1a21;
+    --color-primary: #7ed6c5;
+    --color-primary-dark: #0b1d1a;
+    --color-green-btn: #2bbb59;
+    --color-green-btn-hover: #40b947;
+}
+
+body {
+    font-family: var(--font-secondary);
+    color: var(--color-text-dark);
+    background: var(--color-bg-gradient);
+    line-height: 1.6;
+    margin: 0;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ==========================================
+   LOADER / PANTALLA DE CARGA (Común)
+   ========================================== */
+.loader {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #ffffff 0%, #f7fffb 100%);
+    z-index: 9999;
+    flex-direction: column;
+}
+
+.loader-inner {
+    text-align: center;
+}
+
+.loader-logo {
+    height: 78px;
+    width: auto;
+    display: block;
+    margin: 0 auto 18px;
+}
+
+.loader-lines {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    width: 48px;
+    height: 6px;
+    background: linear-gradient(90deg, var(--color-primary), #34d399);
+    border-radius: 6px;
+    transform-origin: left center;
+    transform: scaleX(0);
+    animation: lineGrow 900ms cubic-bezier(.2, .8, .2, 1) forwards;
+    animation-delay: calc(var(--i) * 140ms);
+}
+
+@keyframes lineGrow {
+    0% {
+        transform: scaleX(0);
+        opacity: 0.3;
+    }
+    60% {
+        transform: scaleX(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+.loader--hide {
+    opacity: 0;
+    transform: translateY(-12px);
+    transition: opacity 600ms ease, transform 600ms ease;
+    pointer-events: none;
+}
+
+.loader .line.pulse {
+    animation: linePulse 900ms ease-in-out infinite alternate;
+}
+
+@keyframes linePulse {
+    from {
+        transform: scaleX(0.9);
+    }
+    to {
+        transform: scaleX(1.05);
+    }
+}
+
+/* ==========================================
+   FOOTER / PIE DE PÁGINA (Común)
+   ========================================== */
+.footer {
+    background: linear-gradient(180deg, #0b1d1a 0%, #1a2e2a 100%);
+    color: white;
+    padding: 60px 0 20px;
+    margin-top: 80px;
+    font-family: var(--font-primary);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.footer-section strong {
+    color: #34d399;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+    color: #ccc;
+    font-family: var(--font-primary);
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .footer {
+        padding: 40px 0 20px;
+    }
+}
