@@ -12,6 +12,8 @@ export default defineConfig({
         tienda: resolve(__dirname, 'src/tienda.html'),
         favoritos: resolve(__dirname, 'src/favoritos.html'),
         carrito: resolve(__dirname, 'src/carrito.html'),
+        checkout: resolve(__dirname, 'src/checkout.html'),
+        gracias: resolve(__dirname, 'src/gracias.html'),
       },
     },
   },
