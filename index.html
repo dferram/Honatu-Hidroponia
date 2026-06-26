@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Honatu | Insumos Hidropónicos Premium</title>
+  <meta name="description" content="Honatu ofrece insumos hidropónicos de alta calidad: nutrientes, sustratos, sistemas y herramientas para cultivo sin suelo. Aprende, compra y únete a nuestra comunidad.">
+
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/ecommerce.css">
+  <link rel="icon" href="assets/logo/Logo.png" type="image/png">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader" class="loader" aria-hidden="false">
+    <div class="loader-inner">
+      <img src="assets/logo/Logo.png" alt="Honatu" class="loader-logo">
+      <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar navbar--transparent" role="navigation" aria-label="Navegación principal">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Inicio">
+        <img src="assets/logo/Logo.png" alt="Honatu">
+      </a>
+
+      <div id="navMenu" class="nav-menu">
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#tienda" class="nav-link">Tienda</a>
+        <a href="#educacion" class="nav-link">Educación</a>
+        <a href="#impacto" class="nav-link">Impacto</a>
+        <a href="#involucrate" class="nav-link">Involúcrate</a>
+        <a href="#tienda" class="btn btn-primary btn-sm nav-cta">Comprar</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="favoritos.html" class="nav-cart" aria-label="Favoritos">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </a>
+        <button id="userLoginToggle" class="nav-cart" aria-label="Usuario">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+        <button id="cartToggle" class="nav-cart" aria-label="Carrito de compras">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span id="cartBadge" class="cart-badge">0</span>
+        </button>
+        <button id="navHamburger" class="nav-hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-bg">
+      <img src="assets/images/home/img_6.jpg" alt="Cultivo hidropónico" loading="eager">
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-eyebrow">Cultivo sin límites</span>
+        <h1>Cultiva el Futuro<br><em>desde la Raíz</em></h1>
+        <p class="hero-subtitle">Insumos hidropónicos premium, conocimiento especializado y una comunidad que crece contigo.</p>
+        <div class="hero-actions">
+          <a href="#tienda" class="btn btn-primary">Explorar Productos <span class="btn-icon">&rarr;</span></a>
+          <a href="#educacion" class="btn btn-ghost">Aprende Más</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content reveal">
+          <span class="section-eyebrow">Nuestra Historia</span>
+          <h2 class="section-title">Honatu, tu socio en hidroponía</h2>
+          <p class="about-description">
+            Somos una empresa especializada en insumos hidropónicos, dedicada a suministrar materiales
+            de calidad y a impulsar el conocimiento para que las personas se acerquen al cultivo sin suelo.
+            Creemos que la hidroponía es el futuro de la agricultura sostenible.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat-item reveal" data-delay="1">
+              <div class="stat-number" data-count="150">0</div>
+              <div class="stat-label">Clientes</div>
+            </div>
+            <div class="stat-item reveal" data-delay="2">
+              <div class="stat-number" data-count="45">0</div>
+              <div class="stat-label">Productos</div>
+            </div>
+            <div class="stat-item reveal" data-delay="3">
+              <div class="stat-number" data-count="3">0</div>
+              <div class="stat-label">Años</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-image-wrap reveal-right">
+          <img src="assets/images/nosotros/img_1.jpg" alt="Equipo Honatu" class="about-image-main">
+          <img src="assets/images/nosotros/img_5.jpg" alt="Productos Honatu" class="about-image-accent">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIENDA -->
+  <section id="tienda" class="shop">
+    <div class="container">
+      <div class="shop-header reveal">
+        <div>
+          <span class="section-eyebrow">Nuestra Tienda</span>
+          <h2 class="section-title">Insumos Hidropónicos</h2>
+          <p class="section-subtitle">Productos seleccionados para cada etapa de tu cultivo. Calidad probada, resultados reales.</p>
+        </div>
+        <div class="shop-actions">
+          <a href="tienda.html" class="btn btn-secondary btn-sm" style="border-radius: var(--radius-full); padding: 8px 20px;">Ver todos los productos <span class="btn-icon">&rarr;</span></a>
+        </div>
+      </div>
+
+      <div id="shopGrid" class="shop-grid">
+        <article class="product-card reveal" data-delay="1" data-category="nutrientes" data-id="1" data-name="Solución Nutritiva A+B" data-price="389" data-img="assets/images/home/img_1.jpg">
+          <div class="product-img-wrap">
+            <img src="assets/images/home/img_1.jpg" alt="Solución Nutritiva A+B" loading="lazy">
+            <span class="product-badge">Popular</span>
+          </div>
+          <div class="product-body">
+            <span class="product-category">Nutrientes</span>
+            <h3 class="product-name">Solución Nutritiva A+B</h3>
+            <p class="product-desc">Fórmula balanceada de macro y micronutrientes para todas las etapas de crecimiento.</p>
+            <div class="product-footer">
+              <span class="product-price">$389 <small>MXN</small></span>
+              <button class="btn-add-cart" data-product-id="1" aria-label="Agregar al carrito">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-delay="2" data-category="sustratos" data-id="2" data-name="Fibra de Coco Premium" data-price="249" data-img="assets/images/home/img_2.jpg">
+          <div class="product-img-wrap">
+            <img src="assets/images/home/img_2.jpg" alt="Fibra de Coco Premium" loading="lazy">
+          </div>
+          <div class="product-body">
+            <span class="product-category">Sustratos</span>
+            <h3 class="product-name">Fibra de Coco Premium</h3>
+            <p class="product-desc">Sustrato natural lavado y bufferizado, excelente retención de agua y drenaje.</p>
+            <div class="product-footer">
+              <span class="product-price">$249 <small>MXN</small></span>
+              <button class="btn-add-cart" data-product-id="2" aria-label="Agregar al carrito">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-delay="3" data-category="herramientas" data-id="3" data-name="Medidor pH/EC Digital" data-price="599" data-img="assets/images/home/img_3.jpg">
+          <div class="product-img-wrap">
+            <img src="assets/images/home/img_3.jpg" alt="Medidor pH/EC Digital" loading="lazy">
+            <span class="product-badge">Nuevo</span>
+          </div>
+          <div class="product-body">
+            <span class="product-category">Herramientas</span>
+            <h3 class="product-name">Medidor pH/EC Digital</h3>
+            <p class="product-desc">Medidor de alta precisión con pantalla LCD retroiluminada y calibración automática.</p>
+            <div class="product-footer">
+              <span class="product-price">$599 <small>MXN</small></span>
+              <button class="btn-add-cart" data-product-id="3" aria-label="Agregar al carrito">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCACIÓN -->
+  <section id="educacion" class="education">
+    <div class="container">
+      <div class="education-header reveal">
+        <span class="section-eyebrow">Aprende</span>
+        <h2 class="section-title">Educación Hidropónica</h2>
+        <p class="section-subtitle">Guías, técnicas y recursos para dominar el cultivo sin suelo, desde principiante hasta experto.</p>
+      </div>
+
+      <div class="edu-grid">
+        <article class="edu-card-featured reveal">
+          <img src="assets/images/educacion/img_1.jpg" alt="Introducción a la Hidroponía" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">Guía Completa</span>
+            <h3 class="card-title">Introducción a la Hidroponía: Todo lo que Necesitas Saber</h3>
+            <p class="card-text">La hidroponía permite cultivar sin tierra, usando soluciones nutritivas que entregan justo lo que las plantas necesitan. Descubre la historia, los principios básicos y los diferentes sistemas disponibles.</p>
+          </div>
+        </article>
+
+        <article class="edu-card reveal" data-delay="1">
+          <img src="assets/images/educacion/img_5.jpg" alt="Nutrientes Hidropónicos" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">Nutrientes</span>
+            <h3 class="card-title">Guía de Nutrientes: NPK y Microelementos</h3>
+            <p class="card-text">Aprende a balancear macronutrientes y micronutrientes para cada etapa de crecimiento.</p>
+          </div>
+        </article>
+
+        <article class="edu-card reveal" data-delay="2">
+          <img src="assets/images/educacion/img_3.jpg" alt="Sistemas de Cultivo" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">Sistemas</span>
+            <h3 class="card-title">NFT vs DWC vs Goteo: ¿Cuál Elegir?</h3>
+            <p class="card-text">Compara los principales sistemas hidropónicos y encuentra el ideal para tu espacio.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACTO -->
+  <section id="impacto" class="impact">
+    <div class="container">
+      <div class="impact-header reveal">
+        <span class="section-eyebrow">Nuestro Impacto</span>
+        <h2 class="section-title">Transformando la Agricultura</h2>
+        <p class="section-subtitle">Cada producto que usas contribuye a un modelo de producción más limpio, eficiente y responsable.</p>
+      </div>
+
+      <div class="impact-grid">
+        <div class="impact-card reveal" data-delay="1">
+          <div class="impact-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+          </div>
+          <div class="impact-stat" data-count="90">0</div>
+          <span class="impact-label">% Menos Agua</span>
+        </div>
+        <div class="impact-card reveal" data-delay="2">
+          <div class="impact-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg>
+          </div>
+          <div class="impact-stat" data-count="3">0</div>
+          <span class="impact-label">x Más Rápido</span>
+        </div>
+        <div class="impact-card reveal" data-delay="3">
+          <div class="impact-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l2 7H7L9 3z"/><path d="M12 10v8"/><path d="M8 18h8"/><circle cx="12" cy="14" r="1"/></svg>
+          </div>
+          <div class="impact-stat" data-count="0">0</div>
+          <span class="impact-label">Pesticidas</span>
+        </div>
+        <div class="impact-card reveal" data-delay="4">
+          <div class="impact-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="impact-stat" data-count="365">0</div>
+          <span class="impact-label">Días de Cosecha</span>
+        </div>
+      </div>
+
+      <div class="impact-features">
+        <div class="impact-feature reveal" data-delay="1">
+          <div class="impact-feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <div>
+            <h3>Uso Responsable del Agua</h3>
+            <p>Nuestros sistemas recirculan la solución nutritiva, reduciendo el consumo hídrico hasta un 90% comparado con agricultura tradicional.</p>
+          </div>
+        </div>
+        <div class="impact-feature reveal" data-delay="2">
+          <div class="impact-feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+          </div>
+          <div>
+            <h3>Reducción de Residuos</h3>
+            <p>Fomentamos el uso consciente de insumos, la reutilización de materiales y la correcta disposición de envases.</p>
+          </div>
+        </div>
+        <div class="impact-feature reveal" data-delay="3">
+          <div class="impact-feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h3>Cultivo Sostenible</h3>
+            <p>Alternativas de producción que requieren menos suelo, optimizan nutrientes y disminuyen el impacto ambiental.</p>
+          </div>
+        </div>
+        <div class="impact-feature reveal" data-delay="4">
+          <div class="impact-feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          </div>
+          <div>
+            <h3>Educación Ambiental</h3>
+            <p>Compartimos información y orientación para que más personas adopten prácticas responsables con el medio ambiente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVOLÚCRATE -->
+  <section id="involucrate" class="involve">
+    <div class="container">
+      <div class="involve-grid">
+        <div>
+          <div class="reveal">
+            <span class="section-eyebrow">Comunidad</span>
+            <h2 class="section-title">Involúcrate con Honatu</h2>
+            <p class="section-subtitle" style="margin-bottom: 32px;">Descubre formas concretas de participar: desde talleres prácticos hasta proyectos comunitarios y redes de intercambio.</p>
+          </div>
+
+          <div class="involve-cards">
+            <div class="involve-card reveal" data-delay="1">
+              <div class="involve-card-num">01</div>
+              <div>
+                <h3>Talleres Prácticos</h3>
+                <p>Clases presenciales y virtuales donde experimentamos con insumos, montajes y técnicas paso a paso.</p>
+              </div>
+            </div>
+            <div class="involve-card reveal" data-delay="2">
+              <div class="involve-card-num">02</div>
+              <div>
+                <h3>Proyectos Comunitarios</h3>
+                <p>Únete a huertos cooperativos, jardines escolares y espacios verdes que impulsan emprendimientos locales.</p>
+              </div>
+            </div>
+            <div class="involve-card reveal" data-delay="3">
+              <div class="involve-card-num">03</div>
+              <div>
+                <h3>Mentorías y Apoyo</h3>
+                <p>Recibe acompañamiento experto para elegir insumos, medir resultados y escalar tus prácticas con confianza.</p>
+              </div>
+            </div>
+            <div class="involve-card reveal" data-delay="4">
+              <div class="involve-card-num">04</div>
+              <div>
+                <h3>Red de Intercambio</h3>
+                <p>Conecta con personas apasionadas por la hidroponía, comparte experiencias y aprende de la comunidad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form reveal-right">
+          <h3>Contáctanos</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Nombre completo</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Correo electrónico</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="tu@email.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-subject">Asunto</label>
+              <input type="text" id="contact-subject" class="form-input" placeholder="¿En qué te ayudamos?">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Mensaje</label>
+              <textarea id="contact-message" class="form-textarea" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Enviar Mensaje <span class="btn-icon">&rarr;</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section id="ubicacion" class="map-section">
+    <div class="container">
+      <div class="map-header reveal">
+        <span class="section-eyebrow">Visítanos</span>
+        <h2 class="section-title">Encuéntranos</h2>
+        <p class="section-subtitle">Ven a conocer nuestros productos y obtén asesoría personalizada.</p>
+      </div>
+
+      <div class="map-wrap reveal-scale">
+        <iframe class="map-frame"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3745.8123456789!2d-98.7506823!3d20.1240064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d109e98b2802ef%3A0xa12d7c7ddad6e11b!2sAjolotario%20Miquiztli%20Xolotl%20Pachuca!5e0!3m2!1ses!2smx!4v1715201234567"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="map-actions">
+        <a href="https://maps.app.goo.gl/MPReqs226jMXCBGh6" target="_blank" rel="noopener" class="btn btn-secondary">Abrir en Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo/Logo.png" alt="Honatu">
+          <p>Insumos hidropónicos premium para cultivadores que buscan calidad, conocimiento y comunidad.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.4 31.4 0 000 12a31.4 31.4 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.4 31.4 0 0024 12a31.4 31.4 0 00-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+            </a>
+            <a href="#" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.3.2-.6.1a7.6 7.6 0 01-3.8-3.3c-.2-.3 0-.5.2-.6l.5-.6c.1-.2.2-.3.1-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3zM12 21.8a9.9 9.9 0 01-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 01-1.5-5.2c0-5.5 4.5-10 10-10a9.9 9.9 0 017 2.9 9.8 9.8 0 012.9 7c0 5.5-4.5 10-10 10zm8.5-18.3A11.8 11.8 0 0012 0C5.4 0 .1 5.3.1 11.9a11.8 11.8 0 001.6 5.9L0 24l6.3-1.7a11.9 11.9 0 005.7 1.5c6.6 0 11.9-5.3 11.9-11.9a11.8 11.8 0 00-3.5-8.4z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#tienda">Tienda</a>
+          <a href="#educacion">Educación</a>
+          <a href="#impacto">Impacto</a>
+          <a href="#involucrate">Involúcrate</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>+52 (442) 123-4567</p>
+          <p>info@honatu.com</p>
+          <p>Querétaro, Qro. México</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Horarios</h4>
+          <p>Lunes – Viernes: 9:00 – 18:00</p>
+          <p>Sábado: 10:00 – 14:00</p>
+          <p>Domingo: Cerrado</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Honatu. Todos los derechos reservados.</p>
+        <a href="#">Política de Privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART PANEL -->
+  <div id="cartOverlay" class="cart-overlay"></div>
+  <aside id="cartPanel" class="cart-panel" aria-label="Carrito de compras">
+    <div class="cart-header">
+      <h3>Tu Carrito</h3>
+      <button id="cartClose" class="cart-close" aria-label="Cerrar carrito">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div id="cartItems" class="cart-items">
+      <div class="cart-empty">
+        <svg class="cart-empty-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <p>Tu carrito está vacío</p>
+        <p class="cart-empty-sub">Explora nuestros productos y empieza a cultivar</p>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Total:</span>
+        <span id="cartTotal" class="cart-total-value">$0 MXN</span>
+      </div>
+      <a href="carrito.html" class="btn btn-terracotta btn-checkout" style="text-decoration: none; text-align: center;">Ver Carrito Completo <span class="btn-icon">&rarr;</span></a>
+    </div>
+  </aside>
+
+  <!-- LOGIN MODAL -->
+  <div id="loginOverlay" class="login-overlay"></div>
+  <div id="loginModal" class="login-modal" aria-hidden="true" role="dialog">
+    <div class="login-modal-content">
+      <button id="loginClose" class="login-close" aria-label="Cerrar modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      
+      <div class="login-header">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-forest)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 16px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <h2 id="loginTitle">Inicia Sesión</h2>
+        <p id="loginSubtitle">Inicia sesión primero para poder comprar o guardar favoritos.</p>
+      </div>
+      
+      <form id="loginForm" class="login-form">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Correo electrónico</label>
+          <input type="email" id="loginEmail" class="form-input" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Contraseña</label>
+          <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Ingresar</button>
+      </form>
+      
+      <div class="login-footer">
+        <p>¿No tienes cuenta? <a href="#" style="color: var(--color-forest); font-weight: 600;">Regístrate</a></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
