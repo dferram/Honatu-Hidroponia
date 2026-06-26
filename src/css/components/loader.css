@@ -1,0 +1,83 @@
+/* ============================================
+   HONATU – Loader Component
+   ============================================ */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-cream-warm);
+  z-index: 10000;
+  flex-direction: column;
+}
+
+.loader-inner {
+  text-align: center;
+}
+
+.loader-logo {
+  height: 72px;
+  width: auto;
+  display: block;
+  margin: 0 auto 24px;
+  animation: loaderPulse 2s ease-in-out infinite;
+}
+
+@keyframes loaderPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.96); }
+}
+
+.loader-bar {
+  width: 180px;
+  height: 3px;
+  background: var(--color-sand-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.loader-bar-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-forest), var(--color-sage), var(--color-terracotta));
+  border-radius: var(--radius-full);
+  animation: loaderFill 1.5s var(--ease-out) forwards;
+}
+
+@keyframes loaderFill {
+  0% { width: 0%; }
+  60% { width: 85%; }
+  100% { width: 100%; }
+}
+
+.loader--hide {
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 500ms ease, transform 500ms ease;
+  pointer-events: none;
+}
+
+/* Loader variant for subpages (lines animation) */
+.loader-lines {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.loader-lines .line {
+  width: 3px;
+  height: 20px;
+  background: var(--color-sage);
+  border-radius: var(--radius-full);
+  animation: loaderLine 1.2s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.15s);
+}
+
+@keyframes loaderLine {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.4; }
+  50% { transform: scaleY(1); opacity: 1; }
+}

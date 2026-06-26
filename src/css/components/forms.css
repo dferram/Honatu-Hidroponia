@@ -1,0 +1,50 @@
+/* ============================================
+   HONATU – Forms Component
+   ============================================ */
+
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-forest);
+  margin-bottom: 6px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--color-white);
+  color: var(--color-earth);
+  transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-sage);
+  box-shadow: 0 0 0 3px rgba(118, 138, 120, 0.1);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.form-grid.full {
+  grid-template-columns: 1fr;
+}

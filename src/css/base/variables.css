@@ -1,0 +1,81 @@
+/* ============================================
+   HONATU – Design Tokens
+   Variables & Custom Properties
+   ============================================ */
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* — Color Palette: Verde & Tierra — */
+  --color-forest:       #2D5016;
+  --color-forest-dark:  #1E3A0E;
+  --color-sage:         #6B8F4E;
+  --color-sage-light:   #8AB06A;
+  --color-moss:         #4A6B35;
+  --color-sand:         #D4C5A9;
+  --color-sand-light:   #E8DFCC;
+  --color-cream:        #F5F0E8;
+  --color-cream-warm:   #FAF7F2;
+  --color-earth:        #3B2F1E;
+  --color-earth-mid:    #5C4A32;
+  --color-terracotta:   #B87333;
+  --color-terracotta-h: #CF8A4A;
+  --color-olive:        #7A8450;
+  --color-leaf:         #3D7A1C;
+
+  /* — Neutrals — */
+  --color-white:        #FFFFFF;
+  --color-off-white:    #FDFCF9;
+  --color-gray-100:     #F7F5F0;
+  --color-gray-200:     #ECE8E0;
+  --color-gray-300:     #D5CFC3;
+  --color-gray-400:     #A89F8E;
+  --color-gray-500:     #7D7567;
+  --color-gray-600:     #5C5548;
+  --color-gray-700:     #3D382E;
+  --color-gray-800:     #2A2620;
+  --color-gray-900:     #1A1714;
+
+  /* — Typography — */
+  --font-display:       'Playfair Display', 'Georgia', serif;
+  --font-heading:       'Playfair Display', 'Georgia', serif;
+  --font-body:          'Inter', system-ui, -apple-system, sans-serif;
+
+  /* — Spacing Scale — */
+  --space-xs:    4px;
+  --space-sm:    8px;
+  --space-md:    16px;
+  --space-lg:    24px;
+  --space-xl:    32px;
+  --space-2xl:   48px;
+  --space-3xl:   64px;
+  --space-4xl:   96px;
+  --space-5xl:   128px;
+
+  /* — Border Radius — */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-full: 9999px;
+
+  /* — Shadows — */
+  --shadow-sm:   0 2px 8px rgba(59, 47, 30, 0.06);
+  --shadow-md:   0 8px 24px rgba(59, 47, 30, 0.08);
+  --shadow-lg:   0 16px 48px rgba(59, 47, 30, 0.10);
+  --shadow-xl:   0 24px 64px rgba(59, 47, 30, 0.14);
+  --shadow-glow: 0 0 40px rgba(107, 143, 78, 0.15);
+
+  /* — Transitions — */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:   200ms;
+  --duration-normal: 400ms;
+  --duration-slow:   600ms;
+
+  /* — Layout — */
+  --container-max:   1200px;
+  --container-narrow: 800px;
+  --nav-height:      80px;
+}

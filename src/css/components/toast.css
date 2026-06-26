@@ -1,0 +1,87 @@
+/* ============================================
+   HONATU – Toast Component
+   ============================================ */
+
+.custom-toast {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  background: var(--color-white);
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(14, 28, 21, 0.1);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  transform: translateX(150%);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid var(--color-sage);
+  min-width: 300px;
+}
+
+.custom-toast.show {
+  transform: translateX(0);
+}
+
+.toast-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-white);
+  padding-right: 12px;
+}
+
+.toast-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-forest);
+}
+
+.toast-vine-container {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vine-stem {
+  fill: none;
+  stroke: var(--color-forest);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+}
+
+.custom-toast.show .vine-stem {
+  animation: drawVine 1.5s ease-out forwards;
+}
+
+.vine-leaf {
+  opacity: 0;
+  transform: scale3d(0, 0, 1);
+}
+
+.custom-toast.show .vine-leaf {
+  animation: popLeaf 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.custom-toast.show .leaf-1 { animation-delay: 0.3s; }
+.custom-toast.show .leaf-2 { animation-delay: 0.6s; }
+.custom-toast.show .leaf-3 { animation-delay: 0.9s; }
+.custom-toast.show .leaf-4 { animation-delay: 0.5s; }
+.custom-toast.show .leaf-5 { animation-delay: 0.8s; }
+
+@keyframes drawVine {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes popLeaf {
+  0% { opacity: 0; transform: scale3d(0, 0, 1); }
+  100% { opacity: 1; transform: scale3d(1, 1, 1); }
+}
