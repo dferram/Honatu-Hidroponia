@@ -45,22 +45,22 @@ Honatu is led by **Jorge** and **Eduardo**, two horticulturists with hands-on ex
 
 ## Services
 
-| Area | Description |
-| --- | --- |
-| **Hydroponic Systems** | Custom growing modules designed for indoor and outdoor residential spaces. Efficient in both water usage and footprint, installed and configured by the Honatu team. |
-| **Nutrients & Supplies** | A curated selection of balanced nutrient solutions, high-retention inert substrates, and technical accessories for day-to-day crop maintenance. |
-| **Workshops & Training** | Hands-on sessions covering everything from system setup to pest prevention, nutrient management, and growth optimization. |
+| Area                     | Description                                                                                                                                                          |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Hydroponic Systems**   | Custom growing modules designed for indoor and outdoor residential spaces. Efficient in both water usage and footprint, installed and configured by the Honatu team. |
+| **Nutrients & Supplies** | A curated selection of balanced nutrient solutions, high-retention inert substrates, and technical accessories for day-to-day crop maintenance.                      |
+| **Workshops & Training** | Hands-on sessions covering everything from system setup to pest prevention, nutrient management, and growth optimization.                                            |
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology | Purpose |
-| --- | --- | --- |
-| **Frontend** | HTML5 + CSS3 + JavaScript | UI and visual experience |
-| **Build Tool** | Vite | Bundling and development server |
-| **Backend** | Node.js | Server logic and API routing |
-| **Database** | PostgreSQL | Relational storage for products, clients, and orders |
+| Layer          | Technology                | Purpose                                              |
+| -------------- | ------------------------- | ---------------------------------------------------- |
+| **Frontend**   | HTML5 + CSS3 + JavaScript | UI and visual experience                             |
+| **Build Tool** | Vite                      | Bundling and development server                      |
+| **Backend**    | Node.js                   | Server logic and API routing                         |
+| **Database**   | PostgreSQL                | Relational storage for products, clients, and orders |
 
 > Backend and database integration are planned for later phases of the project. Current development focuses on the frontend and user experience.
 
@@ -74,4 +74,4 @@ For inquiries about systems, supplies, or upcoming workshops:
 
 ---
 
-> Built by [Fernando Ramírez](https://github.com/dferram) for Honatu Hidroponía · 2025
+> Built by [Fernando Ramírez](https://github.com/dferram) for Honatu Hidroponía · 2026
