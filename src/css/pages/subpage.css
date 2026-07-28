@@ -12,7 +12,7 @@
   background:
     radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.18) 0 70px, transparent 72px),
     radial-gradient(circle at 82% 26%, rgba(255, 255, 255, 0.12) 0 95px, transparent 98px),
-    linear-gradient(135deg, #145f3a 0%, #1d8a52 55%, #6bbf59 100%);
+    linear-gradient(135deg, var(--color-forest-dark, #1E3A0E) 0%, var(--color-forest, #2D5016) 60%, var(--color-moss, #4A6B35) 100%);
 }
 
 .hero::before,
@@ -135,32 +135,44 @@
   z-index: 2;
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 96px 0 130px;
-  max-width: 720px;
+  padding: 96px 0 100px;
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .eyebrow,
 .section-label {
   margin-bottom: 12px;
-  color: #dff5d8;
-  font-size: 0.78rem;
+  color: var(--color-sand-light, #E8DFCC);
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .hero h1 {
-  max-width: 720px;
-  margin-bottom: 22px;
-  font-size: clamp(2.4rem, 6vw, 4.8rem);
-  line-height: 1.02;
+  max-width: 800px;
+  margin: 0 auto 22px;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.08;
   letter-spacing: 0;
+  text-align: center;
+  font-family: var(--font-display);
+  color: var(--color-cream-warm, #FAF7F2);
 }
 
-.hero-content p:last-child {
-  max-width: 620px;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 1.08rem;
+.hero-content p {
+  max-width: 660px;
+  margin: 0 auto;
+  color: var(--color-cream, #F5F0E8);
+  opacity: 0.95;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
 }
 
 /* SECTIONS LAYOUT */
@@ -174,7 +186,8 @@
 
 .section-intro {
   max-width: 680px;
-  margin-bottom: 36px;
+  margin: 0 auto 40px;
+  text-align: center;
 }
 
 .section-intro .section-label,
