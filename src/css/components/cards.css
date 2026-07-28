@@ -1,14 +1,16 @@
 /* ============================================
-   HONATU – Cards Component
+   HONATU – Cards & Product Grid Component
+   Shared across Index, Tienda, and Favoritos
    ============================================ */
 
+/* Generic Card */
 .card {
   background: var(--color-white);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-lg, 16px);
   overflow: hidden;
   border: 1px solid rgba(212, 197, 169, 0.3);
-  transition: transform var(--duration-normal) var(--ease-out),
-              box-shadow var(--duration-normal) var(--ease-out);
+  transition: transform var(--duration-normal, 0.3s) var(--ease-out, ease-out),
+              box-shadow var(--duration-normal, 0.3s) var(--ease-out, ease-out);
 }
 
 .card:hover {
@@ -23,7 +25,7 @@
 }
 
 .card-body {
-  padding: var(--space-lg);
+  padding: var(--space-lg, 24px);
 }
 
 .card-tag {
@@ -32,22 +34,202 @@
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--color-sage);
+  color: var(--color-sage, #6B8F4E);
   background: rgba(107, 143, 78, 0.1);
   padding: 4px 12px;
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-full, 9999px);
+  margin-bottom: var(--space-sm, 8px);
 }
 
 .card-title {
-  font-family: var(--font-display);
+  font-family: var(--font-display, serif);
   font-size: 1.25rem;
-  margin-bottom: var(--space-sm);
-  color: var(--color-earth);
+  margin-bottom: var(--space-sm, 8px);
+  color: var(--color-earth, #3B2F1E);
 }
 
 .card-text {
   font-size: 0.92rem;
-  color: var(--color-gray-500);
+  color: var(--color-gray-500, #7D7567);
   line-height: 1.6;
+}
+
+/* ==========================================
+   E-COMMERCE PRODUCT GRID & CARDS
+   ========================================== */
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-2xl, 40px);
+  flex-wrap: wrap;
+  gap: var(--space-lg, 24px);
+}
+
+.shop-filters {
+  display: flex;
+  gap: var(--space-sm, 8px);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: var(--radius-full, 9999px);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-gray-500, #7D7567);
+  background: var(--color-white, #ffffff);
+  border: 1px solid var(--color-gray-200, #ECE8E0);
+  transition: all var(--duration-fast, 0.15s) ease;
+  cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--color-forest, #2D5016);
+  color: var(--color-white, #ffffff);
+  border-color: var(--color-forest, #2D5016);
+}
+
+/* Consistent Product Grid (Index, Tienda, Favoritos) */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-lg, 24px);
+  width: 100%;
+}
+
+/* Product Card */
+.product-card {
+  background: var(--color-white, #ffffff);
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
+  border: 1px solid rgba(212, 197, 169, 0.3);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform var(--duration-normal, 0.3s) var(--ease-out, ease-out),
+              box-shadow var(--duration-normal, 0.3s) var(--ease-out, ease-out);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(59, 47, 30, 0.08);
+}
+
+.product-img-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-cream, #F5F0E8), var(--color-sand-light, #E8DFCC));
+}
+
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow, 0.5s) var(--ease-out, ease-out);
+}
+
+.product-card:hover .product-img-wrap img {
+  transform: scale(1.06);
+}
+
+.product-badge {
+  position: absolute;
+  top: var(--space-md, 16px);
+  left: var(--space-md, 16px);
+  background: var(--color-sage, #6B8F4E);
+  color: var(--color-white, #ffffff);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-full, 9999px);
+  z-index: 2;
+}
+
+.product-body {
+  padding: var(--space-lg, 24px);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-sage, #6B8F4E);
+  margin-bottom: var(--space-xs, 4px);
+}
+
+.product-name {
+  font-family: var(--font-display, serif);
+  font-size: 1.15rem;
+  color: var(--color-earth, #3B2F1E);
+  margin-bottom: var(--space-sm, 8px);
+}
+
+.product-desc {
+  font-size: 0.85rem;
+  color: var(--color-gray-500, #7D7567);
+  line-height: 1.5;
+  margin-bottom: var(--space-md, 16px);
+  flex: 1;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.product-price {
+  font-family: var(--font-display, serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-forest, #2D5016);
+}
+
+.product-price small {
+  font-size: 0.75rem;
+  color: var(--color-gray-400, #A89F8E);
+  font-family: var(--font-body, sans-serif);
+  font-weight: 400;
+}
+
+.btn-add-cart {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-forest, #2D5016);
+  color: var(--color-white, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all var(--duration-fast, 0.15s) ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-add-cart:hover {
+  background: var(--color-terracotta, #B87333);
+  transform: scale(1.08);
+}
+
+.btn-add-cart.added {
+  background: var(--color-sage, #6B8F4E);
+  animation: cartPop 0.4s var(--ease-spring, ease);
+}
+
+@keyframes cartPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
 }
