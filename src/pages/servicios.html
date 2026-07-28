@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios | Honatu</title>
+  
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pages/home.css">
+  <link rel="icon" href="../assets/logo/Logo.png" type="image/png">
+  
+  <script type="module" src="../js/app.js"></script>
+</head>
+
+<body>
+  <nav id="navbar" class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo" aria-label="Inicio">
+        <img src="../assets/logo/Logo.png" alt="Honatu">
+      </a>
+      
+      <div id="navMenu" class="nav-menu">
+        <a href="../index.html#nosotros" class="nav-link">Quienes somos?</a>
+        <a href="../index.html#impacto" class="nav-link">Servicios</a>
+        <a href="../index.html#educacion" class="nav-link">Blog</a>
+        <a href="../index.html#tienda" class="nav-link">Tienda</a>
+        <a href="../index.html#involucrate" class="btn btn-primary btn-sm nav-cta">Contactanos</a>
+      </div>
+
+      <div class="nav-right">
+        <button id="navHamburger" class="nav-hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main style="padding-top: 120px; background: var(--color-cream-warm); min-height: 100vh;">
+    <div class="container" style="max-width: 800px; padding-bottom: var(--space-4xl);">
+      <div class="section-header reveal" style="text-align: center; margin-bottom: 3rem;">
+        <span class="section-eyebrow">Soluciones a tu medida</span>
+        <h1 class="section-title">Solicitar Servicio</h1>
+        <p class="section-subtitle">Completa el formulario para que podamos brindarte atención personalizada según tus necesidades.</p>
+      </div>
+      
+      <div class="reveal" data-delay="1" style="background: white; padding: var(--space-2xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);">
+        <form id="servicioForm" style="display: flex; flex-direction: column; gap: var(--space-lg);">
+          
+          <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+            <label for="tipo_servicio" style="font-weight: 600; color: var(--color-forest);">Servicio de Interés *</label>
+            <select id="tipo_servicio" name="tipo_servicio" required style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
+              <option value="" disabled selected>Selecciona un servicio</option>
+              <option value="asesoria">Asesoría</option>
+              <option value="insumos">Insumos</option>
+              <option value="construccion">Construcción de invernaderos</option>
+              <option value="talleres">Talleres</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+            <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+              <label for="nombre" style="font-weight: 600; color: var(--color-forest);">Nombre Completo *</label>
+              <input type="text" id="nombre" name="nombre" required style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+              <label for="email" style="font-weight: 600; color: var(--color-forest);">Correo Electrónico *</label>
+              <input type="email" id="email" name="email" required style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+            <label for="telefono" style="font-weight: 600; color: var(--color-forest);">Teléfono / WhatsApp</label>
+            <input type="tel" id="telefono" name="telefono" style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+            <label for="mensaje" style="font-weight: 600; color: var(--color-forest);">Cuéntanos sobre tu proyecto *</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; resize: vertical; color: var(--color-forest);"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="align-self: flex-start; margin-top: var(--space-sm);">Enviar Solicitud</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Auto-seleccionar el servicio basado en el parámetro URL
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const servicioSelect = document.getElementById("tipo_servicio");
+      const servicioParam = params.get("servicio");
+      
+      if (servicioParam && servicioSelect) {
+        const option = Array.from(servicioSelect.options).find(opt => opt.value === servicioParam);
+        if (option) {
+          option.selected = true;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

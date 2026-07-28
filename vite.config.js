@@ -10,6 +10,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'src/index.html'),
+        servicios: resolve(__dirname, 'src/pages/servicios.html'),
         tienda: resolve(__dirname, 'src/pages/tienda.html'),
         nosotros: resolve(__dirname, 'src/pages/nosotros.html'),
         educacion: resolve(__dirname, 'src/pages/educacion.html'),
