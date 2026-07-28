@@ -18,6 +18,9 @@ import { initFilters } from './controllers/filters.controller.js';
 import { initContactForm } from './controllers/contact.controller.js';
 import { initFooter } from './controllers/footer.controller.js';
 
+// --- UI Components ---
+import { initVineDecorations } from './components/vine-decoration.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   // Middleware
   initRevealAnimations();
@@ -35,4 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFavorites();
   initFilters();
   initContactForm();
+  
+  // UI Components
+  initVineDecorations();
 });

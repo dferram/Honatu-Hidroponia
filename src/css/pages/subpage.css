@@ -10,8 +10,8 @@
   overflow: hidden;
   color: #ffffff;
   background:
-    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.18) 0 70px, transparent 72px),
-    radial-gradient(circle at 82% 26%, rgba(255, 255, 255, 0.12) 0 95px, transparent 98px),
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.08) 0 70px, transparent 72px),
+    radial-gradient(circle at 82% 26%, rgba(255, 255, 255, 0.06) 0 95px, transparent 98px),
     linear-gradient(135deg, var(--color-forest-dark, #1E3A0E) 0%, var(--color-forest, #2D5016) 60%, var(--color-moss, #4A6B35) 100%);
 }
 
@@ -143,10 +143,9 @@
   align-items: center;
 }
 
-.eyebrow,
-.section-label {
+.eyebrow {
   margin-bottom: 12px;
-  color: var(--color-sand-light, #E8DFCC);
+  color: var(--color-sand-light, #E8DFCC) !important;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -162,13 +161,13 @@
   letter-spacing: 0;
   text-align: center;
   font-family: var(--font-display);
-  color: var(--color-cream-warm, #FAF7F2);
+  color: var(--color-cream-warm, #FAF7F2) !important;
 }
 
 .hero-content p {
   max-width: 660px;
   margin: 0 auto;
-  color: var(--color-cream, #F5F0E8);
+  color: var(--color-cream, #F5F0E8) !important;
   opacity: 0.95;
   font-size: 1.1rem;
   line-height: 1.6;
