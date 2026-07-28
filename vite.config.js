@@ -13,6 +13,8 @@ export default defineConfig({
         tienda: resolve(__dirname, 'src/pages/tienda.html'),
         nosotros: resolve(__dirname, 'src/pages/nosotros.html'),
         educacion: resolve(__dirname, 'src/pages/educacion.html'),
+        talleres: resolve(__dirname, 'src/pages/talleres.html'),
+        cuenta: resolve(__dirname, 'src/pages/cuenta.html'),
         acciones: resolve(__dirname, 'src/pages/acciones.html'),
         involucrate: resolve(__dirname, 'src/pages/involucrate.html'),
         producto: resolve(__dirname, 'src/pages/producto.html'),

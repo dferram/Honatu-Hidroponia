@@ -13,15 +13,9 @@ export function getIsAuthenticated() {
 }
 
 export function openLoginModal() {
-  if (isAuthenticated) {
-    showToast("Ya has iniciado sesión. (Perfil Mock)");
-    return;
-  }
-  const loginModal = document.getElementById('loginModal');
-  const loginOverlay = document.getElementById('loginOverlay');
-  loginModal?.classList.add('active');
-  loginOverlay?.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  const isSubpage = window.location.pathname.includes('/pages/');
+  const targetPage = isSubpage ? 'cuenta.html' : './pages/cuenta.html';
+  window.location.href = targetPage;
 }
 
 export function closeLoginModal() {
