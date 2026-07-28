@@ -30,30 +30,45 @@
     </div>
   </div>
 
-  <header class="hero">
-    <nav class="top-nav">
-      <a class="brand" href="../index.html">
-        <img src="../assets/logo/Logo.png" alt="Logo de Honatu">
-        <span></span>
-      </a>
-
-      <div class="nav-links">
-        <a href="educacion.html">Educación</a>
-        <a href="acciones.html">Acciones</a>
-        <a href="involucrate.html">Involúcrate</a>
-        <a href="nosotros.html">Acerca de nosotros</a>
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar navbar--solid" role="navigation">
+    <div class="nav-container">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="../index.html" class="nav-logo" aria-label="Inicio">
+          <img src="../assets/logo/Logo.png" alt="Honatu">
+        </a>
+        <a href="../index.html" class="btn btn-secondary btn-sm" style="border-radius: var(--radius-full); padding: 6px 16px; font-size: 0.82rem; text-decoration: none;">&larr; Volver al Inicio</a>
       </div>
 
-      <a class="btn-member" href="#contacto">Vuélvete miembro</a>
-    </nav>
+      <div class="nav-right">
+        <a href="favoritos.html" class="nav-cart" aria-label="Favoritos">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </a>
+        <button id="userLoginToggle" class="nav-cart" aria-label="Usuario">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+        <button id="cartToggle" class="nav-cart" aria-label="Carrito de compras">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span id="cartBadge" class="cart-badge">0</span>
+        </button>
+        <button id="navHamburger" class="nav-hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
+  <header class="hero" style="padding-top: 100px;">
     <div class="hero-content">
-      <p class="eyebrow">Educación Hidropónica</p>
+      <p class="eyebrow">Educación & Aprendizaje</p>
       <h1>Aprende sobre Insumos Hidropónicos</h1>
       <p>
         Descubre cómo los insumos hidropónicos revolucionan la agricultura sostenible,
         permitiendo cultivos eficientes sin suelo y con un uso óptimo de recursos.
       </p>
+      <div style="margin-top: 24px;">
+        <a href="talleres.html" class="btn btn-terracotta" style="padding: 12px 28px; text-decoration: none;">Ver Próximos Talleres &rarr;</a>
+      </div>
     </div>
   </header>
 
