@@ -16,6 +16,7 @@ import { initCart } from './controllers/cart.controller.js';
 import { initFavorites } from './controllers/favorites.controller.js';
 import { initFilters } from './controllers/filters.controller.js';
 import { initContactForm } from './controllers/contact.controller.js';
+import { initFooter } from './controllers/footer.controller.js';
 
 // --- UI Components ---
 import { initVineDecorations } from './components/vine-decoration.js';
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Controllers
   initLoader();
   initNavbar();
+  initFooter();
   initSmoothScroll();
   initActiveNavTracking();
   initAuth();
