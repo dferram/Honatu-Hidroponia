@@ -12,11 +12,10 @@ export const HEADER_CONFIG = {
     // homeHref is resolved at render time depending on context
   },
   navigation: [
-    { label: 'Quienes somos?', path: 'pages/nosotros.html', homeHash: '#nosotros' },
-    { label: 'Servicios',      path: 'pages/servicios.html', homeHash: '#impacto'   },
-    { label: 'Blog',           path: 'pages/educacion.html', homeHash: '#educacion' },
-    { label: 'Tienda',         path: 'pages/tienda.html',    homeHash: '#tienda'    },
-    { label: 'Talleres',       path: 'pages/talleres.html'  }
+    { label: 'Servicios',      path: 'pages/servicios.html', homeHash: '#impacto'     },
+    { label: 'Quienes somos?', path: 'pages/nosotros.html',  homeHash: '#nosotros'    },
+    { label: 'Tienda',         path: 'pages/tienda.html',    homeHash: '#tienda'      },
+    { label: 'Blog',           path: 'pages/educacion.html', homeHash: '#educacion'   }
   ],
   cta: {
     label: 'Contactanos',

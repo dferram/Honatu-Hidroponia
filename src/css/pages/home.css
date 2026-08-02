@@ -165,7 +165,7 @@
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.3fr;
   gap: var(--space-4xl);
   align-items: center;
 }
@@ -218,7 +218,7 @@
 
 .about-image-main {
   width: 100%;
-  height: 500px;
+  height: 640px;
   object-fit: cover;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
