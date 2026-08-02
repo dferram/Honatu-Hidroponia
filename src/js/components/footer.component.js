@@ -11,6 +11,7 @@ export const FOOTER_CONFIG = {
   brand: {
     logoAlt: 'Honatu',
     logoRelPath: 'assets/logo/Logo.png',
+    logoCdnUrl: 'https://res.cloudinary.com/usn9paiw/image/upload/f_auto,q_auto/Honatu/Logo_oqlimi',
     description: 'Insumos hidropónicos premium para cultivadores que buscan calidad, conocimiento y comunidad.'
   },
   social: [
@@ -128,7 +129,7 @@ export function generateFooterHTML(config = FOOTER_CONFIG) {
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="${logoSrc}" alt="${config.brand.logoAlt}" class="footer-logo-img">
+          <img src="${logoSrc}" onerror="this.onerror=null; this.src='${config.brand.logoCdnUrl}';" alt="${config.brand.logoAlt}" class="footer-logo-img">
           <p>${config.brand.description}</p>
           <div class="footer-social">
             ${socialHTML}
