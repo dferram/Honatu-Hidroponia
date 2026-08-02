@@ -7,6 +7,9 @@
 import { initRevealAnimations, initCounters, injectFilterAnimation } from './middleware/animations.middleware.js';
 import './middleware/toast.middleware.js'; // self-registers showToast globally
 
+// --- Services ---
+import { initCloudinaryImages } from './services/cloudinary.service.js';
+
 // --- Controllers ---
 import { initLoader } from './controllers/loader.controller.js';
 import { initNavbar } from './controllers/navbar.controller.js';
@@ -18,6 +21,9 @@ import { initFilters } from './controllers/filters.controller.js';
 import { initContactForm } from './controllers/contact.controller.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Services & Assets
+  initCloudinaryImages();
+
   // Middleware
   initRevealAnimations();
   initCounters();
