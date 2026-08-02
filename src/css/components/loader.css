@@ -59,25 +59,3 @@
   transition: opacity 500ms ease, transform 500ms ease;
   pointer-events: none;
 }
-
-/* Loader variant for subpages (lines animation) */
-.loader-lines {
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-  margin-top: 16px;
-}
-
-.loader-lines .line {
-  width: 3px;
-  height: 20px;
-  background: var(--color-sage);
-  border-radius: var(--radius-full);
-  animation: loaderLine 1.2s ease-in-out infinite;
-  animation-delay: calc(var(--i) * 0.15s);
-}
-
-@keyframes loaderLine {
-  0%, 100% { transform: scaleY(0.4); opacity: 0.4; }
-  50% { transform: scaleY(1); opacity: 1; }
-}

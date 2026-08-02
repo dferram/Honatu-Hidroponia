@@ -73,7 +73,7 @@ export function createVineDecoration() {
 }
 
 export function initVineDecorations() {
-  const wrappers = document.querySelectorAll('.contact-form, .servicio-form-wrapper');
+  const wrappers = document.querySelectorAll('.contact-form, .servicio-form-wrapper, .involve-form, .vine-container, [data-vines="true"]');
   if (!wrappers.length) return;
 
   const observer = new IntersectionObserver((entries) => {
@@ -89,14 +89,18 @@ export function initVineDecorations() {
       }
     });
   }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -20px 0px'
   });
 
   wrappers.forEach(wrapper => {
+    // Avoid double appending
+    if (wrapper.querySelector('.form-vine-wrapper')) return;
+    
     wrapper.style.position = 'relative';
     wrapper.style.zIndex = '1';
     wrapper.appendChild(createVineDecoration());
     observer.observe(wrapper);
   });
 }
+

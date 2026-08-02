@@ -16,45 +16,32 @@
 
 <body>
 
-  <!-- PANTALLA DE CARGA -->
+  <!-- LOADER -->
   <div id="loader" class="loader" aria-hidden="false">
     <div class="loader-inner">
-      <img src="../assets/logo/Logo.png" alt="Logo" class="loader-logo">
-      <div class="loader-lines" aria-hidden="true">
-        <span class="line" style="--i:0"></span>
-        <span class="line" style="--i:1"></span>
-        <span class="line" style="--i:2"></span>
-        <span class="line" style="--i:3"></span>
-        <span class="line" style="--i:4"></span>
+      <img src="../assets/logo/Logo.png" alt="Honatu" class="loader-logo">
+      <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
       </div>
     </div>
   </div>
 
-  <header class="hero">
-    <nav class="top-nav">
-      <a class="brand" href="../index.html">
-        <img src="../assets/logo/Logo.png" alt="Logo de Honatu">
-        <span></span>
-      </a>
+  <!-- NAVBAR -->
+  <honatu-header></honatu-header>
 
-      <div class="nav-links">
-        <a href="educacion.html">Educación</a>
-        <a href="acciones.html">Acciones</a>
-        <a href="involucrate.html">Involúcrate</a>
-        <a href="nosotros.html">Acerca de nosotros</a>
-      </div>
-
-      <a class="btn-member" href="#contacto">Vuélvete miembro</a>
-    </nav>
-
+  <!-- SUBPAGE HERO BANNER -->
+  <header class="subpage-hero">
     <div class="hero-content">
-      <p class="eyebrow">Educación Hidropónica</p>
+      <span class="eyebrow">Educación Hidropónica</span>
       <h1>Aprende y participa con Honatu</h1>
       <p>
         Descubre cómo los insumos hidropónicos revolucionan la agricultura sostenible
         y encuentra formas de involucrarte con Honatu para impulsar proyectos, talleres
         y comunidades de cultivo sin suelo.
       </p>
+      <div style="margin-top: 24px;">
+        <a href="talleres.html" class="btn btn-primary" style="padding: 10px 24px; text-decoration: none; border-radius: var(--radius-full);">Ver Próximos Talleres &rarr;</a>
+      </div>
     </div>
   </header>
 

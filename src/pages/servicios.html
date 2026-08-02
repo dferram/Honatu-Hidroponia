@@ -14,27 +14,19 @@
 </head>
 
 <body>
-  <nav id="navbar" class="navbar" role="navigation" aria-label="Navegación principal">
-    <div class="nav-container">
-      <a href="../index.html" class="nav-logo" aria-label="Inicio">
-        <img src="../assets/logo/Logo.png" alt="Honatu">
-      </a>
-      
-      <div id="navMenu" class="nav-menu">
-        <a href="../index.html#nosotros" class="nav-link">Quienes somos?</a>
-        <a href="../index.html#impacto" class="nav-link">Servicios</a>
-        <a href="../index.html#educacion" class="nav-link">Blog</a>
-        <a href="../index.html#tienda" class="nav-link">Tienda</a>
-        <a href="../index.html#involucrate" class="btn btn-primary btn-sm nav-cta">Contactanos</a>
-      </div>
 
-      <div class="nav-right">
-        <button id="navHamburger" class="nav-hamburger" aria-label="Menú">
-          <span></span><span></span><span></span>
-        </button>
+  <!-- LOADER -->
+  <div id="loader" class="loader" aria-hidden="false">
+    <div class="loader-inner">
+      <img src="../assets/logo/Logo.png" alt="Honatu" class="loader-logo">
+      <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
       </div>
     </div>
-  </nav>
+  </div>
+
+  <!-- NAVBAR -->
+  <honatu-header></honatu-header>
 
   <main style="padding-top: 120px; background: var(--color-cream-warm); min-height: 100vh;">
     <div class="container" style="max-width: 800px; padding-bottom: var(--space-4xl);">
