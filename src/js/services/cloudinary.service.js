@@ -178,6 +178,11 @@ export function getCloudinaryUrl(publicId, options = {}) {
     return publicId;
   }
 
+  // Bypass Cloudinary entirely for the Logo as requested
+  if (publicId.includes('Logo.png')) {
+    return publicId;
+  }
+
   // Clean public ID from full URLs or local relative prefixes
   let cleanId = publicId;
   
@@ -342,7 +347,7 @@ export function setupGlobalImageErrorHandler() {
         if (rawSrc && rawSrc.startsWith('data:image/svg+xml')) return;
 
         // If local asset failed, try to load it via getCloudinaryUrl
-        if (rawSrc && !target.dataset.triedCloudinary) {
+        if (rawSrc && !target.dataset.triedCloudinary && !rawSrc.includes('Logo.png')) {
           target.dataset.triedCloudinary = 'true';
           const cloudinaryUrl = getCloudinaryUrl(rawSrc);
           if (cloudinaryUrl && cloudinaryUrl !== rawSrc) {
