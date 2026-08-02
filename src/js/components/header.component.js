@@ -9,13 +9,14 @@ export const HEADER_CONFIG = {
   brand: {
     logoAlt: 'Honatu',
     logoRelPath: 'assets/logo/Logo.png',
-    homePath: 'index.html'
+    // homeHref is resolved at render time depending on context
   },
   navigation: [
     { label: 'Quienes somos?', path: 'pages/nosotros.html', homeHash: '#nosotros' },
-    { label: 'Servicios',      path: 'pages/servicios.html', homeHash: '#impacto' },
+    { label: 'Servicios',      path: 'pages/servicios.html', homeHash: '#impacto'   },
     { label: 'Blog',           path: 'pages/educacion.html', homeHash: '#educacion' },
-    { label: 'Tienda',         path: 'pages/tienda.html',    homeHash: '#tienda' }
+    { label: 'Tienda',         path: 'pages/tienda.html',    homeHash: '#tienda'    },
+    { label: 'Talleres',       path: 'pages/talleres.html'  }
   ],
   cta: {
     label: 'Contactanos',
@@ -42,7 +43,8 @@ export function generateHeaderHTML(config = HEADER_CONFIG) {
   const isSubpage = isSubpageView();
   const currentPage = getCurrentPageName();
   const logoSrc = resolveRelativePath(config.brand.logoRelPath);
-  const homeHref = resolveRelativePath(config.brand.homePath);
+  // Logo: on home page scroll to #hero; on subpages navigate to index.html
+  const logoHref = isSubpage ? resolveRelativePath('index.html') : '#hero';
   const favHref = resolveRelativePath('pages/favoritos.html');
 
   const navLinksHTML = config.navigation.map(item => {
@@ -50,11 +52,10 @@ export function generateHeaderHTML(config = HEADER_CONFIG) {
     let isActive = false;
 
     if (!isSubpage) {
-      // On homepage: use in-page anchor hash if available, or direct subpage link
+      // On homepage: use in-page anchor if defined, else go directly to subpage
       href = item.homeHash ? item.homeHash : resolveRelativePath(item.path);
-      isActive = (item.path === 'index.html' && window.location.hash === '');
     } else {
-      // On subpages: link to corresponding page or back to index with hash
+      // On subpages: always go to the actual subpage
       href = resolveRelativePath(item.path);
       const itemPageName = item.path.replace('pages/', '').replace('.html', '');
       isActive = (currentPage === itemPageName);
@@ -64,16 +65,13 @@ export function generateHeaderHTML(config = HEADER_CONFIG) {
   }).join('');
 
   // CTA button
-  let ctaHref = '';
-  if (!isSubpage) {
-    ctaHref = config.cta.homeHash || resolveRelativePath(config.cta.path);
-  } else {
-    ctaHref = resolveRelativePath(config.cta.path);
-  }
+  const ctaHref = isSubpage
+    ? resolveRelativePath(config.cta.path)
+    : (config.cta.homeHash || resolveRelativePath(config.cta.path));
 
   return `
     <div class="nav-container">
-      <a href="${homeHref}" class="nav-logo" aria-label="Inicio">
+      <a href="${logoHref}" class="nav-logo" aria-label="Inicio">
         <img src="${logoSrc}" alt="${config.brand.logoAlt}">
       </a>
 
