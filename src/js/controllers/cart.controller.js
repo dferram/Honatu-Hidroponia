@@ -5,6 +5,7 @@
 
 import { getItem, setItem, StorageKeys } from '../middleware/storage.middleware.js';
 import { getIsAuthenticated, openLoginModal } from './auth.controller.js';
+import { getCloudinaryUrl } from '../services/cloudinary.service.js';
 
 const SVG_CHECK = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
 
@@ -41,7 +42,7 @@ function renderCart() {
   } else {
     cartItems.innerHTML = cart.map(item =>
       '<div class="cart-item" data-cart-id="' + item.id + '">' +
-        '<img src="' + item.img + '" alt="' + item.name + '" class="cart-item-img">' +
+        '<img src="' + getCloudinaryUrl(item.img, { width: 120, height: 120, crop: 'fill' }) + '" alt="' + item.name + '" class="cart-item-img">' +
         '<div class="cart-item-info">' +
           '<div class="cart-item-name">' + item.name + '</div>' +
           '<div class="cart-item-price">$' + item.price.toLocaleString('es-MX') + ' MXN</div>' +
@@ -66,12 +67,13 @@ function renderCart() {
   setItem(StorageKeys.CART, cart);
 }
 
-function addToCart(id, name, price, img) {
+export function addToCart(id, name, price, img) {
   const existing = cart.find(item => item.id === id);
+  const resolvedImg = getCloudinaryUrl(img, { width: 150, height: 150, crop: 'fill' });
   if (existing) {
     existing.qty += 1;
   } else {
-    cart.push({ id, name, price: parsePrice(price), img, qty: 1 });
+    cart.push({ id, name, price: parsePrice(price), img: resolvedImg, qty: 1 });
   }
   renderCart();
 }
