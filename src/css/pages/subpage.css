@@ -231,3 +231,34 @@
     padding: calc(var(--nav-height, 84px) + 24px) var(--space-md) var(--space-2xl);
   }
 }
+
+/* =========================================
+   MAP & CONTACT BUTTONS (Legacy .map-button)
+   ========================================= */
+.map-button {
+  margin-top: var(--space-2xl);
+  display: flex;
+  justify-content: center;
+}
+
+.map-button a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 14px 32px;
+  background: var(--color-forest, #2D5016);
+  color: var(--color-white, #FFFFFF);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-full, 50px);
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(45, 80, 22, 0.25);
+  transition: all var(--duration-normal, 0.3s) ease;
+}
+
+.map-button a:hover {
+  background: var(--color-forest-dark, #1B310D);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(45, 80, 22, 0.35);
+}
