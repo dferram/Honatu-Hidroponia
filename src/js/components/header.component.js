@@ -71,7 +71,7 @@ export function generateHeaderHTML(config = HEADER_CONFIG) {
   return `
     <div class="nav-container">
       <a href="${logoHref}" class="nav-logo" aria-label="Inicio">
-        <img src="${logoSrc}" onerror="this.onerror=null; this.src='https://res.cloudinary.com/usn9paiw/image/upload/f_auto,q_auto/Honatu/Logo_oqlimi';" alt="${config.brand.logoAlt}">
+        <img src="${logoSrc}" alt="${config.brand.logoAlt}">
       </a>
 
       <div id="navMenu" class="nav-menu">
