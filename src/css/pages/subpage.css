@@ -151,12 +151,22 @@
 .card-large {
   grid-column: span 3;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   align-items: stretch;
 }
 
+.card-large .image-placeholder {
+  aspect-ratio: 16 / 9;
+  height: 100%;
+}
+
+.card-large .card-copy {
+  padding: var(--space-2xl);
+}
+
 .image-placeholder {
-  min-height: 220px;
+  aspect-ratio: 4 / 3;
+  width: 100%;
   background: linear-gradient(135deg, var(--color-cream, #F5F0E8), var(--color-sand-light, #E8DFCC));
   position: relative;
   overflow: hidden;
