@@ -30,7 +30,16 @@ img {
   max-width: 100%;
   display: block;
   height: auto;
+  transition: opacity 0.3s ease;
 }
+
+img.img-fallback {
+  object-fit: cover;
+  background: linear-gradient(135deg, #0e1c15 0%, #1b4332 50%, #2d6a4f 100%);
+  border-radius: inherit;
+  min-height: 140px;
+}
+
 
 a {
   color: inherit;
