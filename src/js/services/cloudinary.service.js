@@ -13,9 +13,9 @@
  * Cloudinary configuration loaded from Vite environment variables (import.meta.env)
  */
 export const cloudinaryConfig = {
-  cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || '',
-  apiKey: import.meta.env.VITE_CLOUDINARY_API_KEY || '',
-  uploadPreset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || '',
+  cloudName: 'usn9paiw',
+  apiKey: '933381184925323',
+  uploadPreset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'honatu_preset',
   folder: import.meta.env.VITE_CLOUDINARY_FOLDER || 'Honatu',
   
   // Base delivery URL
@@ -33,7 +33,7 @@ export const cloudinaryConfig = {
    * @returns {boolean}
    */
   isConfigured() {
-    return Boolean(this.cloudName && this.cloudName !== 'tu_cloud_name_aqui');
+    return true;
   }
 };
 
@@ -80,6 +80,77 @@ export function createFallbackSvg(label = 'Honatu Insumos', width = 600, height 
 }
 
 /**
+ * Mapping between legacy asset paths and uploaded Cloudinary Public IDs
+ */
+export const CLOUDINARY_IMAGE_MAP = {
+  // Brand & Hero
+  'logo/Logo.png': 'Logo_oqlimi',
+  'Logo.png': 'Logo_oqlimi',
+  'FondoHero.jpeg': 'WhatsApp_Image_2026-07-28_at_3.40.54_PM_csc7i5',
+  'main-sample.png': 'main-sample',
+
+  // Nosotros
+  'nosotros/img_1.jpg': 'Huerto_xoiv8v',
+  'nosotros/img_2.jpg': 'Huerto3_pxlbty',
+  'nosotros/img_3.jpg': 'Cliente_torre_prffa5',
+  'nosotros/img_4.jpg': 'producción_indoor_b82gwe',
+  'nosotros/img_5.jpg': 'Huerto2_auf2sd',
+  'nosotros/img_6.jpg': 'Expo_ruj39d',
+  'nosotros/img_7.jpg': 'WhatsApp_Image_2026-07-29_at_6.05.28_PM_oa51ko',
+  'nosotros/img_8.jpg': 'WhatsApp_Image_2026-07-29_at_6.05.27_PM_jfu1r2',
+  'nosotros/img_9.jpg': 'WhatsApp_Image_2026-07-29_at_6.05.27_PM_1_gydhmt',
+  'nosotros/img_10.jpg': 'Huerto_xoiv8v',
+
+  // Productos / Tienda / Home
+  'home/img_1.jpg': 'Tierra-de-Monte-produccion-de-alimentos-organicos-1024x536_g9zdla',
+  'home/img_2.jpg': 'Slab_de_fibra_de_coco_gawh46',
+  'home/img_3.jpg': 'IMG_7833_iq4yoz',
+  'home/img_4.jpg': 'Aero_real_d3deyi',
+  'home/img_5.jpg': 'Espuma_agricola_mc44hn',
+  'home/img_6.jpg': 'Semillas_gvnhvn',
+  'home/img_7.jpg': 'Espuma_agricola_mc44hn',
+  'home/img_8.jpg': 'IMG_7833_iq4yoz',
+  'home/img_9.jpg': 'Semillas_gvnhvn',
+  'home/img_10.jpg': 'Cliente_torre_prffa5',
+
+  // Educación / Hortalizas
+  'educacion/img_1.jpg': 'Huerto3_pxlbty',
+  'educacion/img_2.jpg': 'Acelga_ywtbrs',
+  'educacion/img_3.jpg': 'Aero_real_d3deyi',
+  'educacion/img_4.jpg': 'Kale_uzc8we',
+  'educacion/img_5.jpg': 'Tierra-de-Monte-produccion-de-alimentos-organicos-1024x536_g9zdla',
+  'educacion/img_6.jpg': 'Apio_cbryq2',
+  'educacion/img_7.jpg': 'producción_indoor_b82gwe',
+  'educacion/img_8.jpg': 'Expo_ruj39d',
+  'educacion/img_9.jpg': 'Semillas_gvnhvn',
+  'educacion/img_10.jpg': 'Huerto_xoiv8v',
+
+  // Involúcrate
+  'involucrate/img_1.jpg': 'Expo_ruj39d',
+  'involucrate/img_2.jpg': 'Huerto2_auf2sd',
+  'involucrate/img_3.jpg': 'Cliente_torre_prffa5',
+  'involucrate/img_4.jpg': 'WhatsApp_Image_2026-07-29_at_9.34.00_AM_bde6ew',
+  'involucrate/img_5.jpg': 'WhatsApp_Image_2026-07-29_at_9.33.59_AM_4_g5fvhk',
+  'involucrate/img_6.jpg': 'WhatsApp_Image_2026-07-29_at_9.33.59_AM_2_ury8py',
+  'involucrate/img_7.jpg': 'WhatsApp_Image_2026-07-29_at_9.34.00_AM_3_cjhp2p',
+  'involucrate/img_8.jpg': 'WhatsApp_Image_2026-07-29_at_9.33.59_AM_3_ignbkb',
+  'involucrate/img_9.jpg': 'WhatsApp_Image_2026-07-29_at_9.34.00_AM_1_xb7aej',
+  'involucrate/img_10.jpg': 'WhatsApp_Image_2026-07-29_at_9.33.58_AM_ohkaxr',
+
+  // Acciones
+  'acciones/img_1.jpg': 'Huerto_xoiv8v',
+  'acciones/img_2.jpg': 'Huerto3_pxlbty',
+  'acciones/img_3.jpg': 'Aero_real_d3deyi',
+  'acciones/img_4.jpg': 'producción_indoor_b82gwe',
+  'acciones/img_5.jpg': 'Expo_ruj39d',
+  'acciones/img_6.jpg': 'WhatsApp_Image_2026-07-29_at_6.05.28_PM_oa51ko',
+  'acciones/img_7.jpg': 'WhatsApp_Image_2026-07-29_at_9.34.00_AM_2_dvyqcw',
+  'acciones/img_8.jpg': 'WhatsApp_Image_2026-07-29_at_9.33.57_AM_1_tvrzy1',
+  'acciones/img_9.jpg': 'WhatsApp_Image_2026-07-29_at_9.33.57_AM_qbhmc8',
+  'acciones/img_10.jpg': 'WhatsApp_Image_2026-07-29_at_6.05.27_PM_1_gydhmt'
+};
+
+/**
  * Builds an optimized Cloudinary delivery URL with transformation parameters
  * 
  * @param {string} publicId - Cloudinary Public ID or relative path (e.g. 'home/img_1.jpg', 'nosotros/img_1.jpg')
@@ -92,7 +163,6 @@ export function createFallbackSvg(label = 'Honatu Insumos', width = 600, height 
  * @param {string} [options.format='auto'] - Image format ('auto', 'webp', 'avif', 'png', 'jpg')
  * @param {string|number} [options.dpr='auto'] - Device Pixel Ratio ('auto', 1.0, 2.0)
  * @param {string} [options.effect] - Visual effect (e.g., 'sharpen', 'blur:100')
- * @param {boolean} [options.includeFolder=true] - Whether to prepend default folder if not present
  * @returns {string} Fully qualified Cloudinary CDN URL or SVG Fallback
  */
 export function getCloudinaryUrl(publicId, options = {}) {
@@ -103,24 +173,32 @@ export function getCloudinaryUrl(publicId, options = {}) {
     return publicId;
   }
 
-  // If already a full http/https URL that is not a raw public ID
-  if (publicId.startsWith('http://') || publicId.startsWith('https://')) {
+  // If already a full Cloudinary URL
+  if (publicId.includes('res.cloudinary.com')) {
     return publicId;
   }
 
-  // Clean public ID from local relative prefixes (e.g., '../assets/images/', './assets/images/', 'assets/images/')
-  let cleanId = publicId
-    .replace(/^(\.\.\/|\.\/|\/)?assets\/images\//, '')
-    .replace(/^\/+/, '');
+  // Clean public ID from full URLs or local relative prefixes
+  let cleanId = publicId;
+  
+  // Strip http://... or domain prefix if present
+  if (cleanId.includes('/assets/images/')) {
+    cleanId = cleanId.split('/assets/images/')[1];
+  } else if (cleanId.includes('assets/images/')) {
+    cleanId = cleanId.split('assets/images/')[1];
+  } else {
+    cleanId = cleanId
+      .replace(/^(\.\.\/|\.\/|\/)/, '')
+      .replace(/^assets\//, '')
+      .replace(/^images\//, '');
+  }
+
+  // Check if there is a direct mapping in CLOUDINARY_IMAGE_MAP
+  let finalPublicId = CLOUDINARY_IMAGE_MAP[cleanId] || cleanId;
 
   if (!cloudinaryConfig.isConfigured()) {
     console.warn('[Cloudinary] VITE_CLOUDINARY_CLOUD_NAME is not set. Generating brand placeholder for:', publicId);
     return createFallbackSvg(cleanId);
-  }
-
-  const includeFolder = options.includeFolder !== false;
-  if (includeFolder && cloudinaryConfig.folder && !cleanId.startsWith(cloudinaryConfig.folder + '/')) {
-    cleanId = `${cloudinaryConfig.folder}/${cleanId}`;
   }
 
   const {
@@ -157,7 +235,7 @@ export function getCloudinaryUrl(publicId, options = {}) {
   }
 
   const transformString = transforms.length > 0 ? transforms.join(',') + '/' : '';
-  return `${cloudinaryConfig.baseUrl}/${transformString}${cleanId}`;
+  return `${cloudinaryConfig.baseUrl}/${transformString}${finalPublicId}`;
 }
 
 /**
@@ -179,80 +257,102 @@ export function getCloudinarySrcSet(publicId, widths = [320, 640, 960, 1200, 160
 /**
  * Uploads an image or file directly from the client to Cloudinary using an unsigned upload preset
  * 
- * @param {File|Blob|string} file - File object, Blob, or base64 data URL to upload
+ * @param {File|Blob|string} file - The file object or base64 data URI to upload
  * @param {Object} [options] - Upload options
+ * @param {string} [options.folder] - Target Cloudinary folder
+ * @param {string[]} [options.tags] - Search tags for the asset
+ * @param {Function} [options.onProgress] - Progress callback (percentage: number) => void
  * @returns {Promise<Object>} Cloudinary API response JSON
  */
 export async function uploadImageToCloudinary(file, options = {}) {
   if (!cloudinaryConfig.isConfigured()) {
-    throw new Error('[Cloudinary] Cannot upload: VITE_CLOUDINARY_CLOUD_NAME is not configured.');
+    throw new Error('[Cloudinary] Cloud Name is missing in environment variables.');
   }
 
   const preset = options.uploadPreset || cloudinaryConfig.uploadPreset;
-  if (!preset || preset === 'honatu_preset' || preset === 'tu_upload_preset_aqui') {
-    throw new Error('[Cloudinary] An unsigned upload preset is required for client-side uploads.');
+  if (!preset) {
+    throw new Error('[Cloudinary] Upload Preset is required for client-side uploads. Configure VITE_CLOUDINARY_UPLOAD_PRESET.');
   }
 
   const formData = new FormData();
   formData.append('file', file);
   formData.append('upload_preset', preset);
 
-  const targetFolder = options.folder || cloudinaryConfig.folder;
-  if (targetFolder) {
-    formData.append('folder', targetFolder);
+  const folder = options.folder || cloudinaryConfig.folder;
+  if (folder) {
+    formData.append('folder', folder);
+  }
+
+  if (options.tags && Array.isArray(options.tags)) {
+    formData.append('tags', options.tags.join(','));
   }
 
   if (options.publicId) {
     formData.append('public_id', options.publicId);
   }
 
-  if (Array.isArray(options.tags) && options.tags.length > 0) {
-    formData.append('tags', options.tags.join(','));
-  }
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', cloudinaryConfig.uploadUrl, true);
 
-  const response = await fetch(cloudinaryConfig.uploadUrl, {
-    method: 'POST',
-    body: formData
+    if (options.onProgress && xhr.upload) {
+      xhr.upload.onprogress = (e) => {
+        if (e.lengthComputable) {
+          const percent = Math.round((e.loaded / e.total) * 100);
+          options.onProgress(percent);
+        }
+      };
+    }
+
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        try {
+          const response = JSON.parse(xhr.responseText);
+          resolve(response);
+        } catch (err) {
+          reject(new Error('[Cloudinary] Failed to parse response: ' + err.message));
+        }
+      } else {
+        try {
+          const errResponse = JSON.parse(xhr.responseText);
+          reject(new Error(`[Cloudinary Upload Error]: ${errResponse.error?.message || xhr.statusText}`));
+        } catch (_) {
+          reject(new Error(`[Cloudinary Upload Error]: HTTP ${xhr.status} ${xhr.statusText}`));
+        }
+      }
+    };
+
+    xhr.onerror = () => reject(new Error('[Cloudinary] Network error during upload'));
+    xhr.send(formData);
   });
-
-  if (!response.ok) {
-    const errorData = await response.json().catch(() => ({}));
-    throw new Error(errorData.error?.message || `Cloudinary upload failed with status ${response.status}`);
-  }
-
-  return response.json();
 }
 
 /**
- * Global image error interceptor.
- * Captures any image failure (404, network error, missing file) and gracefully
- * replaces it with a stylish brand placeholder, completely preventing broken image icons.
+ * Attaches a robust global error handler to intercept any broken image (404)
+ * and replace it with a graceful Cloudinary fallback or aesthetic SVG placeholder.
  */
 export function setupGlobalImageErrorHandler() {
-  if (window._honatuImageErrorHandlerAttached) return;
-  window._honatuImageErrorHandlerAttached = true;
-
   window.addEventListener(
     'error',
     (event) => {
       const target = event.target;
       if (target && target.tagName === 'IMG') {
-        const currentSrc = target.getAttribute('src') || '';
-        
-        // Prevent infinite loop if placeholder fails
-        if (currentSrc.startsWith('data:image/svg+xml')) {
-          return;
-        }
+        const rawSrc = target.getAttribute('src') || target.src;
+        // If image is already a fallback data URI, don't loop
+        if (rawSrc && rawSrc.startsWith('data:image/svg+xml')) return;
 
-        // If it failed on a local assets/images path, try Cloudinary first
-        if (currentSrc.includes('assets/images/') && !currentSrc.includes('cloudinary.com')) {
-          const cloudinaryUrl = getCloudinaryUrl(currentSrc);
-          target.src = cloudinaryUrl;
-          return;
+        // If local asset failed, try to load it via getCloudinaryUrl
+        if (rawSrc && !target.dataset.triedCloudinary) {
+          target.dataset.triedCloudinary = 'true';
+          const cloudinaryUrl = getCloudinaryUrl(rawSrc);
+          if (cloudinaryUrl && cloudinaryUrl !== rawSrc) {
+            target.src = cloudinaryUrl;
+            return;
+          }
         }
 
         // If Cloudinary or local path failed, apply SVG placeholder
-        const label = target.alt || target.getAttribute('data-name') || 'Honatu Insumos';
+        const label = target.alt || target.getAttribute('data-name') || 'Honatu Hidroponía';
         target.src = createFallbackSvg(label);
         target.classList.add('img-fallback');
       }
@@ -271,9 +371,15 @@ export function initCloudinaryImages(root = document) {
   // Ensure error interceptor is always active
   setupGlobalImageErrorHandler();
 
-  // 1. Process <img> tags with local assets/images/
+  // 1. Process <img> tags
   const images = root.querySelectorAll('img');
   images.forEach(img => {
+    // Skip logo and local FondoHero if already displaying
+    const rawSrc = img.getAttribute('src') || '';
+    if (rawSrc.includes('Logo.png') || rawSrc.includes('FondoHero')) {
+      return;
+    }
+
     // Check if explicitly configured with data-cloudinary
     const customCloudinaryId = img.getAttribute('data-cloudinary');
     if (customCloudinaryId) {
@@ -296,10 +402,9 @@ export function initCloudinaryImages(root = document) {
       return;
     }
 
-    // Check if pointing to local assets/images/ (e.g. "../assets/images/home/img_1.jpg")
-    const src = img.getAttribute('src');
-    if (src && src.includes('assets/images/')) {
-      img.src = getCloudinaryUrl(src);
+    // Check if pointing to local assets/images/
+    if (rawSrc.includes('assets/images/')) {
+      img.src = getCloudinaryUrl(rawSrc);
     }
   });
 
@@ -328,6 +433,7 @@ setupGlobalImageErrorHandler();
 
 export default {
   config: cloudinaryConfig,
+  map: CLOUDINARY_IMAGE_MAP,
   getUrl: getCloudinaryUrl,
   getSrcSet: getCloudinarySrcSet,
   upload: uploadImageToCloudinary,

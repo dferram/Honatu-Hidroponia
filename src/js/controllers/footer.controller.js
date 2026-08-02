@@ -17,7 +17,7 @@ export function initFooter() {
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="${basePath}assets/logo/Logo.png" alt="Honatu" style="height: 48px; width: auto; max-width: 100%; object-fit: contain;">
+          <img src="${basePath}assets/logo/Logo.png" alt="Honatu" class="footer-logo-img" style="height: 84px; width: auto; max-width: 250px; object-fit: contain;">
           <p>Insumos hidropónicos premium para cultivadores que buscan calidad, conocimiento y comunidad.</p>
           <div class="footer-social">
             <a href="#" aria-label="Facebook">

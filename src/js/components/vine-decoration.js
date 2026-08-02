@@ -26,23 +26,23 @@ export function createVineDecoration() {
     <path class="form-vine-stem" d="M 280,14 L 38,14 Q 14,14 14,38 L 14,280" filter="url(#leafShadowForm)"/>
     
     <!-- Top Border Leaves (y=14) -->
-    <g class="form-vine-leaf leaf-delay-4" style="transform-origin: 240px 14px;"><g class="sway" style="transform-origin: 240px 14px;"><use href="#real-leaf-form" transform="translate(240, 14) rotate(-10) scale(0.45)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-2" style="transform-origin: 200px 14px;"><g class="sway" style="transform-origin: 200px 14px;"><use href="#real-leaf-form" transform="translate(200, 14) rotate(-120) scale(0.5)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-3" style="transform-origin: 160px 14px;"><g class="sway" style="transform-origin: 160px 14px;"><use href="#real-leaf-form" transform="translate(160, 14) rotate(60) scale(0.55)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-5" style="transform-origin: 120px 14px;"><g class="sway" style="transform-origin: 120px 14px;"><use href="#real-leaf-form" transform="translate(120, 14) rotate(-30) scale(0.6)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-2" style="transform-origin: 80px 14px;"><g class="sway" style="transform-origin: 80px 14px;"><use href="#real-leaf-form" transform="translate(80, 14) rotate(30) scale(0.5)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-1" style="transform-origin: 40px 14px;"><g class="sway" style="transform-origin: 40px 14px;"><use href="#real-leaf-form" transform="translate(40, 14) rotate(-45) scale(0.65)" /></g></g>
+    <g class="form-vine-leaf leaf-delay-4" transform="translate(240, 14) rotate(-10)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.45)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(200, 14) rotate(-120)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-3" transform="translate(160, 14) rotate(60)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-5" transform="translate(120, 14) rotate(-30)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.6)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(80, 14) rotate(30)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-1" transform="translate(40, 14) rotate(-45)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.65)" /></g></g></g>
     
     <!-- Corner Leaf (Calculated exact midpoint of Q bezier) -->
-    <g class="form-vine-leaf leaf-delay-1" style="transform-origin: 20px 20px;"><g class="sway" style="transform-origin: 20px 20px;"><use href="#real-leaf-form" transform="translate(20, 20) rotate(-135) scale(0.65)" /></g></g>
+    <g class="form-vine-leaf leaf-delay-1" transform="translate(20, 20) rotate(-135)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.65)" /></g></g></g>
     
     <!-- Left Border Leaves (x=14) -->
-    <g class="form-vine-leaf leaf-delay-4" style="transform-origin: 14px 40px;"><g class="sway" style="transform-origin: 14px 40px;"><use href="#real-leaf-form" transform="translate(14, 40) rotate(120) scale(0.55)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-2" style="transform-origin: 14px 80px;"><g class="sway" style="transform-origin: 14px 80px;"><use href="#real-leaf-form" transform="translate(14, 80) rotate(160) scale(0.6)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-3" style="transform-origin: 14px 120px;"><g class="sway" style="transform-origin: 14px 120px;"><use href="#real-leaf-form" transform="translate(14, 120) rotate(-20) scale(0.5)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-5" style="transform-origin: 14px 160px;"><g class="sway" style="transform-origin: 14px 160px;"><use href="#real-leaf-form" transform="translate(14, 160) rotate(140) scale(0.55)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-2" style="transform-origin: 14px 200px;"><g class="sway" style="transform-origin: 14px 200px;"><use href="#real-leaf-form" transform="translate(14, 200) rotate(-30) scale(0.45)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-3" style="transform-origin: 14px 240px;"><g class="sway" style="transform-origin: 14px 240px;"><use href="#real-leaf-form" transform="translate(14, 240) rotate(120) scale(0.5)" /></g></g>
+    <g class="form-vine-leaf leaf-delay-4" transform="translate(14, 40) rotate(120)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(14, 80) rotate(160)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.6)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-3" transform="translate(14, 120) rotate(-20)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-5" transform="translate(14, 160) rotate(140)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(14, 200) rotate(-30)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.45)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-3" transform="translate(14, 240) rotate(120)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
   </svg>
 </div>
 <div class="form-vine-wrapper bottom-right">
@@ -51,21 +51,21 @@ export function createVineDecoration() {
     <path class="form-vine-stem" d="M 14,236 L 212,236 Q 236,236 236,212 L 236,14" filter="url(#leafShadowForm)"/>
     
     <!-- Bottom Border Leaves (y=236) -->
-    <g class="form-vine-leaf leaf-delay-2" style="transform-origin: 40px 236px;"><g class="sway" style="transform-origin: 40px 236px;"><use href="#real-leaf-form" transform="translate(40, 236) rotate(-140) scale(0.5)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-4" style="transform-origin: 80px 236px;"><g class="sway" style="transform-origin: 80px 236px;"><use href="#real-leaf-form" transform="translate(80, 236) rotate(60) scale(0.55)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-1" style="transform-origin: 120px 236px;"><g class="sway" style="transform-origin: 120px 236px;"><use href="#real-leaf-form" transform="translate(120, 236) rotate(-110) scale(0.6)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-2" style="transform-origin: 160px 236px;"><g class="sway" style="transform-origin: 160px 236px;"><use href="#real-leaf-form" transform="translate(160, 236) rotate(150) scale(0.5)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-3" style="transform-origin: 200px 236px;"><g class="sway" style="transform-origin: 200px 236px;"><use href="#real-leaf-form" transform="translate(200, 236) rotate(30) scale(0.55)" /></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(40, 236) rotate(-140)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-4" transform="translate(80, 236) rotate(60)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-1" transform="translate(120, 236) rotate(-110)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.6)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(160, 236) rotate(150)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-3" transform="translate(200, 236) rotate(30)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
     
     <!-- Corner Leaf (Calculated exact midpoint of Q bezier) -->
-    <g class="form-vine-leaf leaf-delay-1" style="transform-origin: 230px 230px;"><g class="sway" style="transform-origin: 230px 230px;"><use href="#real-leaf-form" transform="translate(230, 230) rotate(-45) scale(0.65)" /></g></g>
+    <g class="form-vine-leaf leaf-delay-1" transform="translate(230, 230) rotate(-45)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.65)" /></g></g></g>
     
     <!-- Right Border Leaves (x=236) -->
-    <g class="form-vine-leaf leaf-delay-5" style="transform-origin: 236px 200px;"><g class="sway" style="transform-origin: 236px 200px;"><use href="#real-leaf-form" transform="translate(236, 200) rotate(-120) scale(0.5)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-3" style="transform-origin: 236px 160px;"><g class="sway" style="transform-origin: 236px 160px;"><use href="#real-leaf-form" transform="translate(236, 160) rotate(-20) scale(0.6)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-2" style="transform-origin: 236px 120px;"><g class="sway" style="transform-origin: 236px 120px;"><use href="#real-leaf-form" transform="translate(236, 120) rotate(-80) scale(0.55)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-5" style="transform-origin: 236px 80px;"><g class="sway" style="transform-origin: 236px 80px;"><use href="#real-leaf-form" transform="translate(236, 80) rotate(-60) scale(0.5)" /></g></g>
-    <g class="form-vine-leaf leaf-delay-1" style="transform-origin: 236px 40px;"><g class="sway" style="transform-origin: 236px 40px;"><use href="#real-leaf-form" transform="translate(236, 40) rotate(-140) scale(0.45)" /></g></g>
+    <g class="form-vine-leaf leaf-delay-5" transform="translate(236, 200) rotate(-120)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-3" transform="translate(236, 160) rotate(-20)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.6)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(236, 120) rotate(-80)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-5" transform="translate(236, 80) rotate(-60)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-1" transform="translate(236, 40) rotate(-140)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.45)" /></g></g></g>
   </svg>
 </div>
   `;
@@ -74,9 +74,29 @@ export function createVineDecoration() {
 
 export function initVineDecorations() {
   const wrappers = document.querySelectorAll('.contact-form, .servicio-form-wrapper');
+  if (!wrappers.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Force reflow and trigger fresh growth animation
+        entry.target.classList.remove('vines-grown');
+        void entry.target.offsetWidth;
+        entry.target.classList.add('vines-grown');
+      } else {
+        // Reset when leaving viewport so it grows again when returned to
+        entry.target.classList.remove('vines-grown');
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
   wrappers.forEach(wrapper => {
     wrapper.style.position = 'relative';
     wrapper.style.zIndex = '1';
     wrapper.appendChild(createVineDecoration());
+    observer.observe(wrapper);
   });
 }
