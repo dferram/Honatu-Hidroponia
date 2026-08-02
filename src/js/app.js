@@ -22,6 +22,7 @@ import { initContactForm } from './controllers/contact.controller.js';
 import { initFooter } from './controllers/footer.controller.js';
 
 // --- UI Components ---
+import './components/footer.component.js'; // Registers <honatu-footer> Custom Element
 import { initVineDecorations } from './components/vine-decoration.js';
 
 document.addEventListener('DOMContentLoaded', () => {
