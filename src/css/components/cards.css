@@ -261,7 +261,7 @@
 }
 
 .services-title {
-  font-family: var(--font-display, 'Playfair Display', serif);
+  font-family: var(--font-display);
   font-size: clamp(2.2rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--color-forest);
@@ -324,7 +324,7 @@
 }
 
 .service-card-heading {
-  font-family: var(--font-display, 'Playfair Display', serif);
+  font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 700;
   color: #D36A44;

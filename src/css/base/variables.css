@@ -3,29 +3,37 @@
    Variables & Custom Properties
    ============================================ */
 
-/* Typography */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+/* Typography: Besley (Clarendon / Heavy Slab Serif like image reference) & Plus Jakarta Sans */
+@import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   /* — Color Palette: Blanco Vegetal, Gris Piedra & Verde Bosque — */
   --color-forest:       #234E28;
-  --color-forest-dark:  #17361A;
+  --color-forest-dark:  #163519;
   --color-sage:         #5E8254;
   --color-sage-light:   #7E9F74;
   --color-moss:         #3B6334;
   --color-leaf:         #327824;
   --color-logo:         #CAD7BA;
   --color-logo-hover:   #BACDA7;
-  --color-logo-text:    #17361A;
+  --color-logo-text:    #163519;
 
-  /* — Blanco Vegetal & Fondos Orgánicos — */
-  --color-blanco-vegetal: #F8FAF6;
+  /* — Blanco Vegetal — */
+  --color-blanco-vegetal: #FAFBF8;
   --color-white:        #FFFFFF;
-  --color-off-white:    #FAFBF9;
-  --color-cream-warm:   #F8FAF6; /* Fondo principal blanco vegetal */
-  --color-cream:        #EFF4EC; /* Blanco vegetal suave para secciones */
+  --color-off-white:    #F6F8F4;
+
+  /* — Gris Piedra (Fondos visibles, minerales y orgánicos) — */
+  --color-stone-light:  #ECEFEA; /* Gris piedra muy claro */
+  --color-stone:        #E2E7DE; /* Gris piedra visible para fondos de sección */
+  --color-stone-medium: #D0D8CB; /* Gris piedra medio para tarjetas y superficies */
+  --color-stone-dark:   #A9B5A3; /* Gris piedra marcado */
+
+  /* Compatibilidad con variables previas para fondos */
+  --color-cream-warm:   #FAFBF8; /* Fondo blanco vegetal */
+  --color-cream:        #E2E7DE; /* Fondo Gris Piedra visible para secciones alternas */
   --color-sand:         #C6D2C0; /* Tono piedra/vegetal suave */
-  --color-sand-light:   #E4ECE0; /* Tono vegetal claro */
+  --color-sand-light:   #E2E7DE; /* Tono gris piedra */
 
   /* — Acentos Tierra / Café Preservados — */
   --color-earth:        #3B2F1E;
@@ -36,20 +44,20 @@
   --color-olive:        #6E7A4A;
 
   /* — Neutros Gris Piedra — */
-  --color-gray-100:     #F0F4ED; /* Gris piedra ultra suave */
-  --color-gray-200:     #DFE5DC; /* Gris piedra claro (bordes) */
-  --color-gray-300:     #C2C9BE; /* Gris piedra medio */
-  --color-gray-400:     #8D9789; /* Gris piedra texto tenue */
-  --color-gray-500:     #626D5E; /* Gris piedra texto secundario */
-  --color-gray-600:     #485244; /* Gris piedra oscuro */
-  --color-gray-700:     #323A2F; /* Gris piedra profundo */
-  --color-gray-800:     #20261E; /* Gris piedra carbón */
-  --color-gray-900:     #141813; /* Gris piedra noche */
+  --color-gray-100:     #EDF1EA; /* Gris piedra ultra suave */
+  --color-gray-200:     #D2DBD0; /* Gris piedra claro (bordes) */
+  --color-gray-300:     #B6C2B3; /* Gris piedra medio */
+  --color-gray-400:     #7F8E7C; /* Gris piedra texto tenue */
+  --color-gray-500:     #556352; /* Gris piedra texto secundario */
+  --color-gray-600:     #3E4B3C; /* Gris piedra oscuro */
+  --color-gray-700:     #2C372A; /* Gris piedra profundo */
+  --color-gray-800:     #1E261D; /* Gris piedra carbón */
+  --color-gray-900:     #121811; /* Gris piedra noche */
 
-  /* — Typography — */
-  --font-display:       'Playfair Display', 'Georgia', serif;
-  --font-heading:       'Playfair Display', 'Georgia', serif;
-  --font-body:          'Inter', system-ui, -apple-system, sans-serif;
+  /* — Typography: Besley (Clarendon Heavy Slab Serif) & Plus Jakarta Sans (Clean Body) — */
+  --font-display:       'Besley', Georgia, serif;
+  --font-heading:       'Besley', Georgia, serif;
+  --font-body:          'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
   /* — Spacing Scale — */
   --space-xs:    4px;
