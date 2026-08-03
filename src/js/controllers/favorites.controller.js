@@ -4,7 +4,6 @@
 
 import { getItem, setItem, StorageKeys } from '../middleware/storage.middleware.js';
 import { showToast } from '../middleware/toast.middleware.js';
-import { getIsAuthenticated, openLoginModal } from './auth.controller.js';
 
 let favorites = getItem(StorageKeys.FAVORITES, []);
 
@@ -29,10 +28,6 @@ export function initFavorites() {
   document.querySelectorAll('.btn-favorite').forEach(btn => {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
-      if (!getIsAuthenticated()) {
-        openLoginModal();
-        return;
-      }
 
       const card = this.closest('.product-card') || this.closest('.product-info');
       if (!card) return;
@@ -40,13 +35,15 @@ export function initFavorites() {
       const id = card.dataset.id || this.dataset.productId;
       if (!id) return;
 
+      const name = card.dataset.name || (card.querySelector('.product-name, .product-title') ? card.querySelector('.product-name, .product-title').textContent.trim() : 'Producto');
+
       const index = favorites.indexOf(id);
       if (index === -1) {
         favorites.push(id);
-        showToast("Agregado a tus favoritos.");
+        showToast(`¡"${name}" agregado a tus favoritos!`);
       } else {
         favorites.splice(index, 1);
-        showToast("Eliminado de favoritos.");
+        showToast(`¡"${name}" eliminado de tus favoritos!`);
       }
 
       setItem(StorageKeys.FAVORITES, favorites);

@@ -4,8 +4,8 @@
    ============================================ */
 
 import { getItem, setItem, StorageKeys } from '../middleware/storage.middleware.js';
-import { getIsAuthenticated, openLoginModal } from './auth.controller.js';
 import { getCloudinaryUrl } from '../services/cloudinary.service.js';
+import { showToast } from '../middleware/toast.middleware.js';
 
 const SVG_CHECK = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
 
@@ -129,20 +129,17 @@ export function initCart() {
   // Add to cart buttons
   document.querySelectorAll('.btn-add-cart, .btn-add-cart-lg').forEach(btn => {
     btn.addEventListener('click', function () {
-      if (!getIsAuthenticated()) {
-        openLoginModal();
-        return;
-      }
-
       const card = this.closest('.product-card') || this.closest('.product-info');
       if (!card) return;
 
       const id = card.dataset.id || this.dataset.productId;
-      const name = card.dataset.name || this.dataset.name;
+      const name = card.dataset.name || this.dataset.name || (card.querySelector('.product-name') ? card.querySelector('.product-name').textContent.trim() : 'Producto');
       const price = card.dataset.price || this.dataset.price;
       const img = card.dataset.img || this.dataset.img;
 
       addToCart(id, name, price, img);
+
+      showToast(`¡"${name}" agregado al carrito con éxito!`);
 
       this.classList.add('added');
       const originalHTML = this.innerHTML;
