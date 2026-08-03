@@ -84,8 +84,6 @@ export function createFallbackSvg(label = 'Honatu Insumos', width = 600, height 
  */
 export const CLOUDINARY_IMAGE_MAP = {
   // Brand & Hero
-  'logo/Logo.png': 'Logo_oqlimi',
-  'Logo.png': 'Logo_oqlimi',
   'FondoHero.jpeg': 'WhatsApp_Image_2026-07-28_at_3.40.54_PM_csc7i5',
   'main-sample.png': 'main-sample',
 
@@ -357,6 +355,11 @@ export function setupGlobalImageErrorHandler() {
         }
 
         // If Cloudinary or local path failed, apply SVG placeholder
+        // Skip SVG placeholder for Logo to prevent it from disappearing
+        if (rawSrc && rawSrc.includes('Logo.png')) {
+          return;
+        }
+        
         const label = target.alt || target.getAttribute('data-name') || 'Honatu Hidroponía';
         target.src = createFallbackSvg(label);
         target.classList.add('img-fallback');
