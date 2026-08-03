@@ -10,10 +10,10 @@
   position: relative;
   padding: calc(var(--nav-height, 84px) + 48px) var(--space-lg) var(--space-3xl);
   background: 
-    radial-gradient(ellipse at 80% 20%, rgba(184, 115, 51, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 20% 80%, rgba(45, 80, 22, 0.08) 0%, transparent 60%),
-    linear-gradient(180deg, #F4ECE1 0%, var(--color-cream-warm, #FAF7F2) 100%);
-  border-bottom: 1px solid rgba(212, 197, 169, 0.4);
+    radial-gradient(ellipse at 80% 20%, rgba(184, 115, 51, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(35, 78, 40, 0.06) 0%, transparent 60%),
+    linear-gradient(180deg, #EEF4EC 0%, var(--color-cream-warm, #F8FAF6) 100%);
+  border-bottom: 1px solid var(--color-gray-200, #DFE5DC);
   text-align: center;
   overflow: hidden;
 }
@@ -26,7 +26,7 @@
   right: -50px;
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, rgba(118, 138, 120, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(94, 130, 84, 0.12) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -67,7 +67,7 @@
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   font-weight: 700;
   line-height: 1.15;
-  color: var(--color-forest, #2D5016) !important;
+  color: var(--color-forest, #234E28) !important;
   margin-bottom: var(--space-md);
 }
 
@@ -75,7 +75,7 @@
 .subpage-hero p {
   font-size: 1.12rem;
   line-height: 1.65;
-  color: var(--color-earth-light, #5C5245) !important;
+  color: var(--color-gray-500, #626D5E) !important;
   max-width: 680px;
   margin: 0 auto;
   opacity: 1;
@@ -113,7 +113,7 @@
   font-family: var(--font-display, 'Playfair Display', serif);
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 700;
-  color: var(--color-forest, #2D5016);
+  color: var(--color-forest, #234E28);
   margin-bottom: var(--space-sm);
   line-height: 1.2;
 }
@@ -121,7 +121,7 @@
 .section-intro p,
 .focus-content p {
   font-size: 1.05rem;
-  color: var(--color-earth-light, #5C5245);
+  color: var(--color-gray-500, #626D5E);
   line-height: 1.6;
 }
 
@@ -135,9 +135,9 @@
 .card {
   background: var(--color-white, #FFFFFF);
   border-radius: var(--radius-lg, 16px);
-  border: 1px solid rgba(212, 197, 169, 0.35);
+  border: 1px solid var(--color-gray-200, #DFE5DC);
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(59, 47, 30, 0.04);
+  box-shadow: 0 4px 20px rgba(35, 78, 40, 0.04);
   transition: transform var(--duration-normal, 0.3s) ease, box-shadow var(--duration-normal, 0.3s) ease;
   display: flex;
   flex-direction: column;
@@ -145,7 +145,7 @@
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(59, 47, 30, 0.1);
+  box-shadow: 0 12px 32px rgba(35, 78, 40, 0.09);
 }
 
 .card-large {
@@ -167,7 +167,7 @@
 .image-placeholder {
   aspect-ratio: 4 / 3;
   width: 100%;
-  background: linear-gradient(135deg, var(--color-cream, #F5F0E8), var(--color-sand-light, #E8DFCC));
+  background: linear-gradient(135deg, var(--color-cream, #EFF4EC), var(--color-sand-light, #E4ECE0));
   position: relative;
   overflow: hidden;
 }
@@ -197,13 +197,13 @@
   font-family: var(--font-display, 'Playfair Display', serif);
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--color-forest, #2D5016);
+  color: var(--color-forest, #234E28);
   margin-bottom: var(--space-xs);
 }
 
 .card-copy p {
   font-size: 0.95rem;
-  color: var(--color-earth-light, #5C5245);
+  color: var(--color-gray-500, #626D5E);
   line-height: 1.6;
 }
 
@@ -247,18 +247,18 @@
   justify-content: center;
   gap: var(--space-sm);
   padding: 14px 32px;
-  background: var(--color-forest, #2D5016);
+  background: var(--color-forest, #234E28);
   color: var(--color-white, #FFFFFF);
   font-weight: 600;
   font-size: 0.95rem;
   border-radius: var(--radius-full, 50px);
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(45, 80, 22, 0.25);
+  box-shadow: 0 4px 16px rgba(35, 78, 40, 0.22);
   transition: all var(--duration-normal, 0.3s) ease;
 }
 
 .map-button a:hover {
-  background: var(--color-forest-dark, #1B310D);
+  background: var(--color-forest-dark, #17361A);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(45, 80, 22, 0.35);
+  box-shadow: 0 8px 28px rgba(35, 78, 40, 0.32);
 }

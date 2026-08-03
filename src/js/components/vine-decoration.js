@@ -4,19 +4,19 @@ export function createVineDecoration() {
 <svg style="width:0; height:0; position:absolute;">
   <defs>
     <linearGradient id="leafGradForm" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#4C7838"/>
-      <stop offset="60%" stop-color="#6A8D45"/>
-      <stop offset="100%" stop-color="#9CB661"/>
+      <stop offset="0%" stop-color="#34622B"/>
+      <stop offset="60%" stop-color="#5E8254"/>
+      <stop offset="100%" stop-color="#8DAF74"/>
     </linearGradient>
     <filter id="leafShadowForm" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.25"/>
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
     </filter>
     <g id="real-leaf-form">
-      <path d="M 0,0 Q 2,10 0,20" stroke="#3E5922" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 0,0 Q 2,10 0,20" stroke="#2D5325" stroke-width="2.5" fill="none" stroke-linecap="round"/>
       <path d="M 0,20 C -25,0 -40,40 0,70 C 40,40 25,0 0,20 Z" fill="url(#leafGradForm)" filter="url(#leafShadowForm)" />
-      <path d="M 0,20 Q 3,45 0,65" fill="none" stroke="#253D15" stroke-width="1.5" opacity="0.6"/>
-      <path d="M 0,30 Q -10,33 -15,30 M 0,40 Q -15,43 -20,37 M 0,50 Q -10,50 -15,45" fill="none" stroke="#253D15" stroke-width="1" opacity="0.4"/>
-      <path d="M 0,30 Q 10,33 15,30 M 0,40 Q 15,43 20,37 M 0,50 Q 10,50 15,45" fill="none" stroke="#253D15" stroke-width="1" opacity="0.4"/>
+      <path d="M 0,20 Q 3,45 0,65" fill="none" stroke="#1B3B1E" stroke-width="1.5" opacity="0.6"/>
+      <path d="M 0,30 Q -10,33 -15,30 M 0,40 Q -15,43 -20,37 M 0,50 Q -10,50 -15,45" fill="none" stroke="#1B3B1E" stroke-width="1" opacity="0.4"/>
+      <path d="M 0,30 Q 10,33 15,30 M 0,40 Q 15,43 20,37 M 0,50 Q 10,50 15,45" fill="none" stroke="#1B3B1E" stroke-width="1" opacity="0.4"/>
     </g>
   </defs>
 </svg>

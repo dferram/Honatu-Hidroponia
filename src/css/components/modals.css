@@ -51,7 +51,7 @@
   position: relative;
   background: var(--color-white);
   border-radius: var(--radius-xl, 22px);
-  box-shadow: 0 25px 55px -12px rgba(14, 28, 21, 0.4), 0 0 0 1px rgba(74, 93, 35, 0.1);
+  box-shadow: 0 25px 55px -12px rgba(14, 28, 21, 0.4), 0 0 0 1px rgba(35, 78, 40, 0.1);
   padding: 30px 28px 24px;
   z-index: 5;
   box-sizing: border-box;
@@ -103,7 +103,7 @@
   top: 14px;
   right: 14px;
   background: var(--color-cream);
-  border: 1px solid rgba(74, 93, 35, 0.15);
+  border: 1px solid var(--color-gray-200);
   color: var(--color-forest);
   cursor: pointer;
   width: 32px;
@@ -155,12 +155,12 @@
 /* Tabs */
 .auth-tabs {
   display: flex;
-  background: #F3F1EC;
+  background: var(--color-gray-100);
   border-radius: var(--radius-full);
   padding: 3px;
   margin-bottom: 16px;
   gap: 4px;
-  border: 1px solid rgba(74, 93, 35, 0.1);
+  border: 1px solid var(--color-gray-200);
 }
 
 .auth-tab-btn {
@@ -224,12 +224,12 @@
   width: 100%;
   height: 40px;
   padding: 8px 12px;
-  border: 1.5px solid #D5DEC9;
+  border: 1.5px solid var(--color-gray-200);
   border-radius: 10px;
   font-size: 0.9rem;
   font-family: var(--font-body);
   color: var(--color-forest);
-  background: #FAFAF8;
+  background: var(--color-off-white);
   transition: all 0.2s ease;
   box-sizing: border-box;
 }
@@ -238,7 +238,7 @@
   outline: none;
   border-color: var(--color-forest);
   background: var(--color-white);
-  box-shadow: 0 0 0 3px rgba(74, 93, 35, 0.12);
+  box-shadow: 0 0 0 3px rgba(94, 130, 84, 0.14);
 }
 
 .login-modal .btn {

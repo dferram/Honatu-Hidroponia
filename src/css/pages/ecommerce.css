@@ -112,7 +112,7 @@
 .login-form .form-input:focus {
   outline: none;
   border-color: var(--color-sage);
-  box-shadow: 0 0 0 3px rgba(118, 138, 120, 0.1);
+  box-shadow: 0 0 0 3px rgba(94, 130, 84, 0.14);
 }
 
 .login-footer {
@@ -226,7 +226,8 @@
 }
 
 .checkout-summary {
-  background: var(--color-sand);
+  background: var(--color-cream-warm);
+  border: 1px solid var(--color-gray-200);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   position: sticky;

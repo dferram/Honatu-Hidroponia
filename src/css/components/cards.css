@@ -8,7 +8,7 @@
   background: var(--color-white);
   border-radius: var(--radius-lg, 16px);
   overflow: hidden;
-  border: 1px solid rgba(212, 197, 169, 0.3);
+  border: 1px solid var(--color-gray-200);
   transition: transform var(--duration-normal, 0.3s) var(--ease-out, ease-out),
               box-shadow var(--duration-normal, 0.3s) var(--ease-out, ease-out);
 }
@@ -34,8 +34,8 @@
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--color-sage, #6B8F4E);
-  background: rgba(107, 143, 78, 0.1);
+  color: var(--color-sage);
+  background: rgba(94, 130, 84, 0.12);
   padding: 4px 12px;
   border-radius: var(--radius-full, 9999px);
   margin-bottom: var(--space-sm, 8px);
@@ -45,12 +45,12 @@
   font-family: var(--font-display, serif);
   font-size: 1.25rem;
   margin-bottom: var(--space-sm, 8px);
-  color: var(--color-earth, #3B2F1E);
+  color: var(--color-forest);
 }
 
 .card-text {
   font-size: 0.92rem;
-  color: var(--color-gray-500, #7D7567);
+  color: var(--color-gray-500);
   line-height: 1.6;
 }
 
@@ -78,18 +78,18 @@
   border-radius: var(--radius-full, 9999px);
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--color-gray-500, #7D7567);
-  background: var(--color-white, #ffffff);
-  border: 1px solid var(--color-gray-200, #ECE8E0);
+  color: var(--color-gray-500);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
   transition: all var(--duration-fast, 0.15s) ease;
   cursor: pointer;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
-  background: var(--color-forest, #2D5016);
-  color: var(--color-white, #ffffff);
-  border-color: var(--color-forest, #2D5016);
+  background: var(--color-forest);
+  color: var(--color-white);
+  border-color: var(--color-forest);
 }
 
 /* Consistent Product Grid (Index, Tienda, Favoritos) */
@@ -102,10 +102,10 @@
 
 /* Product Card */
 .product-card {
-  background: var(--color-white, #ffffff);
+  background: var(--color-white);
   border-radius: var(--radius-lg, 16px);
   overflow: hidden;
-  border: 1px solid rgba(212, 197, 169, 0.3);
+  border: 1px solid var(--color-gray-200);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -115,14 +115,14 @@
 
 .product-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(59, 47, 30, 0.08);
+  box-shadow: 0 12px 30px rgba(35, 78, 40, 0.08);
 }
 
 .product-img-wrap {
   position: relative;
   height: 240px;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--color-cream, #F5F0E8), var(--color-sand-light, #E8DFCC));
+  background: linear-gradient(135deg, var(--color-cream), var(--color-sand-light));
 }
 
 .product-img-wrap img {
@@ -140,8 +140,8 @@
   position: absolute;
   top: var(--space-md, 16px);
   left: var(--space-md, 16px);
-  background: var(--color-sage, #6B8F4E);
-  color: var(--color-white, #ffffff);
+  background: var(--color-sage);
+  color: var(--color-white);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -163,20 +163,20 @@
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--color-sage, #6B8F4E);
+  color: var(--color-sage);
   margin-bottom: var(--space-xs, 4px);
 }
 
 .product-name {
   font-family: var(--font-display, serif);
   font-size: 1.15rem;
-  color: var(--color-earth, #3B2F1E);
+  color: var(--color-forest);
   margin-bottom: var(--space-sm, 8px);
 }
 
 .product-desc {
   font-size: 0.85rem;
-  color: var(--color-gray-500, #7D7567);
+  color: var(--color-gray-500);
   line-height: 1.5;
   margin-bottom: var(--space-md, 16px);
   flex: 1;
@@ -193,12 +193,12 @@
   font-family: var(--font-display, serif);
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--color-forest, #2D5016);
+  color: var(--color-forest);
 }
 
 .product-price small {
   font-size: 0.75rem;
-  color: var(--color-gray-400, #A89F8E);
+  color: var(--color-gray-400);
   font-family: var(--font-body, sans-serif);
   font-weight: 400;
 }
@@ -207,8 +207,8 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--color-forest, #2D5016);
-  color: var(--color-white, #ffffff);
+  background: var(--color-forest);
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -219,12 +219,12 @@
 }
 
 .btn-add-cart:hover {
-  background: var(--color-terracotta, #B87333);
+  background: var(--color-terracotta);
   transform: scale(1.08);
 }
 
 .btn-add-cart.added {
-  background: var(--color-sage, #6B8F4E);
+  background: var(--color-sage);
   animation: cartPop 0.4s var(--ease-spring, ease);
 }
 
@@ -239,7 +239,7 @@
    ========================================== */
 .services-section {
   padding: var(--space-5xl, 80px) 0;
-  background: var(--color-cream, #F5F0E8);
+  background: var(--color-cream);
   position: relative;
 }
 
@@ -264,14 +264,14 @@
   font-family: var(--font-display, 'Playfair Display', serif);
   font-size: clamp(2.2rem, 4vw, 3rem);
   font-weight: 700;
-  color: var(--color-forest, #2D5016);
+  color: var(--color-forest);
   line-height: 1.15;
   margin-bottom: var(--space-sm, 8px);
 }
 
 .services-subtitle {
   font-size: 1.05rem;
-  color: var(--color-gray-600, #5C5548);
+  color: var(--color-gray-600);
   line-height: 1.65;
 }
 
@@ -300,9 +300,9 @@
   border-radius: var(--radius-sm, 6px);
   overflow: hidden;
   margin-bottom: var(--space-md, 16px);
-  background: var(--color-sand-light, #E8DFCC);
+  background: var(--color-sand-light);
   position: relative;
-  box-shadow: 0 4px 14px rgba(59, 47, 30, 0.06);
+  box-shadow: 0 4px 14px rgba(35, 78, 40, 0.05);
 }
 
 .service-card-thumb img {
@@ -334,7 +334,7 @@
 
 .service-card-description {
   font-size: 0.93rem;
-  color: #524B40;
+  color: var(--color-gray-600);
   line-height: 1.6;
   margin-bottom: var(--space-lg, 20px);
   flex-grow: 1;

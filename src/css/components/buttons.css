@@ -35,13 +35,13 @@
 .btn-primary {
   background: var(--color-forest);
   color: var(--color-white);
-  box-shadow: 0 4px 16px rgba(45, 80, 22, 0.25);
+  box-shadow: 0 4px 16px rgba(35, 78, 40, 0.22);
 }
 
 .btn-primary:hover {
   background: var(--color-forest-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(45, 80, 22, 0.35);
+  box-shadow: 0 8px 28px rgba(35, 78, 40, 0.32);
 }
 
 .btn-secondary {
