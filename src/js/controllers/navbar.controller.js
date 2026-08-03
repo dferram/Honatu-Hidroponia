@@ -5,8 +5,14 @@
 
 import { renderHeader } from '../components/header.component.js';
 import { isSubpageView } from '../components/footer.component.js';
+import logoImg from '../../assets/logo/Logo.png';
 
 export function initNavbar() {
+  // Ensure ANY logo image in navbar or static headers is set to the bundled asset
+  document.querySelectorAll('.nav-logo img, nav .nav-logo img, honatu-header .nav-logo img').forEach(img => {
+    img.src = logoImg;
+  });
+
   // Wait for <honatu-header> connectedCallback to have fired (it's synchronous but
   // we need the id="navbar" it sets before querying children).
   let navbar = document.getElementById('navbar') || document.querySelector('honatu-header');

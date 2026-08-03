@@ -176,48 +176,7 @@
   </div>
 
   <!-- NAVBAR -->
-  <nav id="navbar" class="navbar navbar--solid" role="navigation">
-    <div class="nav-container">
-      <div style="display: flex; align-items: center; gap: 16px;">
-        <a href="../index.html" class="nav-logo" aria-label="Inicio">
-          <img src="../assets/logo/Logo.png" alt="Honatu">
-        </a>
-        <a href="../index.html" class="btn btn-secondary btn-sm"
-          style="border-radius: var(--radius-full); padding: 6px 16px; font-size: 0.82rem; text-decoration: none;">&larr;
-          Volver al Inicio</a>
-      </div>
-
-      <div class="nav-right">
-        <a href="favoritos.html" class="nav-cart" aria-label="Favoritos">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path
-              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-            </path>
-          </svg>
-        </a>
-        <button id="userLoginToggle" class="nav-cart" aria-label="Usuario">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-        </button>
-        <button id="cartToggle" class="nav-cart" aria-label="Carrito de compras">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <path d="M16 10a4 4 0 01-8 0" />
-          </svg>
-          <span id="cartBadge" class="cart-badge">0</span>
-        </button>
-        <button id="navHamburger" class="nav-hamburger" aria-label="Menú">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
+  <honatu-header></honatu-header>
 
   <!-- HERO TALLERES -->
   <header class="hero" style="padding-top: 100px;">

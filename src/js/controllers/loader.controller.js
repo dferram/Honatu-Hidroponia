@@ -2,9 +2,17 @@
    HONATU – Loader & Page Transition Controller
    ============================================ */
 
+import logoImg from '../../assets/logo/Logo.png';
+
 export function initLoader() {
   const loader = document.getElementById('loader');
   if (!loader) return;
+
+  // Ensure loader logo uses bundled asset
+  const loaderImg = loader.querySelector('.loader-logo');
+  if (loaderImg) {
+    loaderImg.src = logoImg;
+  }
 
   // Smoothly hide loader after page load
   const hideLoader = () => {
