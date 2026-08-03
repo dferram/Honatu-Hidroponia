@@ -126,6 +126,38 @@
   color: #FFFFFF;
 }
 
+/* Back button in navbar - Matches sand/cream logo color for optimal contrast */
+.btn-nav-back,
+.navbar .btn-secondary,
+.navbar--solid .btn-secondary,
+.navbar--transparent .btn-secondary {
+  background: rgba(212, 197, 169, 0.12) !important;
+  color: var(--color-sand-light, #E8DFCC) !important;
+  border: 1.5px solid var(--color-sand, #D4C5A9) !important;
+  border-radius: var(--radius-full) !important;
+  padding: 6px 18px !important;
+  font-size: 0.84rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all var(--duration-fast, 0.2s) ease !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-nav-back:hover,
+.navbar .btn-secondary:hover,
+.navbar--solid .btn-secondary:hover,
+.navbar--transparent .btn-secondary:hover {
+  background: var(--color-sand, #D4C5A9) !important;
+  color: #1C130D !important;
+  border-color: var(--color-sand-light, #E8DFCC) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 14px rgba(212, 197, 169, 0.3) !important;
+}
+
 .nav-right {
   display: flex;
   align-items: center;

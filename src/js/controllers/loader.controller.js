@@ -35,24 +35,4 @@ export function initLoader() {
   window.addEventListener('pageshow', () => {
     hideLoader();
   });
-
-  // Trigger loader on page tab transitions
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('a');
-    if (!link) return;
-
-    const href = link.getAttribute('href');
-    if (!href) return;
-
-    // Check if it's a real navigation to another page
-    const isExternal = href.startsWith('http://') || href.startsWith('https://') || link.target === '_blank' || href.startsWith('mailto:') || href.startsWith('tel:');
-    const isAnchorOnly = href.startsWith('#') || href.startsWith('javascript:');
-
-    if (!isExternal && !isAnchorOnly) {
-      loader.classList.remove('loader--hide');
-      loader.setAttribute('aria-hidden', 'false');
-      // Safety timeout: if page change doesn't happen, hide it after 1.5s
-      setTimeout(hideLoader, 1500);
-    }
-  });
 }

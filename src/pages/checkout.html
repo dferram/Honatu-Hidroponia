@@ -228,6 +228,19 @@
             return;
           }
 
+          const isAuth = localStorage.getItem('honatu-auth') === 'true';
+          if (!isAuth) {
+            if (typeof window.openLoginModal === 'function') {
+              window.openLoginModal({
+                subtitle: 'Inicia sesión o regístrate para confirmar tu pago y orden.',
+                onLoginSuccess: () => {
+                  btnConfirmPayment.click();
+                }
+              });
+            }
+            return;
+          }
+
           // Show processing state
           btnConfirmPayment.textContent = 'Procesando...';
           btnConfirmPayment.disabled = true;

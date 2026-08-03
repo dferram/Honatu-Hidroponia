@@ -424,11 +424,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.btn-add-cart, .btn-add-cart-lg').forEach(btn => {
     btn.addEventListener('click', function () {
-      if (!isAuthenticated) {
-        openLoginModal();
-        return;
-      }
-
       const card = this.closest('.product-card') || this.closest('.product-info');
       if (!card) return;
 
@@ -532,10 +527,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.btn-favorite').forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
-      if (!isAuthenticated) {
-        openLoginModal();
-        return;
-      }
       
       const card = this.closest('.product-card') || this.closest('.product-info');
       if (!card) return;
