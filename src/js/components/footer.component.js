@@ -3,6 +3,8 @@
    Single source of truth for the site-wide footer
    ============================================ */
 
+import logoImg from '../../assets/logo/Logo.png';
+
 /**
  * Global footer configuration
  * Edit here to update links, texts, schedules, or contact details everywhere
@@ -10,6 +12,7 @@
 export const FOOTER_CONFIG = {
   brand: {
     logoAlt: 'Honatu',
+    logoSrc: logoImg,
     logoRelPath: 'assets/logo/Logo.png',
     description: 'Insumos hidropónicos premium para cultivadores que buscan calidad, conocimiento y comunidad.'
   },
@@ -110,7 +113,7 @@ export function resolveRelativePath(targetPath) {
  * Generates the unified HTML markup for the Honatu footer
  */
 export function generateFooterHTML(config = FOOTER_CONFIG) {
-  const logoSrc = resolveRelativePath(config.brand.logoRelPath);
+  const logoSrc = config.brand.logoSrc || logoImg || resolveRelativePath(config.brand.logoRelPath);
 
   const socialHTML = config.social.map(item => `
     <a href="${item.url}" target="_blank" rel="noopener noreferrer" aria-label="${item.name}">

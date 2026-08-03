@@ -4,10 +4,12 @@
    ============================================ */
 
 import { isSubpageView, resolveRelativePath } from './footer.component.js';
+import logoImg from '../../assets/logo/Logo.png';
 
 export const HEADER_CONFIG = {
   brand: {
     logoAlt: 'Honatu',
+    logoSrc: logoImg,
     logoRelPath: 'assets/logo/Logo.png',
     // homeHref is resolved at render time depending on context
   },
@@ -41,7 +43,7 @@ export function getCurrentPageName() {
 export function generateHeaderHTML(config = HEADER_CONFIG) {
   const isSubpage = isSubpageView();
   const currentPage = getCurrentPageName();
-  const logoSrc = resolveRelativePath(config.brand.logoRelPath);
+  const logoSrc = config.brand.logoSrc || logoImg || resolveRelativePath(config.brand.logoRelPath);
   // Logo: on home page scroll to #hero; on subpages navigate to index.html
   const logoHref = isSubpage ? resolveRelativePath('index.html') : '#hero';
   const favHref = resolveRelativePath('pages/favoritos.html');
