@@ -8,14 +8,14 @@ import { isSubpageView, resolveRelativePath } from './footer.component.js';
 export const HEADER_CONFIG = {
   brand: {
     logoAlt: 'Honatu',
-    logoRelPath: 'assets/logo/Logo.png',
+    logoRelPath: 'src/assets/logo/Logo.png',
     // homeHref is resolved at render time depending on context
   },
   navigation: [
-    { label: 'Servicios',      path: 'pages/servicios.html', homeHash: '#impacto'     },
-    { label: 'Quienes somos?', path: 'pages/nosotros.html',  homeHash: '#nosotros'    },
-    { label: 'Tienda',         path: 'pages/tienda.html',    homeHash: '#tienda'      },
-    { label: 'Blog',           path: 'pages/educacion.html', homeHash: '#educacion'   }
+    { label: 'Servicios', path: 'pages/servicios.html', homeHash: '#impacto' },
+    { label: 'Quienes somos?', path: 'pages/nosotros.html', homeHash: '#nosotros' },
+    { label: 'Tienda', path: 'pages/tienda.html', homeHash: '#tienda' },
+    { label: 'Blog', path: 'pages/educacion.html', homeHash: '#educacion' }
   ],
   cta: {
     label: 'Contactanos',

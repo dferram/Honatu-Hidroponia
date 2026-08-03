@@ -5,13 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Talleres e Inmersiones Hidropónicas | Honatu</title>
-  <meta name="description" content="Aprende sobre hidroponía en nuestros talleres presenciales y online. Descubre experiencias pasadas y regístrate a los próximos eventos.">
+  <meta name="description"
+    content="Aprende sobre hidroponía en nuestros talleres presenciales y online. Descubre experiencias pasadas y regístrate a los próximos eventos.">
 
   <!-- Shared stylesheets -->
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/pages/subpage.css">
   <link rel="stylesheet" href="../css/pages/ecommerce.css">
-  <link rel="icon" href="../assets/logo/Logo.png" type="image/png">
+  <link rel="icon" href="src/assets/logo/Logo.png" type="image/png">
   <script type="module" src="../js/app.js"></script>
 
   <style>
@@ -19,6 +20,7 @@
     .workshop-section {
       padding: var(--space-4xl) 0;
     }
+
     .workshop-card {
       background: var(--color-white);
       border-radius: var(--radius-lg);
@@ -30,25 +32,30 @@
       box-shadow: 0 4px 20px rgba(59, 47, 30, 0.04);
       transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
     }
+
     .workshop-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 32px rgba(59, 47, 30, 0.1);
     }
+
     .workshop-img {
       position: relative;
       height: 220px;
       overflow: hidden;
       background: linear-gradient(135deg, var(--color-cream), var(--color-sand-light));
     }
+
     .workshop-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform var(--duration-slow) var(--ease-out);
     }
+
     .workshop-card:hover .workshop-img img {
       transform: scale(1.05);
     }
+
     .workshop-badge {
       position: absolute;
       top: 16px;
@@ -62,15 +69,18 @@
       letter-spacing: 0.5px;
       text-transform: uppercase;
     }
+
     .workshop-badge--online {
       background: var(--color-terracotta);
     }
+
     .workshop-body {
       padding: var(--space-lg);
       display: flex;
       flex-direction: column;
       flex: 1;
     }
+
     .workshop-date {
       font-size: 0.85rem;
       font-weight: 600;
@@ -80,12 +90,14 @@
       align-items: center;
       gap: 6px;
     }
+
     .workshop-title {
       font-family: var(--font-display);
       font-size: 1.25rem;
       color: var(--color-earth);
       margin-bottom: var(--space-sm);
     }
+
     .workshop-desc {
       font-size: 0.88rem;
       color: var(--color-gray-500);
@@ -93,11 +105,13 @@
       margin-bottom: var(--space-md);
       flex: 1;
     }
+
     .workshop-agenda {
       list-style: none;
       padding: 0;
       margin: 0 0 var(--space-lg) 0;
     }
+
     .workshop-agenda li {
       font-size: 0.85rem;
       color: var(--color-gray-600);
@@ -106,12 +120,14 @@
       align-items: center;
       gap: 8px;
     }
+
     .past-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: var(--space-lg);
       margin-top: var(--space-xl);
     }
+
     .past-card {
       background: var(--color-white);
       border-radius: var(--radius-lg);
@@ -119,14 +135,17 @@
       border: 1px solid rgba(212, 197, 169, 0.3);
       box-shadow: 0 4px 16px rgba(59, 47, 30, 0.03);
     }
+
     .past-card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
     }
+
     .past-card-body {
       padding: var(--space-lg);
     }
+
     .past-card-title {
       font-family: var(--font-display);
       font-size: 1.1rem;
@@ -134,6 +153,7 @@
       color: var(--color-forest);
       margin-bottom: 4px;
     }
+
     .past-card-meta {
       font-size: 0.8rem;
       color: var(--color-sage);
@@ -148,7 +168,7 @@
   <!-- LOADER -->
   <div id="loader" class="loader" aria-hidden="false">
     <div class="loader-inner">
-      <img src="../assets/logo/Logo.png" alt="Honatu" class="loader-logo">
+      <img src="src/assets/logo/Logo.png" alt="Honatu" class="loader-logo">
       <div class="loader-bar">
         <div class="loader-bar-fill"></div>
       </div>
@@ -160,20 +180,36 @@
     <div class="nav-container">
       <div style="display: flex; align-items: center; gap: 16px;">
         <a href="../index.html" class="nav-logo" aria-label="Inicio">
-          <img src="../assets/logo/Logo.png" alt="Honatu">
+          <img src="src/assets/logo/Logo.png" alt="Honatu">
         </a>
-        <a href="../index.html" class="btn btn-secondary btn-sm" style="border-radius: var(--radius-full); padding: 6px 16px; font-size: 0.82rem; text-decoration: none;">&larr; Volver al Inicio</a>
+        <a href="../index.html" class="btn btn-secondary btn-sm"
+          style="border-radius: var(--radius-full); padding: 6px 16px; font-size: 0.82rem; text-decoration: none;">&larr;
+          Volver al Inicio</a>
       </div>
 
       <div class="nav-right">
         <a href="favoritos.html" class="nav-cart" aria-label="Favoritos">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+            </path>
+          </svg>
         </a>
         <button id="userLoginToggle" class="nav-cart" aria-label="Usuario">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
         </button>
         <button id="cartToggle" class="nav-cart" aria-label="Carrito de compras">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 01-8 0" />
+          </svg>
           <span id="cartBadge" class="cart-badge">0</span>
         </button>
         <button id="navHamburger" class="nav-hamburger" aria-label="Menú">
@@ -189,7 +225,8 @@
       <p class="eyebrow">Capacitación Práctica</p>
       <h1>Talleres e Inmersiones Hidropónicas</h1>
       <p>
-        Aprende de forma 100% práctica con los expertos de Honatu. Conoce nuestros talleres anteriores y reserva tu lugar para las próximas sesiones.
+        Aprende de forma 100% práctica con los expertos de Honatu. Conoce nuestros talleres anteriores y reserva tu
+        lugar para las próximas sesiones.
       </p>
       <div style="margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
         <a href="#proximos" class="btn btn-primary" style="text-decoration: none;">Ver Próximos Talleres &rarr;</a>
@@ -206,7 +243,8 @@
         <div class="section-intro" style="text-align: left; margin-left: 0; margin-right: auto;">
           <span class="section-eyebrow">Convocatorias Abiertas</span>
           <h2 class="section-title">Próximos Talleres y Masterclasses</h2>
-          <p class="section-subtitle">Reserva tu cupo para aprender a construir, alimentar y mantener tus propios sistemas hidropónicos.</p>
+          <p class="section-subtitle">Reserva tu cupo para aprender a construir, alimentar y mantener tus propios
+            sistemas hidropónicos.</p>
         </div>
 
         <div class="shop-grid">
@@ -218,17 +256,24 @@
             </div>
             <div class="workshop-body">
               <div class="workshop-date">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
                 Sábado 15 de Agosto · 10:00 AM
               </div>
               <h3 class="workshop-title">Montaje y Control de Sistemas NFT</h3>
-              <p class="workshop-desc">Taller intensivo teórico-práctico de 5 horas donde aprenderás a diseñar e instalar tuberías NFT, bombas y flujo continuo de nutrientes.</p>
+              <p class="workshop-desc">Taller intensivo teórico-práctico de 5 horas donde aprenderás a diseñar e
+                instalar tuberías NFT, bombas y flujo continuo de nutrientes.</p>
               <ul class="workshop-agenda">
                 <li>Selección de perfiles PVC y bombas</li>
                 <li>Calibración precisa de electroconductividad (EC)</li>
                 <li>Preparación de soluciones A+B en vivo</li>
               </ul>
-              <button class="btn btn-terracotta btn-register-workshop" data-workshop="Montaje y Control de Sistemas NFT" style="width: 100%; justify-content: center;">Reservar Lugar ($450 MXN)</button>
+              <button class="btn btn-terracotta btn-register-workshop" data-workshop="Montaje y Control de Sistemas NFT"
+                style="width: 100%; justify-content: center;">Reservar Lugar ($450 MXN)</button>
             </div>
           </article>
 
@@ -240,17 +285,24 @@
             </div>
             <div class="workshop-body">
               <div class="workshop-date">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
                 Jueves 28 de Agosto · 6:00 PM
               </div>
               <h3 class="workshop-title">Nutrición Vegetal y Diagnóstico de Carencias</h3>
-              <p class="workshop-desc">Masterclass virtual enfocada en formular soluciones de nutrientes a medida según el tipo de hortaliza y detectar síntomas visuales de deficiencia.</p>
+              <p class="workshop-desc">Masterclass virtual enfocada en formular soluciones de nutrientes a medida según
+                el tipo de hortaliza y detectar síntomas visuales de deficiencia.</p>
               <ul class="workshop-agenda">
                 <li>Diagnóstico foliar de nitrógeno, fósforo y hierro</li>
                 <li>Ajustes de pH y prevención de bloqueo de nutrientes</li>
                 <li>Incluye plantilla Excel de formulación de nutrientes</li>
               </ul>
-              <button class="btn btn-terracotta btn-register-workshop" data-workshop="Nutrición Vegetal y Diagnóstico" style="width: 100%; justify-content: center;">Reservar Lugar ($290 MXN)</button>
+              <button class="btn btn-terracotta btn-register-workshop" data-workshop="Nutrición Vegetal y Diagnóstico"
+                style="width: 100%; justify-content: center;">Reservar Lugar ($290 MXN)</button>
             </div>
           </article>
 
@@ -262,17 +314,24 @@
             </div>
             <div class="workshop-body">
               <div class="workshop-date">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
                 Sábado 10 de Septiembre · 10:00 AM
               </div>
               <h3 class="workshop-title">Huertos Hidropónicos Urbanos en Casa</h3>
-              <p class="workshop-desc">Ideal para familias y principiantes. Diseñado para comenzar un huerto de lechugas, acelgas y hierbas aromáticas en balcones o patios pequeños.</p>
+              <p class="workshop-desc">Ideal para familias y principiantes. Diseñado para comenzar un huerto de
+                lechugas, acelgas y hierbas aromáticas en balcones o patios pequeños.</p>
               <ul class="workshop-agenda">
                 <li>Incluye kit inicial de sustratos y semillas</li>
                 <li>Optimización de luz natural y espacio</li>
                 <li>Cosecha continua durante todo el año</li>
               </ul>
-              <button class="btn btn-terracotta btn-register-workshop" data-workshop="Huertos Hidropónicos Urbanos" style="width: 100%; justify-content: center;">Reservar Lugar ($520 MXN)</button>
+              <button class="btn btn-terracotta btn-register-workshop" data-workshop="Huertos Hidropónicos Urbanos"
+                style="width: 100%; justify-content: center;">Reservar Lugar ($520 MXN)</button>
             </div>
           </article>
         </div>
@@ -285,7 +344,8 @@
         <div class="section-intro" style="text-align: left; margin-left: 0; margin-right: auto;">
           <span class="section-eyebrow">Nuestra Trayectoria</span>
           <h2 class="section-title">Talleres Anteriores y Galería</h2>
-          <p class="section-subtitle">Más de 350 productores urbanos y apasionados del cultivo han aprendido con Honatu.</p>
+          <p class="section-subtitle">Más de 350 productores urbanos y apasionados del cultivo han aprendido con Honatu.
+          </p>
         </div>
 
         <div class="past-gallery">
@@ -294,7 +354,8 @@
             <div class="past-card-body">
               <div class="past-card-title">Taller Práctico de Verano 2024</div>
               <div class="past-card-meta">Julio 2024 · 42 Asistentes · Presencial</div>
-              <p style="font-size: 0.88rem; color: var(--color-gray-600); line-height: 1.5;">Sesión intensiva en vivero sobre sistemas DWC y germinación en foami agrícola.</p>
+              <p style="font-size: 0.88rem; color: var(--color-gray-600); line-height: 1.5;">Sesión intensiva en vivero
+                sobre sistemas DWC y germinación en foami agrícola.</p>
             </div>
           </div>
 
@@ -303,7 +364,8 @@
             <div class="past-card-body">
               <div class="past-card-title">Workshop de Sensores y Automatización</div>
               <div class="past-card-meta">Mayo 2024 · 28 Asistentes · Híbrido</div>
-              <p style="font-size: 0.88rem; color: var(--color-gray-600); line-height: 1.5;">Integración de temporizadores digitales, automatización de riego y bombas de recirculación.</p>
+              <p style="font-size: 0.88rem; color: var(--color-gray-600); line-height: 1.5;">Integración de
+                temporizadores digitales, automatización de riego y bombas de recirculación.</p>
             </div>
           </div>
 
@@ -312,7 +374,8 @@
             <div class="past-card-body">
               <div class="past-card-title">Seminario Agricultura Sostenible</div>
               <div class="past-card-meta">Febrero 2024 · 65 Asistentes · Virtual</div>
-              <p style="font-size: 0.88rem; color: var(--color-gray-600); line-height: 1.5;">Encuentro comunitario enfocado en ahorro hídrico y cero uso de plaguicidas tóxicos.</p>
+              <p style="font-size: 0.88rem; color: var(--color-gray-600); line-height: 1.5;">Encuentro comunitario
+                enfocado en ahorro hídrico y cero uso de plaguicidas tóxicos.</p>
             </div>
           </div>
         </div>
@@ -328,7 +391,11 @@
   <div id="workshopOverlay" class="login-overlay"></div>
   <div id="workshopModal" class="login-modal" aria-hidden="true" role="dialog">
     <div class="login-modal-content">
-      <button id="workshopClose" class="login-close" aria-label="Cerrar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <button id="workshopClose" class="login-close" aria-label="Cerrar"><svg width="20" height="20" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg></button>
       <div class="login-header">
         <h2 style="font-size: 1.6rem; color: var(--color-forest);">Registro a Taller</h2>
         <p id="workshopSelectedName" style="font-weight: 600; color: var(--color-terracotta); margin-top: 4px;"></p>
@@ -346,7 +413,8 @@
           <label class="form-label" for="wsPhone">Teléfono / WhatsApp</label>
           <input type="tel" id="wsPhone" class="form-input" required placeholder="55 1234 5678">
         </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 12px;">Confirmar mi Registro &rarr;</button>
+        <button type="submit" class="btn btn-primary"
+          style="width: 100%; justify-content: center; margin-top: 12px;">Confirmar mi Registro &rarr;</button>
       </form>
     </div>
   </div>
@@ -355,11 +423,20 @@
   <div id="loginOverlay" class="login-overlay"></div>
   <div id="loginModal" class="login-modal" aria-hidden="true" role="dialog">
     <div class="login-modal-content">
-      <button id="loginClose" class="login-close" aria-label="Cerrar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-      <div class="login-header"><h2 id="loginTitle">Inicia Sesión</h2><p id="loginSubtitle">Inicia sesión primero para poder comprar o guardar favoritos.</p></div>
+      <button id="loginClose" class="login-close" aria-label="Cerrar"><svg width="20" height="20" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg></button>
+      <div class="login-header">
+        <h2 id="loginTitle">Inicia Sesión</h2>
+        <p id="loginSubtitle">Inicia sesión primero para poder comprar o guardar favoritos.</p>
+      </div>
       <form id="loginForm" class="login-form">
-        <div class="form-group"><label class="form-label" for="loginEmail">Correo</label><input type="email" id="loginEmail" class="form-input" required></div>
-        <div class="form-group"><label class="form-label" for="loginPassword">Contraseña</label><input type="password" id="loginPassword" class="form-input" required></div>
+        <div class="form-group"><label class="form-label" for="loginEmail">Correo</label><input type="email"
+            id="loginEmail" class="form-input" required></div>
+        <div class="form-group"><label class="form-label" for="loginPassword">Contraseña</label><input type="password"
+            id="loginPassword" class="form-input" required></div>
         <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Ingresar</button>
       </form>
     </div>
@@ -369,14 +446,20 @@
   <aside id="cartPanel" class="cart-panel" aria-label="Carrito de compras">
     <div class="cart-header">
       <h3>Tu Carrito</h3>
-      <button id="cartClose" class="cart-close" aria-label="Cerrar carrito"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <button id="cartClose" class="cart-close" aria-label="Cerrar carrito"><svg width="20" height="20"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg></button>
     </div>
     <div id="cartItems" class="cart-items"></div>
     <div class="cart-footer">
       <div class="cart-total">
         <span class="cart-total-label">Total:</span><span id="cartTotal" class="cart-total-value">$0 MXN</span>
       </div>
-      <a href="carrito.html" class="btn btn-terracotta btn-checkout" style="text-decoration: none; text-align: center;">Ver Carrito Completo &rarr;</a>
+      <a href="carrito.html" class="btn btn-terracotta btn-checkout"
+        style="text-decoration: none; text-align: center;">Ver Carrito Completo &rarr;</a>
     </div>
   </aside>
 
@@ -423,4 +506,5 @@
   </script>
 
 </body>
+
 </html>

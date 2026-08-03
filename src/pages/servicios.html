@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servicios | Honatu</title>
-  
+
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/pages/home.css">
-  <link rel="icon" href="../assets/logo/Logo.png" type="image/png">
-  
+  <link rel="icon" href="src/assets/logo/Logo.png" type="image/png">
+
   <script type="module" src="../js/app.js"></script>
 </head>
 
@@ -18,7 +18,7 @@
   <!-- LOADER -->
   <div id="loader" class="loader" aria-hidden="false">
     <div class="loader-inner">
-      <img src="../assets/logo/Logo.png" alt="Honatu" class="loader-logo">
+      <img src="src/assets/logo/Logo.png" alt="Honatu" class="loader-logo">
       <div class="loader-bar">
         <div class="loader-bar-fill"></div>
       </div>
@@ -33,15 +33,19 @@
       <div class="section-header reveal" style="text-align: center; margin-bottom: 3rem;">
         <span class="section-eyebrow">Soluciones a tu medida</span>
         <h1 class="section-title">Solicitar Servicio</h1>
-        <p class="section-subtitle">Completa el formulario para que podamos brindarte atención personalizada según tus necesidades.</p>
+        <p class="section-subtitle">Completa el formulario para que podamos brindarte atención personalizada según tus
+          necesidades.</p>
       </div>
-      
-      <div class="reveal servicio-form-wrapper" data-delay="1" style="background: white; padding: var(--space-2xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);">
+
+      <div class="reveal servicio-form-wrapper" data-delay="1"
+        style="background: white; padding: var(--space-2xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);">
         <form id="servicioForm" style="display: flex; flex-direction: column; gap: var(--space-lg);">
-          
+
           <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
-            <label for="tipo_servicio" style="font-weight: 600; color: var(--color-forest);">Servicio de Interés *</label>
-            <select id="tipo_servicio" name="tipo_servicio" required style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
+            <label for="tipo_servicio" style="font-weight: 600; color: var(--color-forest);">Servicio de Interés
+              *</label>
+            <select id="tipo_servicio" name="tipo_servicio" required
+              style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
               <option value="" disabled selected>Selecciona un servicio</option>
               <option value="asesoria">Asesoría</option>
               <option value="insumos">Insumos</option>
@@ -53,25 +57,31 @@
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
             <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
               <label for="nombre" style="font-weight: 600; color: var(--color-forest);">Nombre Completo *</label>
-              <input type="text" id="nombre" name="nombre" required style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
+              <input type="text" id="nombre" name="nombre" required
+                style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
             </div>
             <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
               <label for="email" style="font-weight: 600; color: var(--color-forest);">Correo Electrónico *</label>
-              <input type="email" id="email" name="email" required style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
+              <input type="email" id="email" name="email" required
+                style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
             </div>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
             <label for="telefono" style="font-weight: 600; color: var(--color-forest);">Teléfono / WhatsApp</label>
-            <input type="tel" id="telefono" name="telefono" style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
+            <input type="tel" id="telefono" name="telefono"
+              style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
           </div>
 
           <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
-            <label for="mensaje" style="font-weight: 600; color: var(--color-forest);">Cuéntanos sobre tu proyecto *</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; resize: vertical; color: var(--color-forest);"></textarea>
+            <label for="mensaje" style="font-weight: 600; color: var(--color-forest);">Cuéntanos sobre tu proyecto
+              *</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required
+              style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; resize: vertical; color: var(--color-forest);"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary" style="align-self: flex-start; margin-top: var(--space-sm);">Enviar Solicitud</button>
+          <button type="submit" class="btn btn-primary"
+            style="align-self: flex-start; margin-top: var(--space-sm);">Enviar Solicitud</button>
         </form>
       </div>
     </div>
@@ -86,7 +96,7 @@
       const params = new URLSearchParams(window.location.search);
       const servicioSelect = document.getElementById("tipo_servicio");
       const servicioParam = params.get("servicio");
-      
+
       if (servicioParam && servicioSelect) {
         const option = Array.from(servicioSelect.options).find(opt => opt.value === servicioParam);
         if (option) {
@@ -96,4 +106,5 @@
     });
   </script>
 </body>
+
 </html>
