@@ -176,9 +176,9 @@ export function getCloudinaryUrl(publicId, options = {}) {
     return publicId;
   }
 
-  // Bypass Cloudinary entirely for the Logo as requested
-  if (publicId.includes('Logo.png')) {
-    return publicId;
+  // Bypass Cloudinary entirely for the Logo as requested, stripping any legacy 'src/' prefix
+  if (publicId.includes('Logo.png') || publicId.includes('logo.png')) {
+    return publicId.replace(/^(\.\/|\.\.\/)?src\//, '');
   }
 
   // Clean public ID from full URLs or local relative prefixes

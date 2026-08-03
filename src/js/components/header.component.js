@@ -8,7 +8,7 @@ import { isSubpageView, resolveRelativePath } from './footer.component.js';
 export const HEADER_CONFIG = {
   brand: {
     logoAlt: 'Honatu',
-    logoRelPath: 'src/assets/logo/Logo.png',
+    logoRelPath: 'assets/logo/Logo.png',
     // homeHref is resolved at render time depending on context
   },
   navigation: [

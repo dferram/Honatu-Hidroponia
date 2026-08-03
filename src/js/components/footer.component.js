@@ -10,7 +10,7 @@
 export const FOOTER_CONFIG = {
   brand: {
     logoAlt: 'Honatu',
-    logoRelPath: 'src/assets/logo/Logo.png',
+    logoRelPath: 'assets/logo/Logo.png',
     description: 'Insumos hidropónicos premium para cultivadores que buscan calidad, conocimiento y comunidad.'
   },
   social: [
@@ -97,11 +97,13 @@ export function resolveRelativePath(targetPath) {
     return isSubpage ? `./${pageFileName}` : `./pages/${pageFileName}`;
   }
 
-  if (targetPath.startsWith('assets/')) {
-    return isSubpage ? `../${targetPath}` : `./${targetPath}`;
+  const cleanPath = targetPath.replace(/^(\.\/|\.\.\/)?src\//, '');
+
+  if (cleanPath.startsWith('assets/')) {
+    return isSubpage ? `../${cleanPath}` : `./${cleanPath}`;
   }
 
-  return isSubpage ? `../${targetPath}` : `./${targetPath}`;
+  return isSubpage ? `../${cleanPath}` : `./${cleanPath}`;
 }
 
 /**
