@@ -14,7 +14,7 @@ export const HEADER_CONFIG = {
     // homeHref is resolved at render time depending on context
   },
   navigation: [
-    { label: 'Servicios', path: 'pages/servicios.html', homeHash: '#impacto' },
+    { label: 'Servicios', path: 'pages/servicios.html', homeHash: '#servicios' },
     { label: 'Quienes somos?', path: 'pages/nosotros.html', homeHash: '#nosotros' },
     { label: 'Tienda', path: 'pages/tienda.html', homeHash: '#tienda' },
     { label: 'Blog', path: 'pages/educacion.html', homeHash: '#educacion' }

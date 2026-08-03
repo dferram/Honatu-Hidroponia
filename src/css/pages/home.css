@@ -156,6 +156,15 @@
 }
 
 /* ==========================================
+   SERVICES SECTION (Nuestros Servicios)
+   ========================================== */
+.services-section {
+  padding: var(--space-5xl) 0;
+  background: var(--color-cream);
+  position: relative;
+}
+
+/* ==========================================
    ABOUT / NOSOTROS SECTION
    ========================================== */
 .about {

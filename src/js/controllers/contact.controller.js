@@ -4,24 +4,39 @@
    ============================================ */
 
 export function initContactForm() {
-  const contactForm = document.getElementById('contactForm');
-  if (!contactForm) return;
+  const forms = [
+    document.getElementById('contactForm'),
+    document.getElementById('servicioForm')
+  ].filter(Boolean);
 
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  forms.forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const originalHTML = submitBtn.innerHTML;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalHTML = submitBtn ? submitBtn.innerHTML : 'Enviar';
 
-    submitBtn.innerHTML = 'Mensaje Enviado <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
-    submitBtn.style.background = 'var(--color-sage)';
-    submitBtn.disabled = true;
+      if (submitBtn) {
+        submitBtn.innerHTML = '¡Solicitud Enviada con Éxito! <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+        submitBtn.style.background = 'var(--color-sage)';
+        submitBtn.style.borderColor = 'var(--color-sage)';
+        submitBtn.disabled = true;
+      }
 
-    setTimeout(() => {
-      submitBtn.innerHTML = originalHTML;
-      submitBtn.style.background = '';
-      submitBtn.disabled = false;
-      contactForm.reset();
-    }, 3000);
+      if (window.showToast) {
+        window.showToast('¡Gracias! Hemos recibido tu solicitud. Nos pondremos en contacto contigo muy pronto.', 'success');
+      }
+
+      setTimeout(() => {
+        if (submitBtn) {
+          submitBtn.innerHTML = originalHTML;
+          submitBtn.style.background = '';
+          submitBtn.style.borderColor = '';
+          submitBtn.disabled = false;
+        }
+        form.reset();
+      }, 3500);
+    });
   });
 }
+

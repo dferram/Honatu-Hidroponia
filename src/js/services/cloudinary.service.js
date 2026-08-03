@@ -87,6 +87,12 @@ export const CLOUDINARY_IMAGE_MAP = {
   'FondoHero.jpeg': 'WhatsApp_Image_2026-07-28_at_3.40.54_PM_csc7i5',
   'main-sample.png': 'main-sample',
 
+  // Servicios
+  'servicios/asesoria.jpg': 'Huerto_xoiv8v',
+  'servicios/insumos.jpg': 'Slab_de_fibra_de_coco_gawh46',
+  'servicios/construccion.jpg': 'Aero_real_d3deyi',
+  'servicios/talleres.jpg': 'Huerto3_pxlbty',
+
   // Nosotros
   'nosotros/img_1.jpg': 'Huerto_xoiv8v',
   'nosotros/img_2.jpg': 'Huerto3_pxlbty',

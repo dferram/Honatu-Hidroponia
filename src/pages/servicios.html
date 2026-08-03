@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servicios | Honatu</title>
+  <meta name="description" content="Servicios integrales de hidroponía: asesoría técnica, venta de insumos, construcción de invernaderos y talleres de capacitación.">
 
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/pages/home.css">
@@ -28,79 +29,183 @@
   <!-- NAVBAR -->
   <honatu-header></honatu-header>
 
-  <main style="padding-top: 120px; background: var(--color-cream-warm); min-height: 100vh;">
-    <div class="container" style="max-width: 800px; padding-bottom: var(--space-4xl);">
-      <div class="section-header reveal" style="text-align: center; margin-bottom: 3rem;">
-        <span class="section-eyebrow">Soluciones a tu medida</span>
-        <h1 class="section-title">Solicitar Servicio</h1>
-        <p class="section-subtitle">Completa el formulario para que podamos brindarte atención personalizada según tus
-          necesidades.</p>
+  <main style="padding-top: var(--nav-height, 80px); background: var(--color-cream, #F5F0E8); min-height: 100vh;">
+    <!-- SERVICES SHOWCASE SECTION -->
+    <section class="services-section">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="services-header reveal">
+          <span class="services-eyebrow">Soluciones a tu medida</span>
+          <h1 class="services-title">Nuestros Servicios</h1>
+          <p class="services-subtitle">Ofrecemos una amplia gama de soluciones y servicios especializados en hidroponía y agricultura protegida diseñados para impulsar tus proyectos y maximizar tu producción.</p>
+        </div>
+
+        <!-- 4-Cards Grid -->
+        <div class="services-grid">
+          
+          <!-- Card 1: Asesoría -->
+          <article class="service-card-item reveal" data-delay="1">
+            <div class="service-card-thumb">
+              <img src="https://res.cloudinary.com/usn9paiw/image/upload/f_auto,q_auto,c_fill,w_600,h_400/Huerto_xoiv8v" data-cloudinary="Huerto_xoiv8v" alt="Asesoría Técnica en Hidroponía" loading="lazy">
+            </div>
+            <div class="service-card-content">
+              <h2 class="service-card-heading">Asesoría especializada</h2>
+              <p class="service-card-description">Orientación técnica y acompañamiento continuo en manejo agronómico, control preventivo de plagas, fórmulas nutricionales y optimización de cultivos hidropónicos.</p>
+              <button type="button" class="service-card-action" onclick="selectService('asesoria')">
+                Solicitar servicio
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2: Insumos -->
+          <article class="service-card-item reveal" data-delay="2">
+            <div class="service-card-thumb">
+              <img src="https://res.cloudinary.com/usn9paiw/image/upload/f_auto,q_auto,c_fill,w_600,h_400/Slab_de_fibra_de_coco_gawh46" data-cloudinary="Slab_de_fibra_de_coco_gawh46" alt="Venta de Insumos Hidropónicos" loading="lazy">
+            </div>
+            <div class="service-card-content">
+              <h2 class="service-card-heading">Venta de insumos</h2>
+              <p class="service-card-description">Soluciones minerales balanceadas, sustratos certificados, fibra de coco, medidores de pH/EC y herramientas de alta calidad para un rendimiento óptimo.</p>
+              <button type="button" class="service-card-action" onclick="selectService('insumos')">
+                Solicitar servicio
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 3: Construcción -->
+          <article class="service-card-item reveal" data-delay="3">
+            <div class="service-card-thumb">
+              <img src="https://res.cloudinary.com/usn9paiw/image/upload/f_auto,q_auto,c_fill,w_600,h_400/Aero_real_d3deyi" data-cloudinary="Aero_real_d3deyi" alt="Construcción de Invernaderos y Sistemas Hidropónicos" loading="lazy">
+            </div>
+            <div class="service-card-content">
+              <h2 class="service-card-heading">Construcción de invernaderos</h2>
+              <p class="service-card-description">Diseño, fabricación y montaje de invernaderos protegidos, sistemas hidropónicos verticales y canales NFT adaptados a las condiciones de tu espacio.</p>
+              <button type="button" class="service-card-action" onclick="selectService('construccion')">
+                Solicitar servicio
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 4: Talleres -->
+          <article class="service-card-item reveal" data-delay="4">
+            <div class="service-card-thumb">
+              <img src="https://res.cloudinary.com/usn9paiw/image/upload/f_auto,q_auto,c_fill,w_600,h_400/Huerto3_pxlbty" data-cloudinary="Huerto3_pxlbty" alt="Talleres y Capacitación en Hidroponía" loading="lazy">
+            </div>
+            <div class="service-card-content">
+              <h2 class="service-card-heading">Talleres y capacitación</h2>
+              <p class="service-card-description">Cursos prácticos, masterclasses y capacitaciones para principiantes y productores comerciales sobre técnicas avanzadas de cultivo sin suelo.</p>
+              <button type="button" class="service-card-action" onclick="selectService('talleres')">
+                Solicitar servicio
+              </button>
+            </div>
+          </article>
+
+        </div>
       </div>
+    </section>
 
-      <div class="reveal servicio-form-wrapper" data-delay="1"
-        style="background: white; padding: var(--space-2xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);">
-        <form id="servicioForm" style="display: flex; flex-direction: column; gap: var(--space-lg);">
+    <!-- FORM SECTION -->
+    <section id="solicitar-servicio" style="padding: var(--space-4xl) 0 var(--space-5xl); background: #F3ECE2; border-top: 1px solid rgba(212, 197, 169, 0.3);">
+      <div class="container" style="max-width: 800px;">
+        <div class="section-header reveal" style="text-align: center; margin-bottom: 2.5rem;">
+          <span class="section-eyebrow" style="justify-content: center; color: #D36A44;">Atención personalizada</span>
+          <h2 class="section-title" style="font-size: 2.3rem;">Solicitar Información o Cotización</h2>
+          <p class="section-subtitle">Completa el formulario y un especialista de Honatu se comunicará contigo a la brevedad.</p>
+        </div>
 
-          <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
-            <label for="tipo_servicio" style="font-weight: 600; color: var(--color-forest);">Servicio de Interés
-              *</label>
-            <select id="tipo_servicio" name="tipo_servicio" required
-              style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
-              <option value="" disabled selected>Selecciona un servicio</option>
-              <option value="asesoria">Asesoría</option>
-              <option value="insumos">Insumos</option>
-              <option value="construccion">Construcción de invernaderos</option>
-              <option value="talleres">Talleres</option>
-            </select>
-          </div>
+        <div id="formWrapper" class="reveal servicio-form-wrapper" data-delay="1"
+          style="background: white; padding: var(--space-2xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); border: 1px solid rgba(212, 197, 169, 0.4); transition: all 0.3s ease;">
+          <form id="servicioForm" style="display: flex; flex-direction: column; gap: var(--space-lg);">
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
             <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
-              <label for="nombre" style="font-weight: 600; color: var(--color-forest);">Nombre Completo *</label>
-              <input type="text" id="nombre" name="nombre" required
+              <label for="tipo_servicio" style="font-weight: 600; color: var(--color-forest);">Servicio de Interés
+                *</label>
+              <select id="tipo_servicio" name="tipo_servicio" required
+                style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest); background: var(--color-off-white);">
+                <option value="" disabled selected>Selecciona un servicio</option>
+                <option value="asesoria">Asesoría especializada</option>
+                <option value="insumos">Venta de insumos</option>
+                <option value="construccion">Construcción de invernaderos</option>
+                <option value="talleres">Talleres y capacitación</option>
+              </select>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+              <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+                <label for="nombre" style="font-weight: 600; color: var(--color-forest);">Nombre Completo *</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre y apellido"
+                  style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+                <label for="email" style="font-weight: 600; color: var(--color-forest);">Correo Electrónico *</label>
+                <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com"
+                  style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+              <label for="telefono" style="font-weight: 600; color: var(--color-forest);">Teléfono / WhatsApp</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+52 442 123 4567"
                 style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
             </div>
+
             <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
-              <label for="email" style="font-weight: 600; color: var(--color-forest);">Correo Electrónico *</label>
-              <input type="email" id="email" name="email" required
-                style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
+              <label for="mensaje" style="font-weight: 600; color: var(--color-forest);">Cuéntanos sobre tu proyecto
+                *</label>
+              <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Describe brevemente tus requerimientos o dudas..."
+                style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; resize: vertical; color: var(--color-forest);"></textarea>
             </div>
-          </div>
 
-          <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
-            <label for="telefono" style="font-weight: 600; color: var(--color-forest);">Teléfono / WhatsApp</label>
-            <input type="tel" id="telefono" name="telefono"
-              style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; color: var(--color-forest);">
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
-            <label for="mensaje" style="font-weight: 600; color: var(--color-forest);">Cuéntanos sobre tu proyecto
-              *</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required
-              style="padding: var(--space-md); border: 1px solid var(--color-sage); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; resize: vertical; color: var(--color-forest);"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary"
-            style="align-self: flex-start; margin-top: var(--space-sm);">Enviar Solicitud</button>
-        </form>
+            <div style="display: flex; gap: var(--space-md); align-items: center; flex-wrap: wrap; margin-top: var(--space-sm);">
+              <button type="submit" class="btn btn-primary" style="background: #D36A44; border-color: #D36A44;">
+                Enviar Solicitud
+              </button>
+              <span style="font-size: 0.85rem; color: var(--color-gray-500);">Respuesta en menos de 24 horas</span>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
   <footer class="footer"></footer>
 
   <script>
+    // Función global para seleccionar servicio y hacer scroll suave al formulario
+    window.selectService = function(serviceKey) {
+      const select = document.getElementById("tipo_servicio");
+      if (select) {
+        select.value = serviceKey;
+      }
+      
+      const formSection = document.getElementById("solicitar-servicio");
+      const formWrapper = document.getElementById("formWrapper");
+      
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      if (formWrapper) {
+        formWrapper.style.boxShadow = "0 0 0 3px rgba(211, 106, 68, 0.4), var(--shadow-lg)";
+        setTimeout(() => {
+          formWrapper.style.boxShadow = "var(--shadow-md)";
+        }, 1500);
+      }
+    };
+
     // Auto-seleccionar el servicio basado en el parámetro URL
     document.addEventListener("DOMContentLoaded", () => {
       const params = new URLSearchParams(window.location.search);
-      const servicioSelect = document.getElementById("tipo_servicio");
       const servicioParam = params.get("servicio");
 
-      if (servicioParam && servicioSelect) {
-        const option = Array.from(servicioSelect.options).find(opt => opt.value === servicioParam);
-        if (option) {
-          option.selected = true;
+      if (servicioParam) {
+        const select = document.getElementById("tipo_servicio");
+        if (select) {
+          const option = Array.from(select.options).find(opt => opt.value === servicioParam);
+          if (option) {
+            select.value = servicioParam;
+          }
         }
       }
     });
