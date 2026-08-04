@@ -23,6 +23,8 @@ export default defineConfig({
         carrito: resolve(__dirname, 'src/pages/carrito.html'),
         checkout: resolve(__dirname, 'src/pages/checkout.html'),
         gracias: resolve(__dirname, 'src/pages/gracias.html'),
+        admin: resolve(__dirname, 'src/pages/admin.html'),
+        login: resolve(__dirname, 'src/pages/login.html'),
       },
     },
   },
