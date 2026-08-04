@@ -8,6 +8,13 @@
   <meta name="description"
     content="Gestiona tu información personal, consulta tus pedidos y edita tus direcciones de envío en Honatu.">
 
+  <!-- Google Fonts: Besley (Display/Heading) & Plus Jakarta Sans (Body/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <!-- Shared stylesheets -->
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/pages/subpage.css">
@@ -303,9 +310,14 @@
           <!-- SIDEBAR TAB SWITCHER -->
           <aside class="account-sidebar">
             <div class="account-user-card">
-              <div class="account-avatar">H</div>
+              <div class="account-avatar" id="profileDisplayAvatar">H</div>
               <h3 class="account-user-name" id="profileDisplayName">Cliente Honatu</h3>
               <p class="account-user-email" id="profileDisplayEmail">usuario@honatu.com</p>
+              <div id="adminBadgeContainer" style="margin-top: 8px; display: none;">
+                <a href="admin.html" class="btn btn-sm" style="background: var(--color-earth); color: var(--color-logo); font-size: 0.8rem; width: 100%; justify-content: center; border-radius: var(--radius-sm);">
+                  🪵 Panel de Administrador &rarr;
+                </a>
+              </div>
             </div>
 
             <nav class="account-nav">
@@ -527,8 +539,23 @@
     </div>
   </aside>
 
-  <script>
+  <script type="module">
+    import { getAuthUser, isAdmin, logout } from '../js/controllers/auth.controller.js';
+
     document.addEventListener('DOMContentLoaded', () => {
+      const user = getAuthUser();
+      if (user) {
+        document.getElementById('profileDisplayName').textContent = user.name || 'Cultivador Honatu';
+        document.getElementById('profileDisplayEmail').textContent = user.email || 'cliente@honatu.com';
+        const avatar = document.getElementById('profileDisplayAvatar');
+        if (avatar) avatar.textContent = (user.name || 'H').charAt(0).toUpperCase();
+
+        if (isAdmin()) {
+          const badgeCont = document.getElementById('adminBadgeContainer');
+          if (badgeCont) badgeCont.style.display = 'block';
+        }
+      }
+
       const navBtns = document.querySelectorAll('.account-nav-btn[data-tab]');
       const tabContents = document.querySelectorAll('.account-tab-content');
 
@@ -575,12 +602,7 @@
       const logoutBtn = document.getElementById('logoutBtn');
       if (logoutBtn) {
         logoutBtn.addEventListener('click', () => {
-          if (window.showToast) {
-            window.showToast("Has cerrado sesión.");
-          }
-          setTimeout(() => {
-            window.location.href = '../index.html';
-          }, 1000);
+          logout('../index.html');
         });
       }
     });

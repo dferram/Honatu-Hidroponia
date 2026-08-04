@@ -8,15 +8,38 @@ export function createVineDecoration() {
       <stop offset="60%" stop-color="#5E8254"/>
       <stop offset="100%" stop-color="#8DAF74"/>
     </linearGradient>
+
+    <linearGradient id="flowerPetalGradForm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFAA8A"/>
+      <stop offset="50%" stop-color="#E2725B"/>
+      <stop offset="100%" stop-color="#B84A39"/>
+    </linearGradient>
+
+    <radialGradient id="flowerCoreGradForm" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE885"/>
+      <stop offset="100%" stop-color="#E5A93C"/>
+    </radialGradient>
+
     <filter id="leafShadowForm" x="-30%" y="-30%" width="160%" height="160%">
       <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
     </filter>
+
     <g id="real-leaf-form">
       <path d="M 0,0 Q 2,10 0,20" stroke="#2D5325" stroke-width="2.5" fill="none" stroke-linecap="round"/>
       <path d="M 0,20 C -25,0 -40,40 0,70 C 40,40 25,0 0,20 Z" fill="url(#leafGradForm)" filter="url(#leafShadowForm)" />
       <path d="M 0,20 Q 3,45 0,65" fill="none" stroke="#1B3B1E" stroke-width="1.5" opacity="0.6"/>
       <path d="M 0,30 Q -10,33 -15,30 M 0,40 Q -15,43 -20,37 M 0,50 Q -10,50 -15,45" fill="none" stroke="#1B3B1E" stroke-width="1" opacity="0.4"/>
       <path d="M 0,30 Q 10,33 15,30 M 0,40 Q 15,43 20,37 M 0,50 Q 10,50 15,45" fill="none" stroke="#1B3B1E" stroke-width="1" opacity="0.4"/>
+    </g>
+
+    <!-- Easter Egg Botanical Flower Blossom -->
+    <g id="real-flower-form" filter="url(#leafShadowForm)">
+      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradForm)" transform="rotate(0)" />
+      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradForm)" transform="rotate(72)" />
+      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradForm)" transform="rotate(144)" />
+      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradForm)" transform="rotate(216)" />
+      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradForm)" transform="rotate(288)" />
+      <circle cx="0" cy="0" r="4" fill="url(#flowerCoreGradForm)" stroke="#B87B20" stroke-width="0.8" />
     </g>
   </defs>
 </svg>
@@ -43,6 +66,14 @@ export function createVineDecoration() {
     <g class="form-vine-leaf leaf-delay-5" transform="translate(14, 160) rotate(140)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
     <g class="form-vine-leaf leaf-delay-2" transform="translate(14, 200) rotate(-30)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.45)" /></g></g></g>
     <g class="form-vine-leaf leaf-delay-3" transform="translate(14, 240) rotate(120)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
+
+    <!-- Top-Left Easter Egg Flowers -->
+    <g class="form-vine-flower flower-delay-1" transform="translate(140, 14) rotate(15)">
+      <g class="sway"><g class="flower-pop"><use href="#real-flower-form" transform="scale(0.60)" /></g></g>
+    </g>
+    <g class="form-vine-flower flower-delay-2" transform="translate(14, 140) rotate(115)">
+      <g class="sway"><g class="flower-pop"><use href="#real-flower-form" transform="scale(0.55)" /></g></g>
+    </g>
   </svg>
 </div>
 <div class="form-vine-wrapper bottom-right">
@@ -66,6 +97,14 @@ export function createVineDecoration() {
     <g class="form-vine-leaf leaf-delay-2" transform="translate(236, 120) rotate(-80)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
     <g class="form-vine-leaf leaf-delay-5" transform="translate(236, 80) rotate(-60)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
     <g class="form-vine-leaf leaf-delay-1" transform="translate(236, 40) rotate(-140)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.45)" /></g></g></g>
+
+    <!-- Bottom-Right Easter Egg Flowers -->
+    <g class="form-vine-flower flower-delay-2" transform="translate(135, 236) rotate(-160)">
+      <g class="sway"><g class="flower-pop"><use href="#real-flower-form" transform="scale(0.58)" /></g></g>
+    </g>
+    <g class="form-vine-flower flower-delay-3" transform="translate(236, 95) rotate(-40)">
+      <g class="sway"><g class="flower-pop"><use href="#real-flower-form" transform="scale(0.52)" /></g></g>
+    </g>
   </svg>
 </div>
   `;
@@ -100,7 +139,12 @@ export function initVineDecorations() {
     wrapper.style.position = 'relative';
     wrapper.style.zIndex = '1';
     wrapper.appendChild(createVineDecoration());
+
+    // Easter Egg: ~35% chance to bloom flowers everywhere Planta Teléfono is used
+    if (Math.random() < 0.35) {
+      wrapper.classList.add('blooming-vines');
+    }
+
     observer.observe(wrapper);
   });
 }
-
