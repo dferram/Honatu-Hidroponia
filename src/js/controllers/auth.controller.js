@@ -4,15 +4,83 @@
    ============================================ */
 
 import logoImg from '../../assets/logo/Logo.png';
-import { getString, setString, StorageKeys } from '../middleware/storage.middleware.js';
+import { getItem, setItem, removeItem, getString, setString, StorageKeys } from '../middleware/storage.middleware.js';
 import { showToast } from '../middleware/toast.middleware.js';
 
 let isAuthenticated = getString(StorageKeys.AUTH) === 'true';
+let authRole = getString(StorageKeys.AUTH_ROLE) || 'CLIENT';
+let authUser = getItem(StorageKeys.AUTH_USER, { name: 'Cultivador Honatu', email: 'cliente@honatu.com', role: 'CLIENT' });
 let pendingAuthCallback = null;
 let pendingRedirectUrl = null;
 
 export function getIsAuthenticated() {
   return getString(StorageKeys.AUTH) === 'true';
+}
+
+export function getAuthRole() {
+  return getString(StorageKeys.AUTH_ROLE) || (getIsAuthenticated() ? 'CLIENT' : null);
+}
+
+export function getAuthUser() {
+  return getItem(StorageKeys.AUTH_USER, { name: 'Cultivador Honatu', email: 'cliente@honatu.com', role: getAuthRole() });
+}
+
+export function isAdmin() {
+  return getIsAuthenticated() && getAuthRole() === 'ADMIN';
+}
+
+export function getAdminUrl() {
+  const isSubpage = window.location.pathname.includes('/pages/');
+  return isSubpage ? 'admin.html' : './pages/admin.html';
+}
+
+export function getLoginUrl() {
+  const isSubpage = window.location.pathname.includes('/pages/');
+  return isSubpage ? 'login.html' : './pages/login.html';
+}
+
+export function getClientHomeUrl() {
+  const isSubpage = window.location.pathname.includes('/pages/');
+  return isSubpage ? '../index.html' : './index.html';
+}
+
+export function getClientAccountUrl() {
+  const isSubpage = window.location.pathname.includes('/pages/');
+  return isSubpage ? 'cuenta.html' : './pages/cuenta.html';
+}
+
+export function logout(customRedirect = null) {
+  removeItem(StorageKeys.AUTH);
+  removeItem(StorageKeys.AUTH_ROLE);
+  removeItem(StorageKeys.AUTH_USER);
+  isAuthenticated = false;
+  authRole = null;
+  authUser = null;
+
+  showToast("Has cerrado sesión exitosamente.");
+
+  setTimeout(() => {
+    if (customRedirect) {
+      window.location.href = customRedirect;
+    } else {
+      window.location.href = getLoginUrl();
+    }
+  }, 400);
+}
+
+export function requireAdminAuth(redirectToLogin = true) {
+  if (isAdmin()) {
+    return true;
+  }
+
+  if (redirectToLogin) {
+    showToast("Acceso restringido: Se requieren permisos de Administrador.");
+    const loginUrl = getLoginUrl();
+    setTimeout(() => {
+      window.location.href = loginUrl;
+    }, 600);
+  }
+  return false;
 }
 
 const AUTH_VINE_DECORATION = `
@@ -23,6 +91,15 @@ const AUTH_VINE_DECORATION = `
       <stop offset="60%" stop-color="#6A8D45"/>
       <stop offset="100%" stop-color="#9CB661"/>
     </linearGradient>
+    <linearGradient id="flowerPetalGradAuth" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFAA8A"/>
+      <stop offset="50%" stop-color="#E2725B"/>
+      <stop offset="100%" stop-color="#B84A39"/>
+    </linearGradient>
+    <radialGradient id="flowerCoreGradAuth" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE885"/>
+      <stop offset="100%" stop-color="#E5A93C"/>
+    </radialGradient>
     <filter id="leafShadowAuth" x="-30%" y="-30%" width="160%" height="160%">
       <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.18"/>
     </filter>
@@ -32,6 +109,15 @@ const AUTH_VINE_DECORATION = `
       <path d="M 0,20 Q 3,45 0,65" fill="none" stroke="#253D15" stroke-width="1.4" opacity="0.6"/>
       <path d="M 0,30 Q -10,33 -15,30 M 0,40 Q -15,43 -20,37 M 0,50 Q -10,50 -15,45" fill="none" stroke="#253D15" stroke-width="1" opacity="0.4"/>
       <path d="M 0,30 Q 10,33 15,30 M 0,40 Q 15,43 20,37 M 0,50 Q 10,50 15,45" fill="none" stroke="#253D15" stroke-width="1" opacity="0.4"/>
+    </g>
+    <!-- Easter Egg Flower -->
+    <g id="real-flower-auth" filter="url(#leafShadowAuth)">
+      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradAuth)" transform="rotate(0)" />
+      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradAuth)" transform="rotate(72)" />
+      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradAuth)" transform="rotate(144)" />
+      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradAuth)" transform="rotate(216)" />
+      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradAuth)" transform="rotate(288)" />
+      <circle cx="0" cy="0" r="4" fill="url(#flowerCoreGradAuth)" stroke="#B87B20" stroke-width="0.8" />
     </g>
   </defs>
 </svg>
@@ -47,6 +133,10 @@ const AUTH_VINE_DECORATION = `
     <g class="form-vine-leaf leaf-delay-2" transform="translate(0, 55) rotate(165)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-auth" transform="scale(0.48)" /></g></g></g>
     <g class="form-vine-leaf leaf-delay-3" transform="translate(0, 90) rotate(-35)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-auth" transform="scale(0.44)" /></g></g></g>
     <g class="form-vine-leaf leaf-delay-5" transform="translate(0, 125) rotate(145)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-auth" transform="scale(0.38)" /></g></g></g>
+    <!-- Modal Easter Egg Flower -->
+    <g class="form-vine-flower flower-delay-1" transform="translate(60, 0) rotate(15)">
+      <g class="sway"><g class="flower-pop"><use href="#real-flower-auth" transform="scale(0.55)" /></g></g>
+    </g>
   </svg>
 </div>
 <div class="form-vine-wrapper bottom-right">
@@ -61,6 +151,10 @@ const AUTH_VINE_DECORATION = `
     <g class="form-vine-leaf leaf-delay-3" transform="translate(140, 85) rotate(155)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-auth" transform="scale(0.46)" /></g></g></g>
     <g class="form-vine-leaf leaf-delay-2" transform="translate(140, 50) rotate(-65)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-auth" transform="scale(0.44)" /></g></g></g>
     <g class="form-vine-leaf leaf-delay-4" transform="translate(140, 15) rotate(-30)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-auth" transform="scale(0.38)" /></g></g></g>
+    <!-- Modal Easter Egg Flower -->
+    <g class="form-vine-flower flower-delay-2" transform="translate(140, 50) rotate(-40)">
+      <g class="sway"><g class="flower-pop"><use href="#real-flower-auth" transform="scale(0.52)" /></g></g>
+    </g>
   </svg>
 </div>
 `;
@@ -85,7 +179,6 @@ function ensureAuthModalDOM() {
     document.body.appendChild(modal);
   }
 
-  // Inject enhanced template with vines wrapped snugly inside card
   modal.innerHTML = `
     <div class="login-modal-card">
       ${AUTH_VINE_DECORATION}
@@ -99,7 +192,7 @@ function ensureAuthModalDOM() {
       <div class="auth-modal-header">
         <img src="${logoImg}" alt="Honatu Hidroponía" class="auth-modal-logo">
         <h2 id="authModalTitle">¡Hola Cultivador!</h2>
-        <p id="authModalSubtitle">Inicia sesión o regístrate para confirmar tu compra y guardar tus pedidos.</p>
+        <p id="authModalSubtitle">Inicia sesión o regístrate para gestionar tus pedidos y talleres.</p>
       </div>
 
       <div class="auth-tabs" role="tablist">
@@ -117,15 +210,20 @@ function ensureAuthModalDOM() {
       <div id="loginPane" class="auth-pane active">
         <form id="modalLoginForm" class="login-form">
           <div class="form-group">
-            <label class="form-label" for="modalLoginEmail">Correo Electrónico</label>
-            <input type="email" id="modalLoginEmail" class="form-input" placeholder="tu@correo.com" required>
+            <label class="form-label" for="modalLoginEmail">Usuario o Correo Electrónico</label>
+            <input type="text" id="modalLoginEmail" class="form-input" placeholder="Vacío = Cliente | 'admin' = Administrador" autocomplete="username">
           </div>
           <div class="form-group">
             <label class="form-label" for="modalLoginPassword">Contraseña</label>
-            <input type="password" id="modalLoginPassword" class="form-input" placeholder="••••••••" required>
+            <input type="password" id="modalLoginPassword" class="form-input" placeholder="Vacío = Cliente | 'contraseña' = Admin" autocomplete="current-password">
           </div>
+
+          <div style="background: rgba(35, 78, 40, 0.06); border: 1px dashed var(--color-sage); border-radius: var(--radius-sm); padding: 8px 12px; margin-bottom: 14px; font-size: 0.78rem; color: var(--color-forest);">
+            <strong>Acceso de prueba:</strong> Dejar vacío para entrar como <em>Cliente</em>, o escribir <code>admin</code> y <code>contraseña</code> para el <em>Panel Admin</em>.
+          </div>
+
           <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-            Ingresar y Continuar &rarr;
+            Iniciar Sesión &rarr;
           </button>
           <p class="auth-switch-prompt">
             ¿Aún no tienes cuenta? <button type="button" id="switchToRegister">Crear una cuenta gratis</button>
@@ -204,33 +302,96 @@ function bindModalEvents() {
 
   modalLoginForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-    handleAuthSuccess("¡Bienvenido(a) de nuevo! Sesión iniciada con éxito.");
+    const userVal = (document.getElementById('modalLoginEmail')?.value || '').trim();
+    const passVal = (document.getElementById('modalLoginPassword')?.value || '').trim();
+
+    // Dual Test Login Logic
+    if (!userVal && !passVal) {
+      handleAuthSuccess({
+        role: 'CLIENT',
+        name: 'Cultivador Honatu',
+        email: 'cliente@honatu.com',
+        message: "¡Bienvenido! Sesión iniciada como Cliente."
+      });
+    } else if (
+      (userVal.toLowerCase() === 'admin' || userVal.toLowerCase() === 'admin@honatu.com') &&
+      (passVal === 'contraseña' || passVal === 'admin' || passVal === 'contrasena')
+    ) {
+      handleAuthSuccess({
+        role: 'ADMIN',
+        name: 'Administrador Honatu',
+        email: 'admin@honatu.com',
+        message: "¡Acceso Autorizado! Bienvenido al Panel de Administrador.",
+        redirectUrl: getAdminUrl()
+      });
+    } else {
+      handleAuthSuccess({
+        role: 'CLIENT',
+        name: userVal.includes('@') ? userVal.split('@')[0] : userVal,
+        email: userVal.includes('@') ? userVal : `${userVal}@honatu.com`,
+        message: `¡Bienvenido(a) de nuevo! Sesión iniciada.`
+      });
+    }
   });
 
   modalRegisterForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('modalRegName')?.value || 'Cultivador';
-    handleAuthSuccess(`¡Bienvenido(a), ${name}! Tu cuenta ha sido creada.`);
+    const email = document.getElementById('modalRegEmail')?.value || 'cliente@honatu.com';
+    handleAuthSuccess({
+      role: 'CLIENT',
+      name: name,
+      email: email,
+      message: `¡Bienvenido(a), ${name}! Tu cuenta ha sido creada.`
+    });
   });
 }
 
-function handleAuthSuccess(successMessage) {
+function handleAuthSuccess({ role = 'CLIENT', name = 'Cultivador', email = 'cliente@honatu.com', message = '', redirectUrl = null }) {
   isAuthenticated = true;
+  authRole = role;
+  authUser = { name, email, role };
+
   setString(StorageKeys.AUTH, 'true');
+  setString(StorageKeys.AUTH_ROLE, role);
+  setItem(StorageKeys.AUTH_USER, authUser);
+
   closeLoginModal();
-  showToast(successMessage);
+  if (message) showToast(message);
 
   if (typeof pendingAuthCallback === 'function') {
     const cb = pendingAuthCallback;
     pendingAuthCallback = null;
-    cb();
-  } else if (pendingRedirectUrl) {
-    const url = pendingRedirectUrl;
+    cb(authUser);
+  } else {
+    const target = redirectUrl || pendingRedirectUrl;
     pendingRedirectUrl = null;
-    setTimeout(() => {
-      window.location.href = url;
-    }, 600);
+    if (target) {
+      setTimeout(() => {
+        window.location.href = target;
+      }, 500);
+    }
   }
+}
+
+export function loginAsClient() {
+  handleAuthSuccess({
+    role: 'CLIENT',
+    name: 'Cultivador Honatu',
+    email: 'cliente@honatu.com',
+    message: "Sesión iniciada como Cliente (Modo de Prueba).",
+    redirectUrl: getClientHomeUrl()
+  });
+}
+
+export function loginAsAdmin() {
+  handleAuthSuccess({
+    role: 'ADMIN',
+    name: 'Administrador Honatu',
+    email: 'admin@honatu.com',
+    message: "Sesión iniciada como Administrador (Modo de Prueba).",
+    redirectUrl: getAdminUrl()
+  });
 }
 
 export function openLoginModal(options = {}) {
@@ -246,7 +407,7 @@ export function openLoginModal(options = {}) {
   if (options.subtitle && modalSubtitle) {
     modalSubtitle.textContent = options.subtitle;
   } else if (modalSubtitle) {
-    modalSubtitle.textContent = "Inicia sesión o regístrate para confirmar tu compra y guardar tus pedidos.";
+    modalSubtitle.textContent = "Inicia sesión o regístrate para gestionar tus compras y talleres.";
   }
 
   if (options.defaultTab) {
@@ -257,9 +418,13 @@ export function openLoginModal(options = {}) {
 
   overlay?.classList.add('active');
   modal?.classList.remove('vines-grown');
+  modal?.classList.remove('blooming-vines');
   void modal?.offsetWidth; // Trigger reflow for vine growth animation
   modal?.classList.add('active');
   modal?.classList.add('vines-grown');
+  if (Math.random() < 0.35) {
+    modal?.classList.add('blooming-vines');
+  }
   document.body.style.overflow = 'hidden';
 }
 
@@ -276,14 +441,14 @@ export function closeLoginModal() {
 
 export function requireAuth(onSuccess, redirectTo, subtitle) {
   if (getIsAuthenticated()) {
-    if (typeof onSuccess === 'function') onSuccess();
+    if (typeof onSuccess === 'function') onSuccess(getAuthUser());
     else if (redirectTo) window.location.href = redirectTo;
     return true;
   }
   openLoginModal({
     onLoginSuccess: onSuccess,
     redirectTo,
-    subtitle: subtitle || "Inicia sesión o regístrate para confirmar tu compra."
+    subtitle: subtitle || "Inicia sesión o regístrate para continuar."
   });
   return false;
 }
@@ -296,14 +461,15 @@ export function initAuth() {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const isSubpage = window.location.pathname.includes('/pages/');
-      const targetPage = isSubpage ? 'cuenta.html' : './pages/cuenta.html';
 
-      if (getIsAuthenticated()) {
-        window.location.href = targetPage;
+      if (isAdmin()) {
+        window.location.href = isSubpage ? 'admin.html' : './pages/admin.html';
+      } else if (getIsAuthenticated()) {
+        window.location.href = isSubpage ? 'cuenta.html' : './pages/cuenta.html';
       } else {
         openLoginModal({
-          redirectTo: targetPage,
-          subtitle: "Inicia sesión para gestionar tus pedidos y perfil."
+          redirectTo: isSubpage ? 'cuenta.html' : './pages/cuenta.html',
+          subtitle: "Inicia sesión para acceder a tu cuenta o panel de administración."
         });
       }
     });
@@ -321,6 +487,13 @@ export function initAuth() {
 window.openLoginModal = openLoginModal;
 window.closeLoginModal = closeLoginModal;
 window.requireAuth = requireAuth;
+window.requireAdminAuth = requireAdminAuth;
 window.getIsAuthenticated = getIsAuthenticated;
+window.getAuthRole = getAuthRole;
+window.getAuthUser = getAuthUser;
+window.isAdmin = isAdmin;
+window.loginAsClient = loginAsClient;
+window.loginAsAdmin = loginAsAdmin;
+window.logout = logout;
 
 

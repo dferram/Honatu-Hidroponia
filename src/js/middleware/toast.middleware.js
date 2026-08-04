@@ -29,24 +29,45 @@ const TOAST_SVG = `
   <svg width="180" height="130" viewBox="0 0 180 130" style="overflow:visible;">
     <path class="vine-stem" d="M 14,14 Q 90,8 170,14" stroke="#4A5D23" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#leafShadow)"/>
     <path class="vine-stem" d="M 14,14 Q 8,60 14,120" stroke="#4A5D23" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#leafShadow)"/>
+    
+    <!-- Top Branch Foliage -->
     <g class="vine-leaf leaf-1" style="transform-origin: 14px 14px;"><use href="#real-leaf" transform="translate(14, 14) rotate(-135) scale(0.6)" /></g>
-    <g class="vine-leaf leaf-2" style="transform-origin: 60px 10px;"><use href="#real-leaf" transform="translate(60, 10) rotate(-30) scale(0.5)" /></g>
-    <g class="vine-leaf leaf-3" style="transform-origin: 110px 9px;"><use href="#real-leaf" transform="translate(110, 9) rotate(60) scale(0.45)" /></g>
-    <g class="vine-leaf leaf-4" style="transform-origin: 160px 13px;"><use href="#real-leaf" transform="translate(160, 13) rotate(-10) scale(0.4)" /></g>
-    <g class="vine-leaf leaf-2" style="transform-origin: 11px 45px;"><use href="#real-leaf" transform="translate(11, 45) rotate(160) scale(0.5)" /></g>
-    <g class="vine-leaf leaf-3" style="transform-origin: 9px 85px;"><use href="#real-leaf" transform="translate(9, 85) rotate(-20) scale(0.45)" /></g>
-    <g class="vine-leaf leaf-5" style="transform-origin: 13px 120px;"><use href="#real-leaf" transform="translate(13, 120) rotate(140) scale(0.4)" /></g>
+    <g class="vine-leaf leaf-4" style="transform-origin: 35px 12px;"><use href="#real-leaf" transform="translate(35, 12) rotate(-35) scale(0.48)" /></g>
+    <g class="vine-leaf leaf-2" style="transform-origin: 55px 10px;"><use href="#real-leaf" transform="translate(55, 10) rotate(55) scale(0.50)" /></g>
+    <g class="vine-leaf leaf-5" style="transform-origin: 75px 9px;"><use href="#real-leaf" transform="translate(75, 9) rotate(-40) scale(0.52)" /></g>
+    <g class="vine-leaf leaf-3" style="transform-origin: 95px 8px;"><use href="#real-leaf" transform="translate(95, 8) rotate(60) scale(0.52)" /></g>
+    <g class="vine-leaf leaf-4" style="transform-origin: 115px 9px;"><use href="#real-leaf" transform="translate(115, 9) rotate(-35) scale(0.50)" /></g>
+    <g class="vine-leaf leaf-2" style="transform-origin: 135px 10px;"><use href="#real-leaf" transform="translate(135, 10) rotate(55) scale(0.48)" /></g>
+    <g class="vine-leaf leaf-5" style="transform-origin: 155px 12px;"><use href="#real-leaf" transform="translate(155, 12) rotate(-40) scale(0.44)" /></g>
+    <g class="vine-leaf leaf-3" style="transform-origin: 170px 14px;"><use href="#real-leaf" transform="translate(170, 14) rotate(45) scale(0.38)" /></g>
+    
+    <!-- Left Branch Foliage -->
+    <g class="vine-leaf leaf-2" style="transform-origin: 12px 35px;"><use href="#real-leaf" transform="translate(12, 35) rotate(155) scale(0.48)" /></g>
+    <g class="vine-leaf leaf-4" style="transform-origin: 10px 55px;"><use href="#real-leaf" transform="translate(10, 55) rotate(-35) scale(0.50)" /></g>
+    <g class="vine-leaf leaf-3" style="transform-origin: 8px 75px;"><use href="#real-leaf" transform="translate(8, 75) rotate(145) scale(0.52)" /></g>
+    <g class="vine-leaf leaf-5" style="transform-origin: 10px 95px;"><use href="#real-leaf" transform="translate(10, 95) rotate(-40) scale(0.50)" /></g>
+    <g class="vine-leaf leaf-2" style="transform-origin: 12px 110px;"><use href="#real-leaf" transform="translate(12, 110) rotate(150) scale(0.46)" /></g>
+    <g class="vine-leaf leaf-4" style="transform-origin: 14px 120px;"><use href="#real-leaf" transform="translate(14, 120) rotate(-25) scale(0.40)" /></g>
   </svg>
 </div>
 <div class="toast-vine-container-br" style="position: absolute; bottom: -14px; right: -14px; width: 120px; height: 90px; z-index: 3; pointer-events: none;">
   <svg width="120" height="90" viewBox="0 0 120 90" style="overflow:visible;">
     <path class="vine-stem" d="M 106,76 Q 60,82 10,76" stroke="#4A5D23" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#leafShadow)"/>
     <path class="vine-stem" d="M 106,76 Q 112,40 106,10" stroke="#4A5D23" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#leafShadow)"/>
-    <g class="vine-leaf leaf-1" style="transform-origin: 106px 76px;"><use href="#real-leaf" transform="translate(106, 76) rotate(45) scale(0.6)" /></g>
-    <g class="vine-leaf leaf-2" style="transform-origin: 65px 80px;"><use href="#real-leaf" transform="translate(65, 80) rotate(150) scale(0.5)" /></g>
-    <g class="vine-leaf leaf-4" style="transform-origin: 25px 77px;"><use href="#real-leaf" transform="translate(25, 77) rotate(60) scale(0.4)" /></g>
-    <g class="vine-leaf leaf-3" style="transform-origin: 110px 45px;"><use href="#real-leaf" transform="translate(110, 45) rotate(-20) scale(0.5)" /></g>
-    <g class="vine-leaf leaf-5" style="transform-origin: 107px 15px;"><use href="#real-leaf" transform="translate(107, 15) rotate(-80) scale(0.4)" /></g>
+    
+    <!-- Bottom Branch Foliage -->
+    <g class="vine-leaf leaf-1" style="transform-origin: 106px 76px;"><use href="#real-leaf" transform="translate(106, 76) rotate(45) scale(0.58)" /></g>
+    <g class="vine-leaf leaf-3" style="transform-origin: 88px 78px;"><use href="#real-leaf" transform="translate(88, 78) rotate(145) scale(0.48)" /></g>
+    <g class="vine-leaf leaf-2" style="transform-origin: 70px 80px;"><use href="#real-leaf" transform="translate(70, 80) rotate(-40) scale(0.50)" /></g>
+    <g class="vine-leaf leaf-5" style="transform-origin: 52px 81px;"><use href="#real-leaf" transform="translate(52, 81) rotate(140) scale(0.50)" /></g>
+    <g class="vine-leaf leaf-4" style="transform-origin: 34px 79px;"><use href="#real-leaf" transform="translate(34, 79) rotate(-45) scale(0.48)" /></g>
+    <g class="vine-leaf leaf-2" style="transform-origin: 18px 77px;"><use href="#real-leaf" transform="translate(18, 77) rotate(135) scale(0.42)" /></g>
+    
+    <!-- Right Branch Foliage -->
+    <g class="vine-leaf leaf-4" style="transform-origin: 108px 60px;"><use href="#real-leaf" transform="translate(108, 60) rotate(-45) scale(0.48)" /></g>
+    <g class="vine-leaf leaf-3" style="transform-origin: 110px 42px;"><use href="#real-leaf" transform="translate(110, 42) rotate(145) scale(0.50)" /></g>
+    <g class="vine-leaf leaf-5" style="transform-origin: 109px 26px;"><use href="#real-leaf" transform="translate(109, 26) rotate(-35) scale(0.46)" /></g>
+    <g class="vine-leaf leaf-2" style="transform-origin: 106px 10px;"><use href="#real-leaf" transform="translate(106, 10) rotate(130) scale(0.40)" /></g>
   </svg>
 </div>`;
 

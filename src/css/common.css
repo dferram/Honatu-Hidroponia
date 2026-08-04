@@ -11,93 +11,110 @@
    ========================================== */
 :root {
   /* — Color Palette: Blanco Vegetal, Gris Piedra & Verde Bosque — */
-  --color-forest:       #234E28;
-  --color-forest-dark:  #163519;
-  --color-sage:         #5E8254;
-  --color-sage-light:   #7E9F74;
-  --color-moss:         #3B6334;
-  --color-leaf:         #327824;
-  --color-logo:         #CAD7BA;
-  --color-logo-hover:   #BACDA7;
-  --color-logo-text:    #163519;
+  --color-forest: #234E28;
+  --color-forest-dark: #163519;
+  --color-sage: #5E8254;
+  --color-sage-light: #7E9F74;
+  --color-moss: #3B6334;
+  --color-leaf: #327824;
+  --color-logo: #CAD7BA;
+  --color-logo-hover: #BACDA7;
+  --color-logo-text: #163519;
 
   /* — Blanco Vegetal — */
   --color-blanco-vegetal: #FAFBF8;
-  --color-white:        #FFFFFF;
-  --color-off-white:    #F6F8F4;
+  --color-white: #FFFFFF;
+  --color-off-white: #F6F8F4;
 
   /* — Gris Piedra (Fondos visibles, minerales y orgánicos) — */
-  --color-stone-light:  #ECEFEA; /* Gris piedra muy claro */
-  --color-stone:        #E2E7DE; /* Gris piedra visible para fondos de sección */
-  --color-stone-medium: #D0D8CB; /* Gris piedra medio para tarjetas y superficies */
-  --color-stone-dark:   #A9B5A3; /* Gris piedra marcado */
+  --color-stone-light: #ECEFEA;
+  /* Gris piedra muy claro */
+  --color-stone: #E2E7DE;
+  /* Gris piedra visible para fondos de sección */
+  --color-stone-medium: #D0D8CB;
+  /* Gris piedra medio para tarjetas y superficies */
+  --color-stone-dark: #A9B5A3;
+  /* Gris piedra marcado */
 
   /* Compatibilidad con variables previas para fondos */
-  --color-cream-warm:   #FAFBF8; /* Fondo blanco vegetal */
-  --color-cream:        #E2E7DE; /* Fondo Gris Piedra visible para secciones alternas */
-  --color-sand:         #C6D2C0; /* Tono piedra/vegetal suave */
-  --color-sand-light:   #E2E7DE; /* Tono gris piedra */
+  --color-cream-warm: #FAFBF8;
+  /* Fondo blanco vegetal */
+  --color-cream: #E2E7DE;
+  /* Fondo Gris Piedra visible para secciones alternas */
+  --color-sand: #C6D2C0;
+  /* Tono piedra/vegetal suave */
+  --color-sand-light: #E2E7DE;
+  /* Tono gris piedra */
 
   /* — Acentos Tierra / Café Preservados — */
-  --color-earth:        #3B2F1E;
-  --color-earth-mid:    #5C4A32;
-  --color-earth-light:  #525A4E;
-  --color-terracotta:   #B87333;
+  --color-earth: #3B2F1E;
+  --color-earth-mid: #5C4A32;
+  --color-earth-light: #525A4E;
+  --color-terracotta: #B87333;
   --color-terracotta-h: #CF8A4A;
-  --color-olive:        #6E7A4A;
+  --color-olive: #6E7A4A;
 
   /* — Neutros Gris Piedra — */
-  --color-gray-100:     #EDF1EA; /* Gris piedra ultra suave */
-  --color-gray-200:     #D2DBD0; /* Gris piedra claro (bordes) */
-  --color-gray-300:     #B6C2B3; /* Gris piedra medio */
-  --color-gray-400:     #7F8E7C; /* Gris piedra texto tenue */
-  --color-gray-500:     #556352; /* Gris piedra texto secundario */
-  --color-gray-600:     #3E4B3C; /* Gris piedra oscuro */
-  --color-gray-700:     #2C372A; /* Gris piedra profundo */
-  --color-gray-800:     #1E261D; /* Gris piedra carbón */
-  --color-gray-900:     #121811; /* Gris piedra noche */
+  --color-gray-100: #EDF1EA;
+  /* Gris piedra ultra suave */
+  --color-gray-200: #D2DBD0;
+  /* Gris piedra claro (bordes) */
+  --color-gray-300: #B6C2B3;
+  /* Gris piedra medio */
+  --color-gray-400: #7F8E7C;
+  /* Gris piedra texto tenue */
+  --color-gray-500: #556352;
+  /* Gris piedra texto secundario */
+  --color-gray-600: #3E4B3C;
+  /* Gris piedra oscuro */
+  --color-gray-700: #2C372A;
+  /* Gris piedra profundo */
+  --color-gray-800: #1E261D;
+  /* Gris piedra carbón */
+  --color-gray-900: #121811;
+  /* Gris piedra noche */
 
   /* — Typography: Besley (Clarendon Heavy Slab Serif) & Plus Jakarta Sans (Clean Body) — */
-  --font-display:       'Besley', Georgia, serif;
-  --font-heading:       'Besley', Georgia, serif;
-  --font-body:          'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Besley', Georgia, serif;
+  --font-heading: 'Besley', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
   /* — Spacing Scale — */
-  --space-xs:    4px;
-  --space-sm:    8px;
-  --space-md:    16px;
-  --space-lg:    24px;
-  --space-xl:    32px;
-  --space-2xl:   48px;
-  --space-3xl:   64px;
-  --space-4xl:   96px;
-  --space-5xl:   128px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
 
   /* — Border Radius — */
-  --radius-sm:   6px;
-  --radius-md:   12px;
-  --radius-lg:   20px;
-  --radius-xl:   28px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
   --radius-full: 9999px;
 
   /* — Shadows — */
-  --shadow-sm:   0 2px 8px rgba(35, 78, 40, 0.05);
-  --shadow-md:   0 8px 24px rgba(35, 78, 40, 0.07);
-  --shadow-lg:   0 16px 48px rgba(35, 78, 40, 0.09);
-  --shadow-xl:   0 24px 64px rgba(35, 78, 40, 0.12);
+  --shadow-sm: 0 2px 8px rgba(35, 78, 40, 0.05);
+  --shadow-md: 0 8px 24px rgba(35, 78, 40, 0.07);
+  --shadow-lg: 0 16px 48px rgba(35, 78, 40, 0.09);
+  --shadow-xl: 0 24px 64px rgba(35, 78, 40, 0.12);
   --shadow-glow: 0 0 40px rgba(94, 130, 84, 0.16);
 
   /* — Transitions — */
-  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --duration-fast:   200ms;
+  --duration-fast: 200ms;
   --duration-normal: 400ms;
-  --duration-slow:   600ms;
+  --duration-slow: 600ms;
 
   /* — Layout — */
-  --container-max:   1200px;
+  --container-max: 1200px;
   --container-narrow: 800px;
-  --nav-height:      80px;
+  --nav-height: 80px;
 }
 
 /* ==========================================
@@ -139,7 +156,8 @@ a {
   transition: color var(--duration-fast) ease;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -171,7 +189,7 @@ button {
   opacity: 0;
   transform: translateY(32px);
   transition: opacity var(--duration-slow) var(--ease-out),
-              transform var(--duration-slow) var(--ease-out);
+    transform var(--duration-slow) var(--ease-out);
 }
 
 .reveal.is-visible {
@@ -183,7 +201,7 @@ button {
   opacity: 0;
   transform: translateX(-40px);
   transition: opacity var(--duration-slow) var(--ease-out),
-              transform var(--duration-slow) var(--ease-out);
+    transform var(--duration-slow) var(--ease-out);
 }
 
 .reveal-left.is-visible {
@@ -195,7 +213,7 @@ button {
   opacity: 0;
   transform: translateX(40px);
   transition: opacity var(--duration-slow) var(--ease-out),
-              transform var(--duration-slow) var(--ease-out);
+    transform var(--duration-slow) var(--ease-out);
 }
 
 .reveal-right.is-visible {
@@ -207,7 +225,7 @@ button {
   opacity: 0;
   transform: scale(0.92);
   transition: opacity var(--duration-slow) var(--ease-out),
-              transform var(--duration-slow) var(--ease-out);
+    transform var(--duration-slow) var(--ease-out);
 }
 
 .reveal-scale.is-visible {
@@ -216,17 +234,39 @@ button {
 }
 
 /* Stagger delays */
-[data-delay="1"] { transition-delay: 100ms; }
-[data-delay="2"] { transition-delay: 200ms; }
-[data-delay="3"] { transition-delay: 300ms; }
-[data-delay="4"] { transition-delay: 400ms; }
-[data-delay="5"] { transition-delay: 500ms; }
-[data-delay="6"] { transition-delay: 600ms; }
+[data-delay="1"] {
+  transition-delay: 100ms;
+}
+
+[data-delay="2"] {
+  transition-delay: 200ms;
+}
+
+[data-delay="3"] {
+  transition-delay: 300ms;
+}
+
+[data-delay="4"] {
+  transition-delay: 400ms;
+}
+
+[data-delay="5"] {
+  transition-delay: 500ms;
+}
+
+[data-delay="6"] {
+  transition-delay: 600ms;
+}
 
 /* ==========================================
    TYPOGRAPHY
    ========================================== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   font-weight: 800;
   line-height: 1.18;
@@ -297,7 +337,7 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   transform: translateX(-100%);
   transition: transform var(--duration-normal) var(--ease-out);
 }
@@ -365,7 +405,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   border: 1px solid rgba(212, 197, 169, 0.3);
   transition: transform var(--duration-normal) var(--ease-out),
-              box-shadow var(--duration-normal) var(--ease-out);
+    box-shadow var(--duration-normal) var(--ease-out);
 }
 
 .card:hover {
@@ -436,8 +476,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes loaderPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(0.96); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(0.96);
+  }
 }
 
 .loader-bar {
@@ -458,9 +507,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes loaderFill {
-  0% { width: 0%; }
-  60% { width: 85%; }
-  100% { width: 100%; }
+  0% {
+    width: 0%;
+  }
+
+  60% {
+    width: 85%;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
 
 .loader--hide {
@@ -637,15 +694,18 @@ h1, h2, h3, h4, h5, h6 {
   .footer-brand img {
     height: 70px;
   }
+
   .footer-top {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
   }
+
   .footer-bottom {
     flex-direction: column;
     gap: var(--space-sm);
     text-align: center;
   }
+
   .footer {
     padding: var(--space-3xl) 0 var(--space-lg);
   }

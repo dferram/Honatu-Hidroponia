@@ -140,6 +140,56 @@
 }
 
 /* ============================================
+   Easter Egg: Blooming Flowers on Planta Teléfono
+   ============================================ */
+.form-vine-flower {
+  display: none;
+  opacity: 0;
+}
+
+.form-vine-flower .flower-pop {
+  transform-origin: 0px 0px;
+  transform: scale(0) rotate(-40deg);
+  opacity: 0;
+}
+
+.blooming-vines .form-vine-flower {
+  display: block;
+  opacity: 1;
+}
+
+.blooming-vines.vines-grown .form-vine-flower .flower-pop,
+.blooming-vines.is-visible .form-vine-flower .flower-pop,
+.login-modal.active.blooming-vines .form-vine-flower .flower-pop,
+.blooming-vines .form-vine-flower .flower-pop {
+  animation: popFlower 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.flower-delay-1 .flower-pop { animation-delay: 0.75s; }
+.flower-delay-2 .flower-pop { animation-delay: 1.05s; }
+.flower-delay-3 .flower-pop { animation-delay: 1.25s; }
+
+@keyframes popFlower {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-50deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.form-vine-flower .sway {
+  transform-origin: 0px 0px;
+  animation: gentleBreeze2 3.6s ease-in-out infinite alternate;
+}
+
+/* ============================================
    Gentle & Noticeable Wind Breeze (Firmly anchored at 0,0)
    ============================================ */
 
