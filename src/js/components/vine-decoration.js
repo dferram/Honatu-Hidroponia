@@ -1,3 +1,8 @@
+/* ============================================
+   HONATU – Planta Teléfono Foliage Decoration
+   Clean botanical vines with balanced, gapless leaves
+   ============================================ */
+
 export function createVineDecoration() {
   const template = document.createElement('template');
   template.innerHTML = `
@@ -8,17 +13,6 @@ export function createVineDecoration() {
       <stop offset="60%" stop-color="#5E8254"/>
       <stop offset="100%" stop-color="#8DAF74"/>
     </linearGradient>
-
-    <linearGradient id="flowerPetalGradForm" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFAA8A"/>
-      <stop offset="50%" stop-color="#E2725B"/>
-      <stop offset="100%" stop-color="#B84A39"/>
-    </linearGradient>
-
-    <radialGradient id="flowerCoreGradForm" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFE885"/>
-      <stop offset="100%" stop-color="#E5A93C"/>
-    </radialGradient>
 
     <filter id="leafShadowForm" x="-30%" y="-30%" width="160%" height="160%">
       <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
@@ -31,80 +25,64 @@ export function createVineDecoration() {
       <path d="M 0,30 Q -10,33 -15,30 M 0,40 Q -15,43 -20,37 M 0,50 Q -10,50 -15,45" fill="none" stroke="#1B3B1E" stroke-width="1" opacity="0.4"/>
       <path d="M 0,30 Q 10,33 15,30 M 0,40 Q 15,43 20,37 M 0,50 Q 10,50 15,45" fill="none" stroke="#1B3B1E" stroke-width="1" opacity="0.4"/>
     </g>
-
-    <!-- Easter Egg Botanical Flower Blossom -->
-    <g id="real-flower-form" filter="url(#leafShadowForm)">
-      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradForm)" transform="rotate(0)" />
-      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradForm)" transform="rotate(72)" />
-      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradForm)" transform="rotate(144)" />
-      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradForm)" transform="rotate(216)" />
-      <path d="M 0,0 C -9,-18 9,-18 0,0 Z" fill="url(#flowerPetalGradForm)" transform="rotate(288)" />
-      <circle cx="0" cy="0" r="4" fill="url(#flowerCoreGradForm)" stroke="#B87B20" stroke-width="0.8" />
-    </g>
   </defs>
 </svg>
 <div class="form-vine-wrapper top-left">
   <svg width="300" height="300" viewBox="0 0 300 300" style="overflow:visible;">
-    <!-- Straight stems with rounded corner so leaves align perfectly -->
     <path class="form-vine-stem" d="M 280,14 L 38,14 Q 14,14 14,38 L 14,280" filter="url(#leafShadowForm)"/>
     
-    <!-- Top Border Leaves (y=14) -->
-    <g class="form-vine-leaf leaf-delay-4" transform="translate(240, 14) rotate(-10)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.45)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-2" transform="translate(200, 14) rotate(-120)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-3" transform="translate(160, 14) rotate(60)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-5" transform="translate(120, 14) rotate(-30)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.6)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-2" transform="translate(80, 14) rotate(30)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-1" transform="translate(40, 14) rotate(-45)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.65)" /></g></g></g>
+    <!-- Top Branch — organic clusters with size variety -->
+    <g class="form-vine-leaf leaf-delay-5" transform="translate(268, 14) rotate(-20)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.28)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(252, 16) rotate(170)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.45)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-4" transform="translate(218, 12) rotate(-40)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-1" transform="translate(205, 16) rotate(158)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.30)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-3" transform="translate(168, 15) rotate(-32)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.48)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-5" transform="translate(128, 13) rotate(162)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.38)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(95, 16) rotate(-45)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.52)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-4" transform="translate(88, 13) rotate(155)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.25)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-1" transform="translate(52, 15) rotate(-28)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.42)" /></g></g></g>
     
-    <!-- Corner Leaf (Calculated exact midpoint of Q bezier) -->
-    <g class="form-vine-leaf leaf-delay-1" transform="translate(20, 20) rotate(-135)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.65)" /></g></g></g>
+    <!-- Corner — big statement leaf -->
+    <g class="form-vine-leaf leaf-delay-1" transform="translate(18, 18) rotate(-130)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.58)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-3" transform="translate(22, 10) rotate(-55)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.26)" /></g></g></g>
     
-    <!-- Left Border Leaves (x=14) -->
-    <g class="form-vine-leaf leaf-delay-4" transform="translate(14, 40) rotate(120)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-2" transform="translate(14, 80) rotate(160)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.6)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-3" transform="translate(14, 120) rotate(-20)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-5" transform="translate(14, 160) rotate(140)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-2" transform="translate(14, 200) rotate(-30)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.45)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-3" transform="translate(14, 240) rotate(120)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
-
-    <!-- Top-Left Easter Egg Flowers -->
-    <g class="form-vine-flower flower-delay-1" transform="translate(140, 14) rotate(15)">
-      <g class="sway"><g class="flower-pop"><use href="#real-flower-form" transform="scale(0.60)" /></g></g>
-    </g>
-    <g class="form-vine-flower flower-delay-2" transform="translate(14, 140) rotate(115)">
-      <g class="sway"><g class="flower-pop"><use href="#real-flower-form" transform="scale(0.55)" /></g></g>
-    </g>
+    <!-- Left Branch — drooping leaves, irregular clusters -->
+    <g class="form-vine-leaf leaf-delay-3" transform="translate(16, 52) rotate(160)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.35)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-5" transform="translate(12, 78) rotate(-22)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.50)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(17, 88) rotate(170)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.28)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-4" transform="translate(13, 130) rotate(150)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-1" transform="translate(16, 168) rotate(-35)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.40)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-3" transform="translate(12, 175) rotate(165)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.24)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-5" transform="translate(15, 218) rotate(-28)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.48)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(17, 255) rotate(155)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.32)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-4" transform="translate(13, 272) rotate(-18)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.42)" /></g></g></g>
   </svg>
 </div>
 <div class="form-vine-wrapper bottom-right">
   <svg width="250" height="250" viewBox="0 0 250 250" style="overflow:visible;">
-    <!-- Straight stems with rounded corner so leaves align perfectly -->
     <path class="form-vine-stem" d="M 14,236 L 212,236 Q 236,236 236,212 L 236,14" filter="url(#leafShadowForm)"/>
     
-    <!-- Bottom Border Leaves (y=236) -->
-    <g class="form-vine-leaf leaf-delay-2" transform="translate(40, 236) rotate(-140)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-4" transform="translate(80, 236) rotate(60)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-1" transform="translate(120, 236) rotate(-110)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.6)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-2" transform="translate(160, 236) rotate(150)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-3" transform="translate(200, 236) rotate(30)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
+    <!-- Bottom Branch — varied clusters -->
+    <g class="form-vine-leaf leaf-delay-5" transform="translate(32, 237) rotate(165)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.30)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(62, 234) rotate(-35)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.52)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-4" transform="translate(72, 237) rotate(155)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.24)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-1" transform="translate(115, 236) rotate(-30)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.46)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-3" transform="translate(152, 235) rotate(158)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.38)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-5" transform="translate(188, 237) rotate(-40)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.50)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(198, 234) rotate(168)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.26)" /></g></g></g>
     
-    <!-- Corner Leaf (Calculated exact midpoint of Q bezier) -->
-    <g class="form-vine-leaf leaf-delay-1" transform="translate(230, 230) rotate(-45)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.65)" /></g></g></g>
+    <!-- Corner — big leaf -->
+    <g class="form-vine-leaf leaf-delay-1" transform="translate(232, 232) rotate(50)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-3" transform="translate(228, 224) rotate(-45)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.28)" /></g></g></g>
     
-    <!-- Right Border Leaves (x=236) -->
-    <g class="form-vine-leaf leaf-delay-5" transform="translate(236, 200) rotate(-120)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-3" transform="translate(236, 160) rotate(-20)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.6)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-2" transform="translate(236, 120) rotate(-80)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.55)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-5" transform="translate(236, 80) rotate(-60)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.5)" /></g></g></g>
-    <g class="form-vine-leaf leaf-delay-1" transform="translate(236, 40) rotate(-140)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.45)" /></g></g></g>
-
-    <!-- Bottom-Right Easter Egg Flowers -->
-    <g class="form-vine-flower flower-delay-2" transform="translate(135, 236) rotate(-160)">
-      <g class="sway"><g class="flower-pop"><use href="#real-flower-form" transform="scale(0.58)" /></g></g>
-    </g>
-    <g class="form-vine-flower flower-delay-3" transform="translate(236, 95) rotate(-40)">
-      <g class="sway"><g class="flower-pop"><use href="#real-flower-form" transform="scale(0.52)" /></g></g>
-    </g>
+    <!-- Right Branch — organic drooping clusters -->
+    <g class="form-vine-leaf leaf-delay-4" transform="translate(237, 198) rotate(-22)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.45)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-2" transform="translate(234, 165) rotate(160)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.52)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-5" transform="translate(237, 155) rotate(-38)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.25)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-1" transform="translate(235, 118) rotate(152)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.35)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-3" transform="translate(237, 82) rotate(-30)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.48)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-5" transform="translate(234, 72) rotate(165)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.22)" /></g></g></g>
+    <g class="form-vine-leaf leaf-delay-4" transform="translate(236, 38) rotate(-25)"><g class="sway"><g class="leaf-pop"><use href="#real-leaf-form" transform="scale(0.42)" /></g></g></g>
   </svg>
 </div>
   `;
@@ -139,11 +117,6 @@ export function initVineDecorations() {
     wrapper.style.position = 'relative';
     wrapper.style.zIndex = '1';
     wrapper.appendChild(createVineDecoration());
-
-    // Easter Egg: ~35% chance to bloom flowers everywhere Planta Teléfono is used
-    if (Math.random() < 0.35) {
-      wrapper.classList.add('blooming-vines');
-    }
 
     observer.observe(wrapper);
   });

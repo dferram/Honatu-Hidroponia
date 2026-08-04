@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. Bind Global Logout
   document.getElementById('adminLogoutBtn')?.addEventListener('click', (e) => {
     e.preventDefault();
-    logout('../index.html');
+    logout('login.html');
   });
 });
 
