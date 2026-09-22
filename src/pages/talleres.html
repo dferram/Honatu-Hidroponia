@@ -89,12 +89,16 @@
 
     .workshop-date {
       font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--color-sage);
-      margin-bottom: var(--space-xs);
-      display: flex;
+      font-weight: 700;
+      color: var(--color-forest);
+      background: rgba(94, 130, 84, 0.15); /* Light sage background */
+      padding: 6px 10px;
+      border-radius: 6px;
+      margin-bottom: var(--space-sm);
+      display: inline-flex;
       align-items: center;
       gap: 6px;
+      border: 1px solid rgba(94, 130, 84, 0.3);
     }
 
     .workshop-title {
@@ -108,8 +112,26 @@
       font-size: 0.88rem;
       color: var(--color-gray-500);
       line-height: 1.6;
-      margin-bottom: var(--space-md);
+      margin-bottom: var(--space-lg);
       flex: 1;
+    }
+
+    /* Custom wide grid for workshops */
+    .workshop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+      width: 100%;
+    }
+    @media (max-width: 1024px) {
+      .workshop-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .workshop-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .workshop-agenda {
@@ -195,7 +217,7 @@
       </p>
       <div style="margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
         <a href="#proximos" class="btn btn-primary" style="text-decoration: none;">Ver Próximos Talleres &rarr;</a>
-        <a href="#pasados" class="btn btn-ghost" style="text-decoration: none;">Experiencias Pasadas</a>
+        <a href="#pasados" class="btn btn-secondary" style="text-decoration: none;">Experiencias anteriores</a>
       </div>
     </div>
   </header>
@@ -204,15 +226,15 @@
 
     <!-- PRÓXIMOS TALLERES -->
     <section id="proximos" class="workshop-section">
-      <div class="container">
-        <div class="section-intro" style="text-align: left; margin-left: 0; margin-right: auto;">
+      <div class="container" style="max-width: 1500px;">
+        <div class="section-intro" style="text-align: left; margin-left: 0; margin-right: auto; max-width: 800px;">
           <span class="section-eyebrow">Convocatorias Abiertas</span>
           <h2 class="section-title">Próximos Talleres y Masterclasses</h2>
           <p class="section-subtitle">Reserva tu cupo para aprender a construir, alimentar y mantener tus propios
             sistemas hidropónicos.</p>
         </div>
 
-        <div class="shop-grid">
+        <div class="workshop-grid">
           <!-- TALLER 1: Huertos Hidropónicos en casa (Nivel I) -->
           <article class="workshop-card">
             <div class="workshop-img">
@@ -353,7 +375,7 @@
   <!-- MODAL DE INSCRIPCIÓN A TALLER -->
   <div id="workshopOverlay" class="login-overlay"></div>
   <div id="workshopModal" class="login-modal" aria-hidden="true" role="dialog">
-    <div class="login-modal-content">
+    <div class="login-modal-content" data-vines="true" style="overflow: visible; position: relative; z-index: 1;">
       <button id="workshopClose" class="login-close" aria-label="Cerrar"><svg width="20" height="20" viewBox="0 0 24 24"
           fill="none" stroke="currentColor" stroke-width="2">
           <line x1="18" y1="6" x2="6" y2="18" />

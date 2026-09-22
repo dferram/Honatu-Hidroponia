@@ -342,7 +342,7 @@
 }
 
 .service-card-action {
-  align-self: flex-start;
+  align-self: center;
   margin-top: auto;
   background: #D36A44;
   color: #FFFFFF !important;
