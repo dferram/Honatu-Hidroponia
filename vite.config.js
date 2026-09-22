@@ -11,6 +11,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'src/index.html'),
         servicios: resolve(__dirname, 'src/pages/servicios.html'),
+        agendar: resolve(__dirname, 'src/pages/agendar.html'),
         tienda: resolve(__dirname, 'src/pages/tienda.html'),
         nosotros: resolve(__dirname, 'src/pages/nosotros.html'),
         educacion: resolve(__dirname, 'src/pages/educacion.html'),

@@ -104,7 +104,9 @@
       </div>
     </section>
 
-    <!-- FORM SECTION -->
+
+
+    <!-- FORM SECTION (General) -->
     <section id="solicitar-servicio" style="padding: var(--space-4xl) 0 var(--space-5xl); background: var(--color-cream-warm); border-top: 1px solid var(--color-gray-200);">
       <div class="container" style="max-width: 800px;">
         <div class="section-header reveal" style="text-align: center; margin-bottom: 2.5rem;">
@@ -171,17 +173,92 @@
   <!-- FOOTER -->
   <footer class="footer"></footer>
 
-  <script>
-    // Función global para seleccionar servicio y hacer scroll suave al formulario
+  <style>
+    /* Calendar Styles */
+    .cal-header-cell {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 8px 0;
+    }
+    .cal-day {
+      width: 100%;
+      aspect-ratio: 1;
+      border: none;
+      background: none;
+      border-radius: var(--radius-md, 8px);
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--color-forest);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cal-day:hover:not(.cal-day--disabled):not(.cal-day--selected) {
+      background: rgba(94, 130, 84, 0.1);
+    }
+    .cal-day--today {
+      font-weight: 700;
+      color: var(--color-terracotta);
+    }
+    .cal-day--selected {
+      background: var(--color-forest) !important;
+      color: var(--color-white) !important;
+      font-weight: 700;
+    }
+    .cal-day--disabled {
+      color: var(--color-gray-300);
+      cursor: not-allowed;
+      opacity: 0.4;
+    }
+    .cal-day--other-month {
+      color: var(--color-gray-300);
+    }
+    .time-slot-btn {
+      padding: 10px 12px;
+      border: 1.5px solid var(--color-gray-200);
+      border-radius: var(--radius-md, 8px);
+      background: var(--color-white);
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-forest);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: center;
+    }
+    .time-slot-btn:hover {
+      border-color: var(--color-sage);
+      background: rgba(94, 130, 84, 0.06);
+    }
+    .time-slot-btn.selected {
+      border-color: var(--color-forest);
+      background: var(--color-forest);
+      color: var(--color-white);
+    }
+
+
+
+    // ============ GENERAL SERVICE FORM ============
     window.selectService = function(serviceKey) {
       const select = document.getElementById("tipo_servicio");
       if (select) {
         select.value = serviceKey;
       }
-      
+
+      if (serviceKey === 'asesoria') {
+        window.location.href = './agendar.html';
+        return;
+      }
+
       const formSection = document.getElementById("solicitar-servicio");
       const formWrapper = document.getElementById("formWrapper");
-      
+
       if (formSection) {
         formSection.scrollIntoView({ behavior: "smooth", block: "start" });
       }
@@ -200,13 +277,10 @@
       const servicioParam = params.get("servicio");
 
       if (servicioParam) {
-        const select = document.getElementById("tipo_servicio");
-        if (select) {
-          const option = Array.from(select.options).find(opt => opt.value === servicioParam);
-          if (option) {
-            select.value = servicioParam;
-          }
-        }
+        // Small delay to let the page render first
+        setTimeout(() => {
+          window.selectService(servicioParam);
+        }, 600);
       }
     });
   </script>
