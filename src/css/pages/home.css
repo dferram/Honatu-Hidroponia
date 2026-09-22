@@ -394,14 +394,15 @@
 
 .impact-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
-  margin-bottom: var(--space-4xl);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xl);
+  margin: 0 auto var(--space-4xl);
+  max-width: 900px;
 }
 
 .impact-card {
   text-align: center;
-  padding: var(--space-2xl) var(--space-lg);
+  padding: 4rem 2.5rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -416,9 +417,9 @@
 }
 
 .impact-icon-wrap {
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-md);
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-lg);
   background: rgba(198, 210, 192, 0.12);
   display: flex;
   align-items: center;
@@ -429,15 +430,16 @@
 
 .impact-stat {
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: 700;
   color: var(--color-sand);
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 
 .impact-label {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
   font-weight: 500;
 }
 
@@ -937,17 +939,17 @@
     gap: var(--space-sm);
   }
 
-  .stat-number {
-    font-size: 1.6rem;
+  .impact-stat {
+    font-size: 2.8rem;
   }
 
   .impact-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-md);
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
   .impact-card {
-    padding: var(--space-lg) var(--space-md);
+    padding: var(--space-2xl) var(--space-md);
   }
 
   .shop-grid {
