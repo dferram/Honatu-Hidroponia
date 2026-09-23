@@ -56,8 +56,10 @@ export function generateHeaderHTML(config = HEADER_CONFIG) {
       // On homepage: use in-page anchor if defined, else go directly to subpage
       href = item.homeHash ? item.homeHash : resolveRelativePath(item.path);
     } else {
-      // On subpages: always go to the actual subpage
-      href = resolveRelativePath(item.path);
+      // On subpages: redirect back to homepage section if homeHash is defined, else go to subpage
+      href = item.homeHash
+        ? `${resolveRelativePath('index.html')}${item.homeHash}`
+        : resolveRelativePath(item.path);
       const itemPageName = item.path.replace('pages/', '').replace('.html', '');
       isActive = (currentPage === itemPageName);
     }
@@ -65,10 +67,12 @@ export function generateHeaderHTML(config = HEADER_CONFIG) {
     return `<a href="${href}" class="nav-link ${isActive ? 'active' : ''}">${item.label}</a>`;
   }).join('');
 
-  // CTA button
-  const ctaHref = isSubpage
-    ? resolveRelativePath(config.cta.path)
-    : (config.cta.homeHash || resolveRelativePath(config.cta.path));
+  // CTA button: on homepage use in-page anchor, on subpages redirect to homepage section
+  const ctaHref = !isSubpage
+    ? (config.cta.homeHash || resolveRelativePath(config.cta.path))
+    : (config.cta.homeHash
+        ? `${resolveRelativePath('index.html')}${config.cta.homeHash}`
+        : resolveRelativePath(config.cta.path));
 
   return `
     <div class="nav-container">

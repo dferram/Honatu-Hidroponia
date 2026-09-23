@@ -39,3 +39,33 @@ export function initActiveNavTracking() {
 
   sections.forEach(section => observerNav.observe(section));
 }
+
+/**
+ * Ensures smooth and accurate scrolling when navigating to a hash URL (e.g. index.html#servicios)
+ * from another page, accounting for asynchronous asset loading and layout shifts.
+ */
+export function handleInitialHashScroll() {
+  if (typeof window === 'undefined' || !window.location.hash) return;
+
+  const scrollToHash = () => {
+    try {
+      const hash = window.location.hash;
+      if (!hash || hash === '#') return;
+      const target = document.querySelector(hash);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (_) {}
+  };
+
+  // Run quickly for immediate response, after loader hides, and on window load
+  setTimeout(scrollToHash, 80);
+  setTimeout(scrollToHash, 350);
+  window.addEventListener('load', () => {
+    setTimeout(scrollToHash, 100);
+  }, { once: true });
+
+  window.addEventListener('hashchange', () => {
+    scrollToHash();
+  });
+}

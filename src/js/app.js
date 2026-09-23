@@ -13,7 +13,7 @@ import { initCloudinaryImages } from './services/cloudinary.service.js';
 // --- Controllers ---
 import { initLoader } from './controllers/loader.controller.js';
 import { initNavbar } from './controllers/navbar.controller.js';
-import { initSmoothScroll, initActiveNavTracking } from './controllers/scroll.controller.js';
+import { initSmoothScroll, initActiveNavTracking, handleInitialHashScroll } from './controllers/scroll.controller.js';
 import { initAuth } from './controllers/auth.controller.js';
 import { initCart } from './controllers/cart.controller.js';
 import { initFavorites } from './controllers/favorites.controller.js';
@@ -43,6 +43,7 @@ function bootstrapApp() {
   try { initFooter(); } catch (e) { console.warn('Footer init error:', e); }
   try { initSmoothScroll(); } catch (e) { console.warn('Smooth scroll error:', e); }
   try { initActiveNavTracking(); } catch (e) { console.warn('Active nav tracking error:', e); }
+  try { handleInitialHashScroll(); } catch (e) { console.warn('Hash scroll error:', e); }
   try { initAuth(); } catch (e) { console.warn('Auth init error:', e); }
   try { initCart(); } catch (e) { console.warn('Cart init error:', e); }
   try { initFavorites(); } catch (e) { console.warn('Favorites init error:', e); }
