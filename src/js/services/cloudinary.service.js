@@ -151,7 +151,12 @@ export const CLOUDINARY_IMAGE_MAP = {
   'acciones/img_7.jpg': 'Talleres.PNG',
   'acciones/img_8.jpg': 'Asesoria.jpg',
   'acciones/img_9.jpg': 'Cliente_torre',
-  'acciones/img_10.jpg': 'Huerto2'
+  'acciones/img_10.jpg': 'Huerto2',
+
+  // Talleres – imágenes de talleres activos
+  'talleres/nivel-i.jpg': 'NIvelI.jpg',
+  'talleres/nivel-ii.jpg': 'NIvelII.jpg',
+  'talleres/masterclass.jpg': 'Masterclass.jpg'
 };
 
 /**

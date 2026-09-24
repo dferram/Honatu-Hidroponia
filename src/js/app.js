@@ -24,6 +24,7 @@ import { initFooter } from './controllers/footer.controller.js';
 // --- UI Components ---
 import './components/header.component.js'; // Registers <honatu-header> Custom Element
 import './components/footer.component.js'; // Registers <honatu-footer> Custom Element
+import './components/map.component.js';    // Registers <honatu-map> Custom Element
 import { initVineDecorations } from './components/vine-decoration.js';
 
 function bootstrapApp() {
