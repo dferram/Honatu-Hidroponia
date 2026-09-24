@@ -17,7 +17,7 @@ export const cloudinaryConfig = {
   apiKey: '933381184925323',
   uploadPreset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'honatu_preset',
   folder: import.meta.env.VITE_CLOUDINARY_FOLDER || 'Honatu',
-  
+
   // Base delivery URL
   get baseUrl() {
     return `https://res.cloudinary.com/${this.cloudName}/image/upload`;
@@ -154,9 +154,9 @@ export const CLOUDINARY_IMAGE_MAP = {
   'acciones/img_10.jpg': 'Huerto2',
 
   // Talleres – imágenes de talleres activos
-  'talleres/nivel-i.jpg': 'NIvelI.jpg',
-  'talleres/nivel-ii.jpg': 'NIvelII.jpg',
-  'talleres/masterclass.jpg': 'Masterclass.jpg'
+  'talleres/nivel-i.jpg': 'NivelI',
+  'talleres/nivel-ii.jpg': 'NivelII',
+  'talleres/masterclass.jpg': 'Masterclass'
 };
 
 /**
@@ -194,7 +194,7 @@ export function getCloudinaryUrl(publicId, options = {}) {
 
   // Clean public ID from full URLs or local relative prefixes
   let cleanId = publicId;
-  
+
   // Strip http://... or domain prefix if present
   if (cleanId.includes('/assets/images/')) {
     cleanId = cleanId.split('/assets/images/')[1];
@@ -370,7 +370,7 @@ export function setupGlobalImageErrorHandler() {
         if (rawSrc && rawSrc.includes('Logo.png')) {
           return;
         }
-        
+
         const label = target.alt || target.getAttribute('data-name') || 'Honatu Hidroponía';
         target.src = createFallbackSvg(label);
         target.classList.add('img-fallback');
